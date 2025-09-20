@@ -73,7 +73,7 @@ $ sudo make install
 
 ## 📷 **Installation Verification**
 <p align="center">
-  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week0/Yosys_Installation.png" width="600"/>
+  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week0/Installation%20Images/Yosys_Installation.png" width="600"/>
 </p>
 
 <div align="center">

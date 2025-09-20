@@ -4,6 +4,14 @@ This document explains the **SoC design flow**, starting from specifications and
 
 ---
 
+## 📷 SoC Design Flow Diagram  
+
+<p align="center">
+  <img src="https://github.com/<your-username>/<your-repo>/blob/main/Images/soc_design_flow.png" alt="SoC Design Flow" width="800"/>
+</p>
+
+---
+
 ## 🔹 O1 – Chip Modelling  
 - **Input:** Specifications written as a **C model**  
 - **Purpose:** Defines high-level chip functionality  

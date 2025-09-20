@@ -210,7 +210,7 @@ sudo make install
 
 ## 📷 **Installation Verification**
 <p align="center">
-  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week0/Installation%20Images/ngspice_Installation.png" 
+  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week0/Installation%20Images/Magic_Installation.png" 
        alt="magic vlsi Installed" width="600"/>
 </p>
 

@@ -157,8 +157,7 @@ $ sudo apt install ngspice
 
 ## 📷 **Installation Verification**
 <p align="center">
-  <img src="https://github.com/TheVoltageVikingRam/RTL2GDS_Alchemy/blob/main/Week0/assets/ngspice_installed.png" 
-       alt="ngspice Installed" width="600"/>
+  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week0/ngspice_Installation.png" width="600"/>
 </p>
 
 <div align="center">

@@ -7,7 +7,7 @@ This document explains the **SoC design flow**, starting from specifications and
 ## 📷 SoC Design Flow Diagram  
 
 <p align="center">
-  <img src="https://github.com/<your-username>/<your-repo>/blob/main/Images/soc_design_flow.png" alt="SoC Design Flow" width="800"/>
+  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week0/SOC%20Design%20flow.png" width="800"/>
 </p>
 
 ---

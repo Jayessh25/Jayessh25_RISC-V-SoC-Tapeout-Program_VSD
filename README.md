@@ -40,7 +40,7 @@ This week focuses on preparing the development environment with essential open-s
 
 | Task | Description | Tools Installed | Status |
 |------|-------------|----------------|---------|
-| **Task 0** | 🛠️ [Tools Installation](https://github.com/TheVoltageVikingRam/RTL2GDS_Alchemy/tree/main/Week0) | **Complete EDA Toolchain Setup** | ✅ Done |
+| **Task 0** | 🛠️ [Tools Installation](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week0) | **Complete EDA Toolchain Setup** | ✅ Done |
 
 ### 📦 **Tools Installed in Week 0 - Task 0**
 

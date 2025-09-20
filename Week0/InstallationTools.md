@@ -212,7 +212,7 @@ sudo make install
 
 ## 📷 **Installation Verification**
 <p align="center">
-  <img src="https://github.com/TheVoltageVikingRam/RTL2GDS_Alchemy/blob/main/Week0/assets/magic_vlsi_installed.png" 
+  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week0/Magic_Installation.png" 
        alt="magic vlsi Installed" width="600"/>
 </p>
 

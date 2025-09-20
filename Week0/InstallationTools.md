@@ -245,11 +245,11 @@ sudo make install
 
 <div align="center">
 
-**📂 Repository:** [RTL2GDS_Alchemy](https://github.com/TheVoltageVikingRam/RTL2GDS_Alchemy)  
-**👨‍💻 Author:** [TheVoltageVikingRam](https://github.com/TheVoltageVikingRam)  
+**📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  
+**👨‍💻 Author:** [Jayessh25](https://github.com/Jayessh25)  
 **📚 Program:** VLSI System Design (VSD)
 
-[![Follow](https://img.shields.io/github/followers/TheVoltageVikingRam?style=social)](https://github.com/TheVoltageVikingRam)
-[![Stars](https://img.shields.io/github/stars/TheVoltageVikingRam/RTL2GDS_Alchemy?style=social)](https://github.com/TheVoltageVikingRam/RTL2GDS_Alchemy)
+[![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
+[![Stars](https://img.shields.io/github/stars/TheVoltageVikingRam/RTL2GDS_Alchemy?style=social)](https://github.com/Jayessh25/RTL2GDS_Alchemy)
 
 </div>

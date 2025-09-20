@@ -250,6 +250,6 @@ sudo make install
 **📚 Program:** VLSI System Design (VSD)
 
 [![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
-[![Stars](https://img.shields.io/github/stars/TheVoltageVikingRam/RTL2GDS_Alchemy?style=social)](https://github.com/Jayessh25/RTL2GDS_Alchemy)
+[![Stars](https://img.shields.io/github/stars/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD?style=social)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)
 
 </div>

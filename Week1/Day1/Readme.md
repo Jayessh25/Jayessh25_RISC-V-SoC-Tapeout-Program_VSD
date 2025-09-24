@@ -207,7 +207,7 @@ Let’s synthesize the `good_mux` design using Yosys!
     ```
 
 <div align="center">
-  <img src="" alt="Yosys Gate-level Schematic" width="70%">
+  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day1/synthesis.png" alt="Yosys Gate-level Schematic" width="70%">
 </div>
 
 ---

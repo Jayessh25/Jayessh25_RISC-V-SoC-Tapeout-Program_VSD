@@ -29,13 +29,6 @@ This repository documents my **week-by-week progress** with tasks inside each we
 </div>
 
 ---
-## 📅 **Week 0 — Setup & Tools**
-
-<details>
-<summary><b>🛠️ Foundation Week: Environment Setup and Tool Installation</b></summary>
-
-This week focuses on preparing the development environment with essential open-source EDA tools for the complete RTL-to-GDSII flow.
-
 ### 🛠️ **Tasks Overview**
 
 | Task | Description | Tools Installed | Status |

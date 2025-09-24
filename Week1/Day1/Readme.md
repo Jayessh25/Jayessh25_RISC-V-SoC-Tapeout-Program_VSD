@@ -211,7 +211,7 @@ Let’s synthesize the `good_mux` design using Yosys!
 </div>
 
 ---
-**7. Standard Cell Libraries**
+## 7. Standard Cell Libraries
 
 A standard cell library contains pre-designed logic gates (AND, OR, NAND, flip-flops, etc.) with different drive strengths, timing, and power characteristics. Each gate can come in multiple versions (“flavors”) depending on speed, area, and power.
 

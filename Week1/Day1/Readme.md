@@ -23,8 +23,8 @@ Today, you'll dive into **Verilog RTL design**, **open-source simulation with Ic
    - [Testbench: `tb_good_mux.v`](#testbench-tb_good_muxv)  
 5. [Introduction to Yosys & Gate Libraries](#5-introduction-to-yosys--gate-libraries)  
 6. [Synthesis Lab with Yosys](#6-synthesis-lab-with-yosys)  
-7. [Standard Cell Libraries](#7-Standard-Cell-Libraries) 
-8. [Summary](#8-summary)  
+7. [Standard Cell Libraries](#8-Standard-Cell-Libraries) 
+8. [Summary](#9-summary)  
 
 ---
 
@@ -211,7 +211,41 @@ Let’s synthesize the `good_mux` design using Yosys!
 </div>
 
 ---
-## 7. Standard Cell Libraries
+## 8. Netlist Generation in Yosys
+
+After synthesis, Yosys allows us to export the gate-level representation of our design into a Verilog netlist.
+A netlist is a text description of the circuit in terms of gates, wires, and their interconnections.
+It’s the bridge between RTL code and physical implementation.
+
+**🔹 Command 1: write_verilog good_mux_netlist.v**
+
+- This writes the synthesized netlist with attributes included.
+- Attributes contain extra information such as:
+         - Original source file and line numbers
+         - Synthesis directives ((* keep *), (* src = ... *))
+         - Internal hints useful for debugging
+
+<div align="center">
+  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day1/synthesis.png" alt="Yosys Gate-level Schematic" width="70%">
+</div>
+
+
+**🔹 Command 2: write_verilog -noattr good_mux_netlist.v**
+
+- This writes the same netlist but without attributes, resulting in a cleaner file.
+- Easier to read, minimalistic.
+- Preferred for post-synthesis simulation or sharing with others.
+<div align="center">
+  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day1/synthesis.png" alt="Yosys Gate-level Schematic" width="70%">
+</div>
+
+**Key Takeaways**
+
+- **write_verilog** → detailed netlist with attributes (good for debugging).
+- **write_verilog -noattr** → clean netlist without attributes (good for simulation & handoff).
+
+---
+## 8. Standard Cell Libraries
 
 A standard cell library contains pre-designed logic gates (AND, OR, NAND, flip-flops, etc.) with different drive strengths, timing, and power characteristics. Each gate can come in multiple versions (“flavors”) depending on speed, area, and power.
 
@@ -249,7 +283,7 @@ Slower cells are gates designed to switch more slowly, optimized for area and po
 - Trade-offs: Low power and area, but slower operation.
 
 ---
-## 8. Summary
+## 9. Summary
 
 - You learned about simulators, designs, and testbenches.
 - You ran your first Verilog simulation with iverilog and visualized waveforms.

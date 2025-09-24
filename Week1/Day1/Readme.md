@@ -184,12 +184,12 @@ Let’s synthesize the `good_mux` design using Yosys!
 
 2. **Read the liberty library**
     ```shell
-    read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+    read_liberty -lib ../verilog_files/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
     ```
 
 3. **Read the Verilog code**
     ```shell
-    read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/good_mux.v
+    read_verilog good_mux.v
     ```
 
 4. **Synthesize the design**
@@ -199,7 +199,7 @@ Let’s synthesize the `good_mux` design using Yosys!
 
 5. **Technology mapping**
     ```shell
-    abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+    abc -liberty -lib ../verilog_files/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
     ```
 
 6. **Visualize the gate-level netlist**

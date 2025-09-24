@@ -38,29 +38,186 @@ The **design** is your Verilog code describing the intended logic.
 ### Testbench
 A **testbench** applies inputs to your design and checks outputs for correctness.
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/93927b96-df80-4da5-b801-284fc2cc6757" alt="Design & Testbench Overview" width="70%">
-</div>
-
 ---
 
 ## 2. Getting Started with iverilog
 
 **iverilog** is an open-source Verilog simulator. Typical workflow:
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/3ca190fb-cfa4-4abb-b9e1-0151b3c4bdba" alt="iverilog Simulation Flow" width="70%">
-</div>
-
 - Provide design and testbench as input.  
 - Generates `.vcd` waveform file for GTKWave.
 
 ---
 
-## 3. Lab: 2-to-1 Multiplexer Simulation
+## 3. Lab: Simulating a 2-to-1 Multiplexer
 
-### Step 1: Clone Repository
-```bash
+Let’s simulate a simple **2-to-1 multiplexer** using iverilog!
+
+###  Step 1: Clone the Workshop Repository
+
+```shell
 git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+
+###  Step 2: Install Required Tools
+
+```shell
+sudo apt install iverilog
+sudo apt install gtkwave
+```
+
+###  Step 3: Simulate the Design
+
+Compile the design and testbench:
+
+```shell
+iverilog good_mux.v tb_good_mux.v
+```
+
+Run the simulation:
+
+```shell
+./a.out
+```
+
+View the waveform:
+
+```shell
+gtkwave tb_good_mux.vcd
+```
+
+<div align="center">
+  <img src="" alt="GTKWave Example" width="70%">
+</div>
+
+---
+
+## 4. Verilog Code Analysis
+
+**The code for the multiplexer (`good_mux.v`):**
+
+```verilog
+module good_mux (input i0, input i1, input sel, output reg y);
+always @ (*)
+begin
+    if(sel)
+        y <= i1;
+    else 
+        y <= i0;
+end
+endmodule
+```
+
+**The Testbench code for the multiplexer (`tb_good_mux.v`):**
+
+```verilog
+module tb_good_mux;
+	reg i0,i1,sel;
+	wire y;
+	good_mux uut (
+		.sel(sel),
+		.i0(i0),
+		.i1(i1),
+		.y(y)
+	);
+	initial begin
+	$dumpfile("tb_good_mux.vcd");
+	$dumpvars(0,tb_good_mux);
+	sel = 0;
+	i0 = 0;
+	i1 = 0;
+	#300 $finish;
+	end
+always #75 sel = ~sel;
+always #10 i0 = ~i0;
+always #55 i1 = ~i1;
+endmodule
+```
+###  **How It Works**
+
+- **Inputs:** `i0`, `i1` (data), `sel` (select line)
+- **Output:** `y` (registered output)
+- **Logic:** If `sel` is 1, `y` gets `i1`; if `sel` is 0, `y` gets `i0`.
+
+---
+
+## 5. Introduction to Yosys & Gate Libraries
+
+###  What is Yosys?
+
+**Yosys** is a powerful open-source synthesis tool for digital hardware. It takes your Verilog code and converts it into a gate-level netlist—a hardware blueprint.
+
+#### Yosys Features
+
+- **Synthesis:** Converts HDL to a logic circuit
+- **Optimization:** Improves speed or area
+- **Technology Mapping:** Matches logic to actual hardware cells
+- **Verification:** Checks correctness
+- **Extensibility:** Supports custom flows
+
+###  Why Do Libraries Have Different Gate "Flavors"?
+
+A `.lib` file contains many versions of each gate (like AND, OR, NOT) with different properties:
+
+- **Performance:** Faster gates for critical paths, slower for power savings
+- **Power:** Some gates use less energy
+- **Area:** Smaller gates for compact chips
+- **Drive Strength:** Stronger gates to drive more load
+- **Signal Integrity:** Specialized gates for noise/performance
+- **Mapping:** Synthesis tools pick the best flavor for your needs
+
+---
+
+## 6. Synthesis Lab with Yosys
+
+Let’s synthesize the `good_mux` design using Yosys!
+
+###  Step-by-Step Yosys Flow
+
+1. **Start Yosys**
+    ```shell
+    yosys
+    ```
+
+2. **Read the liberty library**
+    ```shell
+    read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+    ```
+
+3. **Read the Verilog code**
+    ```shell
+    read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/good_mux.v
+    ```
+
+4. **Synthesize the design**
+    ```shell
+    synth -top good_mux
+    ```
+
+5. **Technology mapping**
+    ```shell
+    abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+    ```
+
+6. **Visualize the gate-level netlist**
+    ```shell
+    show
+    ```
+
+<div align="center">
+  <img src="" alt="Yosys Gate-level Schematic" width="70%">
+</div>
+
+---
+
+## 7. Summary
+
+- You learned about simulators, designs, and testbenches.
+- You ran your first Verilog simulation with iverilog and visualized waveforms.
+- You analyzed the 2-to-1 mux code.
+- You explored Yosys and learned why gate libraries have various flavors.
+
+
+---
 

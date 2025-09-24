@@ -226,7 +226,7 @@ It’s the bridge between RTL code and physical implementation.
          - Internal hints useful for debugging
 
 <div align="center">
-  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day1/synthesis.png" alt="Yosys Gate-level Schematic" width="70%">
+  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day1/longnetlist.png" alt="Yosys Gate-level Netlist" width="70%">
 </div>
 
 

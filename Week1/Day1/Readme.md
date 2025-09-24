@@ -255,7 +255,16 @@ Slower cells are gates designed to switch more slowly, optimized for area and po
 - You ran your first Verilog simulation with iverilog and visualized waveforms.
 - You analyzed the 2-to-1 mux code.
 - You explored Yosys and learned why gate libraries have various flavors.
-
-
+  
 ---
 
+<div align="center">
+
+**📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  
+**👨‍💻 Author:** [Jayessh25](https://github.com/Jayessh25)  
+**📚 Program:** VLSI System Design (VSD)
+
+[![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
+[![Stars](https://img.shields.io/github/stars/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD?style=social)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)
+
+</div>

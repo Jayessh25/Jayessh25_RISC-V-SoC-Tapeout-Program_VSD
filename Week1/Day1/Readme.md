@@ -23,7 +23,8 @@ Today, you'll dive into **Verilog RTL design**, **open-source simulation with Ic
    - [Testbench: `tb_good_mux.v`](#testbench-tb_good_muxv)  
 5. [Introduction to Yosys & Gate Libraries](#5-introduction-to-yosys--gate-libraries)  
 6. [Synthesis Lab with Yosys](#6-synthesis-lab-with-yosys)  
-7. [Summary](#7-summary)  
+7. [Standard Cell Libraries](#7-Standard-Cell-Libraries) 
+8. [Summary](#8-summary)  
 
 ---
 
@@ -210,8 +211,44 @@ Let’s synthesize the `good_mux` design using Yosys!
 </div>
 
 ---
+**7. Standard Cell Libraries**
 
-## 7. Summary
+A standard cell library contains pre-designed logic gates (AND, OR, NAND, flip-flops, etc.) with different drive strengths, timing, and power characteristics. Each gate can come in multiple versions (“flavors”) depending on speed, area, and power.
+
+ **Faster Cells**
+
+Faster cells are gates designed to switch more quickly.
+
+ **Characteristics:**
+
+- **Lower delay** → shorter rise/fall times
+- **Higher drive strength** → can drive larger loads
+- **Larger transistors** → bigger area, more capacitance
+- **Higher dynamic power** → consumes more power per transition
+
+ **Usage:**
+- Critical timing paths (speed-sensitive)
+- Clock paths, high-frequency data paths
+- Trade-offs: Fast, but bigger area and higher power consumption.
+
+ **Slower Cells**
+
+Slower cells are gates designed to switch more slowly, optimized for area and power.
+
+ **Characteristics:**
+
+- **Higher delay** → longer rise/fall times
+- **Lower drive strength** → smaller transistor size
+- **Smaller area** → compact, saves silicon
+- **Lower power consumption** → ideal for low-speed or non-critical paths
+
+ **Usage:**
+- Non-critical paths where speed is not important
+- Power-sensitive designs
+- Area-constrained layouts
+- Trade-offs: Low power and area, but slower operation.
+
+## 8. Summary
 
 - You learned about simulators, designs, and testbenches.
 - You ran your first Verilog simulation with iverilog and visualized waveforms.

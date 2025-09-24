@@ -22,9 +22,10 @@ Today, you'll dive into **Verilog RTL design**, **open-source simulation with Ic
    - [Design: `good_mux.v`](#design-good_muxv)  
    - [Testbench: `tb_good_mux.v`](#testbench-tb_good_muxv)  
 5. [Introduction to Yosys & Gate Libraries](#5-introduction-to-yosys--gate-libraries)  
-6. [Synthesis Lab with Yosys](#6-synthesis-lab-with-yosys)  
-7. [Standard Cell Libraries](#8-Standard-Cell-Libraries) 
-8. [Summary](#9-summary)  
+6. [Synthesis Lab with Yosys](#6-synthesis-lab-with-yosys)
+7. [Netlist Generation in Yosys](#7-Netlist-Generation-in-Yosys)
+8. [Standard Cell Libraries](#8-Standard-Cell-Libraries) 
+9. [Summary](#9-summary)  
 
 ---
 
@@ -211,7 +212,7 @@ Let’s synthesize the `good_mux` design using Yosys!
 </div>
 
 ---
-## 8. Netlist Generation in Yosys
+## 7. Netlist Generation in Yosys
 
 After synthesis, Yosys allows us to export the gate-level representation of our design into a Verilog netlist.
 A netlist is a text description of the circuit in terms of gates, wires, and their interconnections.
@@ -236,7 +237,7 @@ It’s the bridge between RTL code and physical implementation.
 - Easier to read, minimalistic.
 - Preferred for post-synthesis simulation or sharing with others.
 <div align="center">
-  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day1/synthesis.png" alt="Yosys Gate-level Schematic" width="70%">
+  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day1/shortnet.png" alt="Yosys Netlist without attributes" width="70%">
 </div>
 
 **Key Takeaways**

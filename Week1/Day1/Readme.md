@@ -89,7 +89,7 @@ gtkwave tb_good_mux.vcd
 ```
 
 <div align="center">
-  <img src="" alt="GTKWave Example" width="70%">
+  <img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day1/Mux%20output.png" alt="GTKWave Example" width="70%">
 </div>
 
 ---

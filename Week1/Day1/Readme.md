@@ -248,6 +248,7 @@ Slower cells are gates designed to switch more slowly, optimized for area and po
 - Area-constrained layouts
 - Trade-offs: Low power and area, but slower operation.
 
+---
 ## 8. Summary
 
 - You learned about simulators, designs, and testbenches.

@@ -16,25 +16,10 @@ Welcome to Day 2 of the RTL Workshop. This day covers three crucial topics:
 
 # Contents
 
--  1.[Timing Libraries](#timing-libraries)
-   - [SKY130 PDK Overview](#sky130-pdk-overview)
-   - [Decoding sky130_fd_sc_hd__tt_025C_1v80.lib in SKY130 PDK](#decoding-sky130_fd_sc_hd__tt_025C_1v80.lib-in-sky130-pdk)
-   - [Opening and Exploring the .lib File](#opening-and-exploring-the-lib-file)
-
+-  1.[Timing Libraries](#timing-libraries)  
 - 2.[Hierarchical vs. Flattened Synthesis](#hierarchical-vs-flattened-synthesis)
-  - [Hierarchical Synthesis](#hierarchical-synthesis)
-  - [Flattened Synthesis](#flattened-synthesis)
-  - [Key Differences](#key-differences)
-
-- 3.[Flip-Flop Coding Styles](#flip-flop-coding-styles)
-  - [Asynchronous Reset D Flip-Flop](#asynchronous-reset-d-flip-flop)
-  - [Asynchronous Set D Flip-Flop](#asynchronous-set-d-flip-flop)
-  - [Synchronous Reset D Flip-Flop](#synchronous-reset-d-flip-flop)
-
+- 3.[Flip-Flop Coding Styles In Verilog](#flip-flop-coding-styles-in-verilog)
 - 4.[Simulation and Synthesis Workflow](#simulation-and-synthesis-workflow)
-  - [Icarus Verilog Simulation](#icarus-verilog-simulation)
-  - [Synthesis with Yosys](#synthesis-with-yosys)
-
 ---
 
 ## Timing Libraries

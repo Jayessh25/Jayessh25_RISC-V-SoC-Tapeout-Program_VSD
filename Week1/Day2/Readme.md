@@ -18,7 +18,7 @@ Welcome to Day 2 of the RTL Workshop. This day covers three crucial topics:
 
 -  1.[Timing Libraries](#timing-libraries)
    - [SKY130 PDK Overview](#sky130-pdk-overview)
-   - [Decoding tt_025C_1v80 in the SKY130 PDK](#decoding-tt_025c_1v80-in-the-sky130-pdk)
+   - [Decoding sky130_fd_sc_hd__tt_025C_1v80.lib in the SKY130 PDK](#Decoding-sky130_fd_sc_hd__tt_025C_1v80.lib-in-SKY130-PDK)
    - [Opening and Exploring the .lib File](#opening-and-exploring-the-lib-file)
 
 - 2.[Hierarchical vs. Flattened Synthesis](#hierarchical-vs-flattened-synthesis)
@@ -43,8 +43,11 @@ Welcome to Day 2 of the RTL Workshop. This day covers three crucial topics:
 
 The SKY130 PDK is an open-source Process Design Kit based on SkyWater Technology's 130nm CMOS technology. It provides essential models and libraries for integrated circuit (IC) design, including timing, power, and process variation information.
 
-### Decoding tt_025C_1v80 in the SKY130 PDK
-
+### Decoding sky130_fd_sc_hd__tt_025C_1v80.lib in the SKY130 PDK
+- **sky130** : process node (130 nm)
+- **fd** : foundry (SkyWater FD)
+- **sc** : standard cell
+- **hd** : high density variant
 - **tt**: Typical process corner.
 - **025C**: Represents a temperature of 25°C, relevant for temperature-dependent performance.
 - **1v80**: Indicates a core voltage of 1.8V.

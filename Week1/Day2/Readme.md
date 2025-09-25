@@ -130,9 +130,25 @@ To open the sky130_fd_sc_hd__tt_025C_1v80.lib file:
 
 ---
 
-## Flip-Flop Coding Styles
+## Flip-Flop Coding Styles In Verilog
 
-Flip-flops are fundamental sequential elements in digital design, used to store binary data. Below are efficient coding styles for different reset/set behaviors.
+Flip-flops are fundamental sequential elements in digital design, used to store binary data. They form the basis of registers, counters, pipelines, and state machines. A flip-flop captures input (d) on a clock edge and holds its value until the next active edge.
+Resets and sets are important to initialize or control flip-flops in designs. Below are different coding styles with explanations.
+
+### Theory of Reset/Set
+- **Asynchronous Reset/Set**
+   - Overrides the clock.
+   - Takes effect immediately when reset/set is asserted.
+   - Useful for global initialization at power-up.
+   - Risk: Can cause metastability if released close to a clock edge.
+
+- **Synchronous Reset/Set**
+   - Only active on the clock edge.
+   - Ensures synchronous operation with other signals.
+   - Safer in pipelined designs.
+   - Slightly slower than async because it waits for a clock edge
+
+## Verilog Coding Styles
 
 ### Asynchronous Reset D Flip-Flop
 
@@ -175,7 +191,17 @@ endmodule
 - **Synchronous reset**: Takes effect only on the clock edge.
 
 ---
+### Comparison of Reset Styles
 
+| Feature               | Asynchronous Reset                    | Synchronous Reset            |
+|-----------------------|---------------------------------------|------------------------------|
+| Activation            | Immediate, ignores clock              | Only at clock edge           |
+| Speed                 | Fast initialization                   | Waits for clock              |
+| Risk                  | Can cause metastability if not synced | Safer                        |
+| Usage                 | Global chip reset at power-up         | Local pipelines, FSMs        |
+| Area Impact           | Adds extra reset pin logic            | Usually smaller              |
+
+---
 ## Simulation and Synthesis Workflow
 
 ### Icarus Verilog Simulation

@@ -68,7 +68,7 @@ To open the sky130_fd_sc_hd__tt_025C_1v80.lib file:
    ```shell
    gedit sky130_fd_sc_hd__tt_025C_1v80.lib
    ```
- ![Screenshot_2025-05-29_11-43-13]()
+ ![Screenshot_2025-05-29_11-43-13](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day2/sky130pdlib.png)
 
 
 ---

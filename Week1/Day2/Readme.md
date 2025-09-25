@@ -218,7 +218,7 @@ endmodule
    ```shell
    gtkwave tb_dff_asyncres.vcd
    ```
-![Screenshot_2025-05-30_10-45-13]()
+![Screenshot_2025-05-30_10-45-13](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day2/tb_dff_asyncres.png)
 
 
 ### Synthesis with Yosys

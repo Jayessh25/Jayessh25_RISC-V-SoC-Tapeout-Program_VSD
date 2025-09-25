@@ -9,7 +9,7 @@
 
 Welcome to Day 3 of the RTL Workshop. This day covers two crucial topics:
 - optimization of combinational and sequential circuits.
-- ntroducing techniques to enhance efficiency and performance.
+- Introducing techniques to enhance efficiency and performance.
 
 ---
 

@@ -18,7 +18,7 @@ Welcome to Day 2 of the RTL Workshop. This day covers three crucial topics:
 
 -  1.[Timing Libraries](#timing-libraries)
    - [SKY130 PDK Overview](#sky130-pdk-overview)
-   - [Decoding sky130_fd_sc_hd__tt_025C_1v80.lib in SKY130 PDK](#Decoding-sky130_fd_sc_hd__tt_025C_1v80.lib-in-SKY130-PDK)
+   - [Decoding sky130_fd_sc_hd__tt_025C_1v80.lib in SKY130 PDK](#decoding-sky130_fd_sc_hd__tt_025C_1v80.lib-in-sky130-pdk)
    - [Opening and Exploring the .lib File](#opening-and-exploring-the-lib-file)
 
 - 2.[Hierarchical vs. Flattened Synthesis](#hierarchical-vs-flattened-synthesis)
@@ -231,3 +231,16 @@ endmodule
 ---
 ## Summary
 This overview provides you with practical insights into timing libraries, synthesis strategies, and reliable coding practices for flip-flops. Continue experimenting with these concepts to deepen your understanding of RTL design and synthesis.
+
+---
+
+<div align="center">
+
+**📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  
+**👨‍💻 Author:** [Jayessh25](https://github.com/Jayessh25)  
+**📚 Program:** VLSI System Design (VSD)
+
+[![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
+[![Stars](https://img.shields.io/github/stars/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD?style=social)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)
+
+</div>

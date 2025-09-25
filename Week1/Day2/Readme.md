@@ -90,7 +90,7 @@ To open the sky130_fd_sc_hd__tt_025C_1v80.lib file:
 - Reporting can require additional configuration.
 
 **Example:**
-![Screenshot_2025-05-29_19-04-48]()
+![Screenshot_2025-05-29_19-04-48](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day2/multiplemodule.png)
 
 
 ---
@@ -229,11 +229,11 @@ endmodule
    ```
 2. Read Liberty library:
    ```shell
-   read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+   read_liberty -lib ../verilog_files/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
    ```
 3. Read Verilog code:
    ```shell
-   read_verilog /path/to/dff_asyncres.v
+   read_verilog dff_asyncres.v
    ```
 4. Synthesize:
    ```shell
@@ -241,11 +241,11 @@ endmodule
    ```
 5. Map flip-flops:
    ```shell
-   dfflibmap -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+   dfflibmap -liberty ../verilog_files/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
    ```
 6. Technology mapping:
    ```shell
-   abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+   abc -liberty ../verilog_files/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
    ```
 7. Visualize the gate-level netlist:
    ```shell
@@ -255,6 +255,109 @@ endmodule
 
 
 ---
+### Icarus Verilog Simulation
+
+1. **Compile:**
+   ```shell
+   iverilog dff_async_set.v tb_dff_async_set.v
+   ```
+2. **Run:**
+   ```shell
+   ./a.out
+   ```
+3. **View Waveform:**
+   ```shell
+   gtkwave tb_dff_async_set.vcd
+   ```
+![Screenshot_2025-05-30_10-45-13]()
+
+
+### Synthesis with Yosys
+
+1. Start Yosys:
+   ```shell
+   yosys
+   ```
+2. Read Liberty library:
+   ```shell
+  read_liberty -lib ../verilog_files/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
+3. Read Verilog code:
+   ```shell
+   read_verilog /path/to/dff_async_set.v
+   ```
+4. Synthesize:
+   ```shell
+   synth -top dff_async_set
+   ```
+5. Map flip-flops:
+   ```shell
+   dfflibmap -liberty ../verilog_files/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
+6. Technology mapping:
+   ```shell
+   abc -liberty ../verilog_files/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
+7. Visualize the gate-level netlist:
+   ```shell
+   show
+   ```
+![Screenshot_2025-05-30_11-03-00]()
+
+
+---
+### Icarus Verilog Simulation
+
+1. **Compile:**
+   ```shell
+   iverilog dff_syncres.v tb_dff_syncres.v
+   ```
+2. **Run:**
+   ```shell
+   ./a.out
+   ```
+3. **View Waveform:**
+   ```shell
+   gtkwave tb_dff_syncres.vcd
+   ```
+![Screenshot_2025-05-30_10-45-13]()
+
+
+### Synthesis with Yosys
+
+1. Start Yosys:
+   ```shell
+   yosys
+   ```
+2. Read Liberty library:
+   ```shell
+   read_liberty -lib ../verilog_files/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
+3. Read Verilog code:
+   ```shell
+   read_verilog /path/to/dff_syncres.v
+   ```
+4. Synthesize:
+   ```shell
+   synth -top dff_syncres
+   ```
+5. Map flip-flops:
+   ```shell
+   dfflibmap -liberty ../verilog_files/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
+6. Technology mapping:
+   ```shell
+   abc -liberty ../verilog_files/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
+7. Visualize the gate-level netlist:
+   ```shell
+   show
+   ```
+![Screenshot_2025-05-30_11-03-00]()
+
+
+---
+
 ## Summary
 This overview provides you with practical insights into timing libraries, synthesis strategies, and reliable coding practices for flip-flops. Continue experimenting with these concepts to deepen your understanding of RTL design and synthesis.
 

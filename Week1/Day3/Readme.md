@@ -1,6 +1,15 @@
-# Day 3: Combinational and Sequential Optimization
+# 🚀 Day 3: Combinational and Sequential Optimization
+<div align="center">
 
-Welcome to Day 3 of this workshop! Today we discuss optimization of combinational and sequential circuits, introducing techniques to enhance efficiency and performance.
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Day-3-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+
+</div>
+
+Welcome to Day 3 of the RTL Workshop. This day covers two crucial topics:
+- optimization of combinational and sequential circuits.
+- ntroducing techniques to enhance efficiency and performance.
 
 ---
 

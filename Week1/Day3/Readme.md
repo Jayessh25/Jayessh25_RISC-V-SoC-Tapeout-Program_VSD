@@ -386,7 +386,7 @@ endmodule
 - Output:
       q – Goes high (1) when the counter reaches 3'b100 (decimal 4), otherwise 0.
 
-![Lab 11 Show]()
+![Lab 11 Show](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/counter_opt2show.png)
 
 
 ---

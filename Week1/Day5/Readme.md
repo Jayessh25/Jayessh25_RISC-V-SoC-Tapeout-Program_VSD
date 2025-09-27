@@ -145,7 +145,7 @@ endmodule
 
 ### Lab 4: Synthesis Result of Lab 3
 
-![incomp2synth]()
+![incomp2synth](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day5/incomp_if2show.png)
 
 ---
 

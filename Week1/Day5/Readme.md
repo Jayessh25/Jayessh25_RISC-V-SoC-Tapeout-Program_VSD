@@ -1,5 +1,11 @@
+# 🚀 Day 4: Gate-Level Simulation (GLS), Blocking vs. Non-Blocking in Verilog, and Synthesis-Simulation Mismatch
+<div align="center">
 
-# Day 5: Optimization in Synthesis
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Day-5-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-HalfComplete-success?style=for-the-badge)
+
+</div>
 
 Welcome to Day 5 of the RTL workshop! Today, we will cover optimization in Verilog synthesis, focusing on `if-else` statements, `for` loops, generate blocks, and explore how improper coding can lead to inferred latches. Labs are included for hands-on experience.
 

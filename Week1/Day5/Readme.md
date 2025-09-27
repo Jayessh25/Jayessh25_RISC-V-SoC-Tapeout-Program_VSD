@@ -123,7 +123,7 @@ endmodule
 
 ### Lab 2: Synthesis Result of Lab 1
 
-![incomp_synth]()
+![incomp_synth](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day5/incomp_ifshow.png)
 
 ---
 

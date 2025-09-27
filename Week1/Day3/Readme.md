@@ -206,7 +206,7 @@ endmodule
 **Functionality:**
 - D flip-flop always sets output `q` to `1` (regardless of reset or clock).
 
-![Lab 6 Output]()
+![Lab 6 Output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/dff_const2gtk.png)
 ![Lab 6 Show]()
 ---
 ### Lab 7

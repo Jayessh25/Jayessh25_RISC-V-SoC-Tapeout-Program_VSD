@@ -61,7 +61,7 @@ Cloning duplicates a logic cell or module to optimize performance, reduce power,
 - Place and route the cloned cell.
 - Verify improvement via timing and power analysis.
 
-![Cloning Example]()
+![Cloning Example](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/Cloning.png)
 
 ---
 

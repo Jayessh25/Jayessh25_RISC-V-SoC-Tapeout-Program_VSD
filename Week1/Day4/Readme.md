@@ -23,8 +23,9 @@ Welcome to Day 4 of the RTL Workshop! Today’s session focuses on three essenti
   - [3.1 Blocking Statements](#31-blocking-statements)
   - [3.2 Non-Blocking Statements](#32-non-blocking-statements)
   - [3.3 Comparison Table](#33-comparison-table)
-- [4. Labs](#4-labs)
-- [5. Summary](#5-summary)
+- [4. Common Pitfalls: Missing Sensitivity List & Non-Standard Coding](#4-common-pitfalls-missing-sensitivity-list--non-standard-coding)
+- [5. Labs](#5-labs)
+- [6. Summary](#6-summary)
 
 ---
 

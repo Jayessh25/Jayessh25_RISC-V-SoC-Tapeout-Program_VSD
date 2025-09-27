@@ -162,7 +162,7 @@ always @(*) begin
 end
 endmodule
 ```
-![compcase]()
+![compcase](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day5/Comp_casegt.png)
 
 ---
 

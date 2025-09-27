@@ -230,7 +230,9 @@ end
 
 Perform GLS on the `bad_mux`.  
 Expect simulation mismatches or warnings due to above issues.
-
+```shell
+iverilog ../mylib/verilog_model/primitives.v ../mylib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+```
 ![lab5]()
 
 ---

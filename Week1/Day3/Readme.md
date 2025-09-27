@@ -352,7 +352,7 @@ endmodule
 - Output:
     q – The least significant bit (LSB) of the counter (count[0]).
 
-![Lab 10 Show]()
+![Lab 10 Show](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/counter_optshow.png)
 
 
 ---

@@ -136,7 +136,7 @@ endmodule
 **Functionality:**  
 3-input conditional logic; y = a ? (c ? b : 0) : 0 (outputs b only when both a and c are true, otherwise 0).
 
-![Lab 3 Output]()
+![Lab 3 Output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/opt_check3show.png)
 
 ---
 

@@ -139,7 +139,7 @@ always @(*) begin
 end
 endmodule
 ```
-![icomp2]()
+![icomp2](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day5/incomp_if2gtk.png)
 
 ---
 

@@ -321,7 +321,7 @@ endmodule
       q1 is already 1
       q <= q1 = 1
 So q stays at 1 forever after the second edge.
-![Lab 9 Output]()
+![Lab 9 Output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/dff_const5gtk.png)
 ![Lab 9 Show]()
 ---
 ### Lab 10

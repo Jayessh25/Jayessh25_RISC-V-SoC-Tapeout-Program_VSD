@@ -168,7 +168,7 @@ endmodule
 
 ### Lab 6: Synthesis Result of Lab 5
 
-![compcase_synth]()
+![compcase_synth](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day5/Comp_caseshow.png)
 
 ---
 

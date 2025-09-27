@@ -20,13 +20,7 @@ Welcome to Day 3 of the RTL Workshop. This day covers two crucial topics:
 - [3. Cloning](#3-cloning)
 - [4. Retiming](#4-retiming)
 - [5. Labs on Optimization](#5-labs-on-optimization)
-  - [Lab 1](#lab-1)
-  - [Lab 2](#lab-2)
-  - [Lab 3](#lab-3)
-  - [Lab 4](#lab-4)
-  - [Lab 5](#lab-5)
-  - [Lab 6](#lab-6)
-
+ 
 ---
 
 ## 1. Constant Propagation
@@ -134,13 +128,13 @@ endmodule
 Verilog code:
 
 ```verilog
-module opt_check2 (input a , input b , output y);
-	assign y = a?1:b;
+module opt_check3 (input a , input b, input c , output y);
+	assign y = a?(c?b:0):0;
 endmodule
 ```
 
 **Functionality:**  
-2-to-1 multiplexer; `y = a ? 1 : b` (outputs `1` when `a` is true, otherwise `b`).
+3-input conditional logic; y = a ? (c ? b : 0) : 0 (outputs b only when both a and c are true, otherwise 0).
 
 ![Lab 3 Output]()
 
@@ -185,12 +179,13 @@ endmodule
 ```
 
 **Functionality:**
+- D flip-flop with asynchronous reset to 0; when not in reset, it always loads constant 1 on each clock edge.
 - D flip-flop with:
   - Asynchronous reset to 0
   - Loads constant `1` when not in reset
 
 ![Lab 5 Output]()
-
+![Lab 5 Show]()
 ---
 
 ### Lab 6
@@ -213,8 +208,190 @@ endmodule
 - D flip-flop always sets output `q` to `1` (regardless of reset or clock).
 
 ![Lab 6 Output]()
+![Lab 6 Show]()
+---
+### Lab 7
+
+Verilog code:
+
+```verilog
+module dff_const3(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+
+**Functionality:**
+- On reset (asynchronous):
+        q = 1 ,q1 = 0
+- On 1st clock edge after reset release:
+        q1 becomes 1
+        q takes previous value of q1 → 0
+- On 2nd clock edge:
+        q1 stays 1
+        q takes value of q1 → 1
+- Afterwards:
+        Both q1 = 1 and q = 1 permanently.
+
+![Lab 7 Output]()
+![Lab 7 Show]()
 
 ---
+### Lab 8
+
+Verilog code:
+
+```verilog
+module dff_const4(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b1;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+
+**Functionality:**
+- On reset (asynchronous):
+           q = 1 , q1 = 1
+- On every clock edge after reset:
+           q1 is assigned 1
+           q takes the value of q1 → always 1
+
+![Lab 8 Output]()
+![Lab 8 Show]()
+---
+### Lab 9
+
+Verilog code:
+
+```verilog
+module dff_const5(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b0;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+
+**Functionality:**
+- On reset (asynchronous):
+      q = 0
+      q1 = 0
+- On 1st clock edge after reset:
+      q1 <= 1
+      q <= q1 → but q1 was 0 before this edge, so q = 0
+- On 2nd clock edge (and after):
+      q1 is already 1
+      q <= q1 = 1
+So q stays at 1 forever after the second edge.
+![Lab 9 Output]()
+![Lab 9 Show]()
+---
+### Lab 10
+
+Verilog code:
+
+```verilog
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = count[0];
+
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+
+endmodule
+```
+**Functionality:**
+
+- Type: 3-bit binary counter with asynchronous reset.
+- Inputs:
+    clk – Clock signal.
+	reset – Asynchronous reset signal.
+- Output:
+    q – The least significant bit (LSB) of the counter (count[0]).
+
+![Lab 10 Show]()
+![Lab 10 Show]()
+
+---
+### Lab 11
+
+Verilog code:
+
+```verilog
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = (count[2:0] == 3'b100);
+
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+
+endmodule
+
+```
+**Functionality:**
+
+- Type: 3-bit binary counter with asynchronous reset.
+
+- Inputs:
+      clk – Clock signal.
+      reset – Asynchronous reset signal.
+- Output:
+      q – Goes high (1) when the counter reaches 3'b100 (decimal 4), otherwise 0.
+
+![Lab 11 Show]()
+![Lab 11 Show]()
+
+---
+
 
 ## Summary
 - **Focus:** Optimization techniques for combinational and sequential circuits in digital design, with practical Verilog labs.

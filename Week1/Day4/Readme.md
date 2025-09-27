@@ -186,7 +186,7 @@ Use this command (adjust paths as needed):
 iverilog ../mylib/verilog_model/primitives.v ../mylib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
 ```
 
-![lab3]()
+![lab3](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day4/ternary_operator_muglx.png)
 
 ---
 

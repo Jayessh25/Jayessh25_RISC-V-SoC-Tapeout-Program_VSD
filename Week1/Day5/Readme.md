@@ -190,7 +190,7 @@ always @(*) begin
 end
 endmodule
 ```
-![badcase]()
+![badcase](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day5/bad_casegtk.png)
 
 ---
 
@@ -217,7 +217,6 @@ always @(*) begin
 end
 endmodule
 ```
-![Screenshot_2025-05-28_12-39-30]()
 
 
 

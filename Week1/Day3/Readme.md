@@ -353,7 +353,7 @@ endmodule
     q – The least significant bit (LSB) of the counter (count[0]).
 
 ![Lab 10 Show]()
-![Lab 10 Show]()
+
 
 ---
 ### Lab 11
@@ -387,7 +387,7 @@ endmodule
       q – Goes high (1) when the counter reaches 3'b100 (decimal 4), otherwise 0.
 
 ![Lab 11 Show]()
-![Lab 11 Show]()
+
 
 ---
 

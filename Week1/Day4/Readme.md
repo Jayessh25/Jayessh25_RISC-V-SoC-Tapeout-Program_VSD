@@ -1,13 +1,18 @@
-# Day 4: Gate-Level Simulation (GLS), Blocking vs. Non-Blocking in Verilog, and Synthesis-Simulation Mismatch
+# 🚀 Day 4: Gate-Level Simulation (GLS), Blocking vs. Non-Blocking in Verilog, and Synthesis-Simulation Mismatch
+<div align="center">
 
-Welcome to Day 4 of the RTL Workshop! Today’s session focuses on three essential topics in digital design:
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Day-4-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
-- **Gate-Level Simulation (GLS)**
-- **Blocking vs. Non-Blocking Assignments in Verilog**
-- **Synthesis-Simulation Mismatch**
+</div>
 
-You’ll learn both the theory and practical implications, complete with hands-on labs to reinforce your understanding.
+Welcome to Day 4 of the RTL Workshop! Today’s session focuses on three essential topics in digital design
 
+- Gate-Level Simulation (GLS)
+- Blocking vs. Non-Blocking Assignments in Verilog
+- Synthesis-Simulation Mismatch
+  
 ---
 
 ## Table of Contents

@@ -247,7 +247,7 @@ endmodule
         Both q1 = 1 and q = 1 permanently.
 
 ![Lab 7 Output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/dff_const3gtk.png)
-![Lab 7 Show]()
+![Lab 7 Show](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/dff_const3show.png)
 
 ---
 ### Lab 8

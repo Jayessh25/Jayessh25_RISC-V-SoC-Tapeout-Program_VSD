@@ -219,7 +219,7 @@ always @ (*) begin
 end
 ```
 
-![lab4]()
+![lab4](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day4/bad_muxgtk.png)
 
 ---
 

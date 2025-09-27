@@ -283,7 +283,7 @@ endmodule
            q takes the value of q1 → always 1
 
 ![Lab 8 Output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/dff_const4gtk.png)
-![Lab 8 Show]()
+![Lab 8 Show](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/dff_const4show.png)
 ---
 ### Lab 9
 

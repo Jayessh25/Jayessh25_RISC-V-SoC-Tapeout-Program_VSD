@@ -117,7 +117,7 @@ always @(*) begin
 end
 endmodule
 ```
-![in_comp_if]()
+![in_comp_if](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day5/incomp_ifgtk.png)
 
 ---
 

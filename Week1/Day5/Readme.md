@@ -3,7 +3,7 @@
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
 ![Day](https://img.shields.io/badge/Day-5-orange?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-HalfComplete-success?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
 </div>
 
@@ -392,7 +392,7 @@ endmodule
 module fa (input a, input b, input c, output co, output sum);
     assign {co, sum} = a + b + c;
 endmodule
-
+```
 ---
 
 ## Summary

@@ -279,7 +279,7 @@ endgenerate
 
 An RCA adds binary numbers using a chain of full adders. To add `n` bits, you need `n` full adders. Each carry-out connects to the carry-in of the next stage.
 
-![image]()
+![image](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day5/ripple_carry_adder.webp)
 
 ---
 

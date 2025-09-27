@@ -283,7 +283,7 @@ _Follow the standard Yosys synthesis flow._
 
 Synthesize the corrected version of the module and observe the results.
 
-![lab7]()
+![lab7](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day4/blocking_caveatglx.png)
 
 ---
 

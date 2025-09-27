@@ -35,7 +35,6 @@ Constant propagation analyzes the design code to identify variables with constan
 - **Performance Improvement:** Faster execution and reduced delays.
 - **Resource Optimization:** Fewer gates or flip-flops required.
 
-![Constant Propagation Example]()
 
 ---
 

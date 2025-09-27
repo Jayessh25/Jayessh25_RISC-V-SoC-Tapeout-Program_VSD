@@ -183,7 +183,7 @@ endmodule
   - Asynchronous reset to 0
   - Loads constant `1` when not in reset
 
-![Lab 5 Output]()
+![Lab 5 Output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/dff_const1gtk.png)
 ![Lab 5 Show]()
 ---
 

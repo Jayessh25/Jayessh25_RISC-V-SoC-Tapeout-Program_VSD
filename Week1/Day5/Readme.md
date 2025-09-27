@@ -334,7 +334,7 @@ always @(*) begin
 end
 endmodule
 ```
-![demux-case]()
+![demux-case](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day5/demux_casegtk.png)
 
 ---
 

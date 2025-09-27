@@ -103,8 +103,58 @@ Verilog offers two types of procedural assignments:
 | Infers combinational logic (gates)        | Infers sequential logic (flip-flops)       |
 
 ---
+## 4. Common Pitfalls: Missing Sensitivity List & Non-Standard Coding
+## Missing Sensitivity List
 
-## 4. Labs
+In older Verilog (always @(a or b or sel)), forgetting to include all inputs in the sensitivity list causes mismatches between RTL simulation and synthesized hardware.
+
+**Example (incorrect):**
+```verilog
+always @(sel) begin
+  if (sel) y = i1;
+  else     y = i0;
+end
+```
+Here, y won’t update when i0 or i1 changes — only when sel changes.
+Fix: Use always @(*), which automatically includes all inputs.
+
+```verilog
+always @(*) begin
+  if (sel) y = i1;
+  else     y = i0;
+end
+```
+
+## Non-Standard Verilog Coding
+
+- Using non-blocking (<=) inside combinational always blocks:
+         - Causes unintended latches or mismatches.
+         - Correct practice: Use blocking (=) for combinational logic. 
+- Using initial blocks, delays (#10), or force/release in RTL:
+         - These are simulation-only constructs and are not synthesizable.
+
+**Example of bad style:**
+
+```verilog
+always @(*) begin
+  if (sel) y <= i1;   // Non-standard for combinational logic
+  else     y <= i0;
+end
+```
+
+Corrected version:
+
+```verilog
+always @(*) begin
+  if (sel) y = i1;   // Correct style
+  else     y = i0;
+end
+```
+
+👉 Following good coding practices (complete sensitivity lists, correct assignment operators, and synthesizable constructs) ensures consistent results across RTL simulation, synthesis, and GLS.
+
+---
+## 5. Labs
 
 ### Lab 1: Ternary Operator MUX
 

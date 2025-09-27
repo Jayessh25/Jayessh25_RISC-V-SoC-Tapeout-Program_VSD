@@ -273,7 +273,7 @@ Synthesize the corrected version of the module and observe the results.
 
 ---
 
-## 5. Summary
+## 6. Summary
 
 - **Gate-Level Simulation (GLS):** Validates netlist functionality, timing, and testability after synthesis.
 - **Synthesis-Simulation Mismatch:** Avoid by using synthesizable, unambiguous RTL code.

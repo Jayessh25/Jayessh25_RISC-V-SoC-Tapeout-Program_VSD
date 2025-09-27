@@ -168,7 +168,7 @@ endmodule
 
 ---
 
-### Lab 2: Synthesis Using Yosys
+### Synthesis Using Yosys
 
 Synthesize the above MUX using Yosys.  
 _Follow the standard Yosys synthesis flow._
@@ -177,7 +177,7 @@ _Follow the standard Yosys synthesis flow._
 
 ---
 
-### Lab 3: Gate-Level Simulation (GLS) of MUX
+### Gate-Level Simulation (GLS) of MUX
 
 Run GLS for the synthesized MUX.  
 Use this command (adjust paths as needed):
@@ -190,7 +190,7 @@ iverilog ../mylib/verilog_model/primitives.v ../mylib/verilog_model/sky130_fd_sc
 
 ---
 
-### Lab 4: Bad MUX Example (Common Pitfalls)
+### Lab 2: Bad MUX Example (Common Pitfalls)
 
 Verilog code with intentional issues:
 
@@ -223,7 +223,16 @@ end
 
 ---
 
-### Lab 5: GLS of Bad MUX
+### Synthesis Using Yosys
+
+Synthesize the above MUX using Yosys.  
+_Follow the standard Yosys synthesis flow._
+
+![lab2]()
+
+---
+
+### GLS of Bad MUX
 
 Perform GLS on the `bad_mux`.  
 Expect simulation mismatches or warnings due to above issues.

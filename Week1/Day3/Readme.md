@@ -158,7 +158,7 @@ module opt_check4 (input a , input b , input c , output y);
 - Logic simplifies to:  
   `y = a ? c : !c`
 
-![Lab 4 Output]()
+![Lab 4 Output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/opt_check4show.png)
 
 ---
 

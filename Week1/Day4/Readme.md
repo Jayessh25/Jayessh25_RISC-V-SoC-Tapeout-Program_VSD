@@ -269,7 +269,7 @@ always @ (*) begin
 end
 ```
 
-![lab6]()
+![lab6](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day4/blocking_caveatgtk.png)
 
 ### Synthesis Using Yosys
 

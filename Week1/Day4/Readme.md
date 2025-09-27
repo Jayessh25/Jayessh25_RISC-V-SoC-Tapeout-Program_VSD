@@ -271,6 +271,12 @@ end
 
 ![lab6]()
 
+### Synthesis Using Yosys
+
+Synthesize the above MUX using Yosys.  
+_Follow the standard Yosys synthesis flow._
+
+![lab2]()
 ---
 
 ### Lab 7: Synthesis of the Blocking Caveat Module

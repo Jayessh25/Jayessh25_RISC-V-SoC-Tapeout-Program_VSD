@@ -100,7 +100,7 @@ Follow the steps from [Day 1 Synthesis Lab]() and add the following between `abc
 opt_clean -purge
 ```
 
-![Lab 1 Output]()
+![Lab 1 Output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/opt_check1show.png)
 
 ---
 
@@ -119,7 +119,7 @@ endmodule
   - `y = 1` if `a` is true.
   - `y = b` if `a` is false.
 
-![Lab 2 Output]()
+![Lab 2 Output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/opt_check1show.png)
 
 ---
 

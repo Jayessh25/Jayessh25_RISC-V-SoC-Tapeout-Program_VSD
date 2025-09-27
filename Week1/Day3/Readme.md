@@ -119,7 +119,7 @@ endmodule
   - `y = 1` if `a` is true.
   - `y = b` if `a` is false.
 
-![Lab 2 Output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/opt_check1show.png)
+![Lab 2 Output]((https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day3/opt_check2show.png))
 
 ---
 

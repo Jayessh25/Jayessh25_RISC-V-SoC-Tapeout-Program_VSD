@@ -173,7 +173,7 @@ endmodule
 Synthesize the above MUX using Yosys.  
 _Follow the standard Yosys synthesis flow._
 
-![lab2]()
+![lab2](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week1/Day4/ternary_operator_muxshow.png)
 
 ---
 

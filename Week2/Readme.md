@@ -1,20 +1,20 @@
 
-# 🚀 Day 5: Gate-Level Simulation (GLS), Blocking vs. Non-Blocking in Verilog, and Synthesis-Simulation Mismatch
+# 🚀 Day 6: BabySoC Fundamentals & Functional Modelling
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
-![Day](https://img.shields.io/badge/Day-5-orange?style=for-the-badge)
+![Day](https://img.shields.io/badge/Day-6-orange?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
 </div>
 
-Welcome to Day 5 of the RTL workshop! Today, we will cover optimization in Verilog synthesis, focusing on `if-else` statements, `for` loops, generate blocks, and explore how improper coding can lead to inferred latches. Labs are included for hands-on experience.
+Welcome to Day 6 of the RTL workshop!Today, we dive into System-on-Chip (SoC) fundamentals and learn how to model the BabySoC functionally. Using Icarus Verilog for simulation and GTKWave for waveform analysis, we understand how processor, memory, clock, and peripherals integrate in a real SoC.
 
 ---
 ## Contents
 
-- [1. If-Else Statements in Verilog](#1-if-else-statements-in-verilog)
-- [2. Inferred Latches in Verilog](#2-inferred-latches-in-verilog)
+- [1. What is a System-on-Chip (SoC)?](#1-What-is-a-System-on-Chip-(SoC)?)
+- [2. Types of SoCs](#2-Types-of-SoCs)
 - [3. Labs for If-Else and Case Statements](#3-labs-for-if-else-and-case-statements)
   - [Lab 1: Incomplete If Statement](#lab-1-incomplete-if-statement)
   - [Lab 2: Synthesis Result of Lab 1](#lab-2-synthesis-result-of-lab-1)
@@ -36,7 +36,7 @@ Welcome to Day 5 of the RTL workshop! Today, we will cover optimization in Veril
 
 ---
 
-## 1. If-Else Statements in Verilog
+## 1. What is a System-on-Chip (SoC)?
 
 **If-else statements** are used for conditional execution in behavioral modeling, typically within procedural blocks (`always`, `initial`, tasks, or functions).
 

@@ -156,7 +156,7 @@ Designed during the MYTH (Microprocessor for You in Thirty Hours) workshop.
 - Represents the brain of the BabySoC.
 
 ---
-## 10. What is PLL?
+## 9. What is PLL?
 
 - PLL (Phase Locked Loop) is a clock-generation circuit.
 - Provides a stable, high-frequency clock for the CPU.
@@ -167,7 +167,7 @@ Designed during the MYTH (Microprocessor for You in Thirty Hours) workshop.
 - Drives the RVMYTH core with a clean and stable clock signal.
 
 ---
-## 11. What is DAC?
+## 10. What is DAC?
 
 - DAC (Digital-to-Analog Converter) converts digital signals → analog outputs.
 - Useful in audio, video, and sensor interfacing.
@@ -179,7 +179,7 @@ Designed during the MYTH (Microprocessor for You in Thirty Hours) workshop.
 
 ---
 
-## 12.Project Structure
+## 11.Project Structure
 - src/include/ - Contains header files (*.vh) with necessary macros or parameter definitions.
 - src/module/ - Contains Verilog files for each module in the SoC design.
 - output/ - Directory where compiled outputs and simulation files will be generated.

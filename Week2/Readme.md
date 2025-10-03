@@ -11,28 +11,27 @@
 Welcome to Day 6 of the RTL workshop!Today, we dive into System-on-Chip (SoC) fundamentals and learn how to model the BabySoC functionally. Using Icarus Verilog for simulation and GTKWave for waveform analysis, we understand how processor, memory, clock, and peripherals integrate in a real SoC.
 
 ---
-## Contents
+## 📑 Table of Contents
 
-- [1. What is a System-on-Chip (SoC)?](#1-What-is-a-System-on-Chip-(SoC)?)
-- [2. Types of SoCs](#2-Types-of-SoCs)
-- [3. Labs for If-Else and Case Statements](#3-labs-for-if-else-and-case-statements)
-  - [Lab 1: Incomplete If Statement](#lab-1-incomplete-if-statement)
-  - [Lab 2: Synthesis Result of Lab 1](#lab-2-synthesis-result-of-lab-1)
-  - [Lab 3: Nested If-Else](#lab-3-nested-if-else)
-  - [Lab 4: Synthesis Result of Lab 3](#lab-4-synthesis-result-of-lab-3)
-  - [Lab 5: Complete Case Statement](#lab-5-complete-case-statement)
-  - [Lab 6: Synthesis Result of Lab 5](#lab-6-synthesis-result-of-lab-5)
-  - [Lab 7: Incomplete Case Handling](#lab-7-incomplete-case-handling)
-  - [Lab 8: Partial Assignments in Case](#lab-8-partial-assignments-in-case)
-- [4. For Loops in Verilog](#4-for-loops-in-verilog)
-- [5. Generate Blocks in Verilog](#5-generate-blocks-in-verilog)
-- [6. What is an RCA (Ripple Carry Adder)?](#6-what-is-an-rca-ripple-carry-adder)
-- [7. Labs on Loops and Generate Blocks](#7-labs-on-loops-and-generate-blocks)
-  - [Lab 9: 4-to-1 MUX Using For Loop](#lab-9-4-to-1-mux-using-for-loop)
-  - [Lab 10: 8-to-1 Demux Using Case](#lab-10-8-to-1-demux-using-case)
-  - [Lab 11: 8-to-1 Demux Using For Loop](#lab-11-8-to-1-demux-using-for-loop)
-  - [Lab 12: 8-bit Ripple Carry Adder with Generate Block](#lab-12-8-bit-ripple-carry-adder-with-generate-block)
-- [Summary](#summary)
+- [1. What is a System-on-Chip (SoC)?](#1-what-is-a-system-on-chip-soc)
+- [2. Types of SoCs](#2-types-of-socs)
+- [3. Components of a Typical SoC](#3-components-of-a-typical-soc)
+- [4. Introduction to VSDBabySoC](#4-introduction-to-vsdbabysoc)
+- [5. What is VSDBabySoC?](#5-what-is-vsdbabysoc)
+- [6. Problem Statement](#6-problem-statement)
+- [7. What is SoC?](#7-what-is-soc)
+- [8. What is RVMYTH?](#8-what-is-rvmyth)
+- [9. What is PLL?](#9-what-is-pll)
+- [10. What is DAC?](#10-what-is-dac)
+- [11. Project Structure](#11-project-structure)
+- [12. TLV to Verilog Conversion for RVMYTH](#12-tlv-to-verilog-conversion-for-rvmyth)
+- [13. Simulation Steps](#13-simulation-steps)
+  - [13.1 Pre-Synthesis Simulation](#131-pre-synthesis-simulation)
+  - [13.2 Viewing Waveform in GTKWave](#132-viewing-waveform-in-gtkwave)
+  - [13.3 Viewing DAC Output in Analog Mode](#133-viewing-dac-output-in-analog-mode)
+  - [13.4 Trouble Shooting Tips](#134-trouble-shooting-tips)
+- [14. Why Pre-Synthesis and Post-Synthesis?](#14-why-pre-synthesis-and-post-synthesis)
+- [15. Summary](#15-summary)
 
 ---
 

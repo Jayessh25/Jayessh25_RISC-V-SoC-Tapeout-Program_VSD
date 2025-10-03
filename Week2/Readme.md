@@ -302,7 +302,7 @@ step 6: gtkwave pre_synth_sim.vcd
 ```
 Drag and drop the CLK, reset, OUT (DAC), and RV TO DAC [9:0] signals to their respective locations in the simulation tool
 
- ![Alt Text]()
+ ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/VSD%20gtkwave1.png)
 
 In this picture we can see the following signals:
 

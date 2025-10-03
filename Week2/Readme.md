@@ -323,7 +323,7 @@ This can be viewed by changing the Data Format of the signal to Analog → Step
 Drag and drop the CLK, reset, OUT (DAC) (as analog step), and RV TO DAC [9:0] signals to their respective locations in the simulation tool 
  ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/vsdbaby%20gtkwave%202.png)
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/vsdbaby%20gtkwave%203.png)
 
 
 ### Trouble shooting tips

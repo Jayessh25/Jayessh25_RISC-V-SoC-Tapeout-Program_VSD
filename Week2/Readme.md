@@ -353,7 +353,7 @@ Drag and drop the CLK, reset, OUT (DAC) (as analog step), and RV TO DAC [9:0] si
 - Use complete if-else/case to avoid latches
 - For/Generate loops → scalable Verilog coding
 - Tools: Icarus Verilog + GTKWave
-- 
+  
 ---
 
 <div align="center">

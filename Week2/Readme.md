@@ -107,6 +107,9 @@ Let’s break down its functional flow:
    - The analog signal can drive external devices like speakers (audio) or displays (video).
    - This allows BabySoC to communicate with the real world.
 
+![VSDBabySoc Block Diagram]()
+
+---
 🔑 Why is BabySoC Important?
 
 - It demonstrates complete SoC integration in a simplified way.

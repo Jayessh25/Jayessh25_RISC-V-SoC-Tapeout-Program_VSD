@@ -102,7 +102,7 @@ Let’s break down its functional flow:
         - Digital 1111111111 (10-bit max) → max analog voltage.
         - Digital 0000000000 → 0V.
         - Intermediate values → proportional voltages.
-## 4.Output (Analog Signal)
+## 4. Output (Analog Signal)
    - The analog signal can drive external devices like speakers (audio) or displays (video).
    - This allows BabySoC to communicate with the real world.
 
@@ -179,7 +179,7 @@ Designed during the MYTH (Microprocessor for You in Thirty Hours) workshop.
 
 ---
 
-## 11.Project Structure
+## 11. Project Structure
 - src/include/ - Contains header files (*.vh) with necessary macros or parameter definitions.
 - src/module/ - Contains Verilog files for each module in the SoC design.
 - output/ - Directory where compiled outputs and simulation files will be generated.
@@ -221,7 +221,7 @@ avsddac.v  avsdpll.v  clk_gate.v  pseudo_rand_gen.sv  pseudo_rand.sv  rvmyth_gen
 ```
 ---
 
-### TLV to Verilog Conversion for RVMYTH
+### 12. TLV to Verilog Conversion for RVMYTH
 
 Initially, you will see only the `rvmyth.tlv` file inside `src/module/`, since the RVMYTH core is written in TL-Verilog.
 To convert it into a `.v` file for simulation, follow the steps below:
@@ -266,9 +266,9 @@ To exit:
 jayesshsk@jayesshsk-VirtualBox:~$ deactivate
 ```
 
-### Simulation Steps
+### 13. Simulation Steps
 
-#### <ins>Pre-Synthesis Simulation</ins>
+#### 13.1 Pre-Synthesis Simulation
 
 Run the following command to perform a pre-synthesis simulation:
 
@@ -292,7 +292,7 @@ Explanation:
 - DPRE_SYNTH_SIM: Defines the PRE_SYNTH_SIM macro for conditional compilation in the testbench.
 - The resulting pre_synth_sim.vcd file can be viewed in GTKWave.
 
-#### Viewing Waveform in GTKWave
+#### 13.2 Viewing Waveform in GTKWave
 
 After running the simulation, open the VCD file in GTKWave: 
 
@@ -317,7 +317,7 @@ In this picture we can see the following signals:
 
 This can be viewed by changing the Data Format of the signal to Analog → Step
 
-#### Viewing DAC output in analog mode 
+#### 13.3 Viewing DAC output in analog mode 
 
 Drag and drop the CLK, reset, OUT (DAC) (as analog step), and RV TO DAC [9:0] signals to their respective locations in the simulation tool 
  ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/vsdbaby%20gtkwave%202.png)
@@ -325,12 +325,12 @@ Drag and drop the CLK, reset, OUT (DAC) (as analog step), and RV TO DAC [9:0] si
 ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/vsdbaby%20gtkwave%203.png)
 
 
-### Trouble shooting tips
+### 13.4 Trouble shooting tips
 
    - Module Redefinition: If you encounter redefinition errors, ensure modules are included only once, either in the testbench or in the command line.
    - Path Issues: Verify paths specified with -I are correct. Use full paths if relative paths cause errors.
 ---
-## Why Pre-Synthesis and Post-Synthesis?
+## 14. Why Pre-Synthesis and Post-Synthesis?
 
 1. **Pre-Synthesis Simulation**: 
    - Focuses only on verifying functionality based on the RTL code.

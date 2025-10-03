@@ -303,6 +303,8 @@ Drag and drop the CLK, reset, OUT (DAC), and RV TO DAC [9:0] signals to their re
 
  ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/VSD%20gtkwave1.png)
 
+**👉 Conclusion (Waveform 1):**
+This view confirms that the DAC is correctly mapping digital values to proportional analog voltages step by step
 In this picture we can see the following signals:
 
 **CLK**: This is the input CLK signal of the RVMYTH core. This signal comes from the PLL, originally.
@@ -324,6 +326,8 @@ Drag and drop the CLK, reset, OUT (DAC) (as analog step), and RV TO DAC [9:0] si
 
 ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/vsdbaby%20gtkwave%203.png)
 
+**👉 Conclusion (Waveform 2):**
+This zoomed-out view shows the DAC producing a waveform-like analog signal (instead of individual digital steps). This represents the real-world analog signal you’d get if you connected BabySoC’s DAC output to a speaker or display.
 
 ### 13.4 Trouble shooting tips
 

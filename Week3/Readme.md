@@ -81,10 +81,9 @@ write_verilog -noattr /home/iraj/VLSI/VSDBabySoC/output/post_synth_sim/vsdbabyso
 
 📸 **Snapshots:**
 
-* 🧩 *Design Hierarchy:* ![Hierarchy](Images/Task1_Design_hierarchy.png)
-* ⚙️ *After ABC Mapping:* ![ABC Mapping](Images/Task1_after_abc_vsdbaby.png)
-* 📊 *Module Stats:* ![clk gate](Images/Task1_clkgate_stat.png), ![rvmyth](Images/Task1_rvmyth_stat.png), ![vsdbaby](Images/Task1_vsdbaby_stat.png)
-
+* 🧩 *Design Hierarchy:* ![Hierarchy](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/vsdbabysoc_block_diagram.png)
+* ⚙️ *After ABC Mapping:* ![ABC Mapping](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/vsdbabysoc_block_diagram.png)
+* 📊 *Module Stats:* ![clk gate](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/vsdbabysoc_block_diagram.png), ![rvmyth](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/vsdbabysoc_block_diagram.png)
 </details>
 
 ---
@@ -111,7 +110,7 @@ write_verilog -noattr /home/iraj/VLSI/VSDBabySoC/output/post_synth_sim/vsdbabyso
 | ⚡ **Post-Synthesis (GLS)** | Structural | Checks real gate-level timing and logic | `post_synth_sim.vcd` |
 
 📈 **Waveform Comparison:**
-![Pre vs Post Synthesis](Images/Task1_Pre_Post_simualtionCompare.png)
+![Pre vs Post Synthesis]
 
 ---
 

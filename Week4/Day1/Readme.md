@@ -2,7 +2,7 @@
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
-![Day](https://img.shields.io/badge/Day-6-orange?style=for-the-badge)
+![Day](https://img.shields.io/badge/Week-4-orange?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
 </div>
@@ -14,25 +14,40 @@ We’ll explore the electrical behavior of the **NMOS transistor** and understan
 ---
 ## 📑 Table of Contents
 
-- [1. What is a System-on-Chip (SoC)?](#1-what-is-a-system-on-chip-soc)
-- [2. Types of SoCs](#2-types-of-socs)
-- [3. Components of a Typical SoC](#3-components-of-a-typical-soc)
-- [4. Introduction to VSDBabySoC](#4-introduction-to-vsdbabysoc)
-- [5. What is VSDBabySoC?](#5-what-is-vsdbabysoc)
-- [6. Problem Statement](#6-problem-statement)
-- [7. What is SoC?](#7-what-is-soc)
-- [8. What is RVMYTH?](#8-what-is-rvmyth)
-- [9. What is PLL?](#9-what-is-pll)
-- [10. What is DAC?](#10-what-is-dac)
-- [11. Project Structure](#11-project-structure)
-- [12. TLV to Verilog Conversion for RVMYTH](#12-tlv-to-verilog-conversion-for-rvmyth)
-- [13. Simulation Steps](#13-simulation-steps)
-  - [13.1 Pre-Synthesis Simulation](#131-pre-synthesis-simulation)
-  - [13.2 Viewing Waveform in GTKWave](#132-viewing-waveform-in-gtkwave)
-  - [13.3 Viewing DAC Output in Analog Mode](#133-viewing-dac-output-in-analog-mode)
-  - [13.4 Trouble Shooting Tips](#134-trouble-shooting-tips)
-- [14. Why Pre-Synthesis and Post-Synthesis?](#14-why-pre-synthesis-and-post-synthesis)
-- [15. Summary](#15-summary)
+1. [What is a System-on-Chip (SoC)?](#1-what-is-a-system-on-chip-soc)  
+2. [Types of SoCs](#2-types-of-socs)  
+3. [Components of a Typical SoC](#3-components-of-a-typical-soc)  
+4. [Introduction to VSDBabySoC](#4-introduction-to-vsdbabysoc)  
+5. [What is VSDBabySoC?](#5-what-is-vsdbabysoc)  
+6. [Problem Statement](#6-problem-statement)  
+7. [What is SoC?](#7-what-is-soc)  
+8. [What is RVMYTH?](#8-what-is-rvmyth)  
+9. [What is PLL?](#9-what-is-pll)  
+10. [What is DAC?](#10-what-is-dac)  
+11. [Project Structure](#11-project-structure)  
+12. [TLV to Verilog Conversion for RVMYTH](#12-tlv-to-verilog-conversion-for-rvmyth)  
+13. [Simulation Steps](#13-simulation-steps)  
+   - [13.1 Pre-Synthesis Simulation](#131-pre-synthesis-simulation)  
+   - [13.2 Viewing Waveform in GTKWave](#132-viewing-waveform-in-gtkwave)  
+   - [13.3 Viewing DAC Output in Analog Mode](#133-viewing-dac-output-in-analog-mode)  
+   - [13.4 Trouble Shooting Tips](#134-trouble-shooting-tips)  
+14. [Why Pre-Synthesis and Post-Synthesis?](#14-why-pre-synthesis-and-post-synthesis)  
+15. [Introduction to Circuit Design and SPICE Simulations](#15-introduction-to-circuit-design-and-spice-simulations)  
+16. [NMOS Device Fundamentals](#16-nmos-device-fundamentals)  
+17. [Threshold Voltage and Body Effect](#17-threshold-voltage-and-body-effect)  
+18. [NMOS Operation Regions](#18-nmos-operation-regions)  
+   - [18.1 Resistive (Linear) Region](#181-resistive--linear-region)  
+   - [18.2 Saturation (Pinch-off) Region](#182-saturation--pinch-off-region)  
+19. [SPICE Simulation Setup and Netlist Example](#19-spice-simulation-setup-and-netlist-example)  
+20. [Introduction to SPICE](#20-introduction-to-spice)  
+21. [SPICE with Sky130 Models](#21-spice-with-sky130-models)  
+22. [NMOS Id–Vds Simulation Output](#22-nmos-id–vds-simulation-output)  
+   - [22.1 Id vs Vds for Multiple Gate Voltages](#221-id-vs-vds-for-multiple-gate-voltages)  
+   - [22.2 Zoomed View of Linear Region](#222-zoomed-view-of-linear-region)  
+   - [22.3 Id vs Vds in Saturation Region](#223-id-vs-vds-in-saturation-region)  
+23. [Summary of Observations](#23-summary-of-observations)  
+24. [Final Outcome](#24-outcome)  
+25. [References & Repository](#25-references--repository)  
 
 ---
 
@@ -341,3 +356,18 @@ You’ll learn how to interpret transistor characteristics, analyze current-volt
 This forms the **foundation of all transistor-based design work** — the stepping stone to CMOS logic and full-system chip verification.
 
 ✨ *Every silicon chip begins at the transistor level — master this, and you master the heart of digital design.* ✨
+
+---
+
+<div align="center">
+
+**📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  
+**👨‍💻 Author:** [Jayessh25](https://github.com/Jayessh25)  
+**📚 Program:** VLSI System Design (VSD)
+
+[![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
+[![Stars](https://img.shields.io/github/stars/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD?style=social)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)
+
+</div>
+
+---

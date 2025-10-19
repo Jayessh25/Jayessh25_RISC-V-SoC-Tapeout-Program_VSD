@@ -1,4 +1,4 @@
-# 🚀 Week 4 Day 3:  SPICE Simulation for Lower Nodes and Velocity Saturation Effect
+# 🚀 Week 4 Day 3:  Transient analysis  & Voltage Transfer Chracteristics (VTC) For a CMOS Inverter
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
@@ -7,36 +7,36 @@
 
 </div>
 
-Welcome to **Week 4** **Day 2** of the **NgspiceSky130 learning series**!  
-This day begins your journey into Analyze the behavior of MOSFETs at lower nodes using SPICE simulations.Study **velocity saturation effects** in short-channel devices.Understand **CMOS inverter characteristics** and **MOSFET as a switch**.  
+Welcome to **Week 4** **Day 3** of the **NgspiceSky130 learning series**!  
+This day begins your journey into Analyze the behavior of MOSFETs at Exploring CMOS inverter static and dynamic characteristics. Performing transient and DC simulations using NGSPICE and Sky130 PDK.
 
 ---
 ## 📑 Table of Contents
 
-1. [Objective](#objective)  
-2. [SPICE Simulation for Lower Nodes](#spice-simulation-for-lower-nodes)  
-3. [Ids vs Vgs Characteristics](#ids-vs-vgs-characteristics)  
-4. [Velocity vs Electric Field Characteristics](#velocity-vs-electric-field-characteristics)  
-5. [Ids vs Vds with Velocity Saturation](#ids-vs-vds-with-velocity-saturation)  
-6. [CMOS Inverter Characteristics](#cmos-inverter-characteristics)  
-7. [MOSFET as a Switch](#mosfet-as-a-switch)  
-8. [Introduction to Standard MOS Voltage-Current Parameters](#introduction-to-standard-mos-voltage-current-parameters)  
-9. [PMOS/NMOS Drain Current vs Drain Voltage](#pmosnmos-drain-current-vs-drain-voltage)  
-10. [Steps for CMOS VTC Derivation](#steps-for-cmos-vtc-derivation)  
-    - [Step 1: Convert PMOS Gate-Source Voltage](#step1-convert-pmos-gate-source-voltage-to-vin)  
-    - [Step 2 & 3: Convert PMOS/NMOS Drain-Source Voltages](#step-2--step-3)  
-    - [Step 4: Merge PMOS and NMOS Load Curves](#step-4-merge-the-pmos-and-nmos-load-curves)  
-11. [Enter Velocity Saturation: The Plot Twist!](#-enter-velocity-saturation-the-plot-twist)  
-12. [LABS](#labs)  
-    - [Example 1 – Ids vs Vds over Constant Vgs](#example-1--ids-vs-vds-over-constant-vgs)  
-    - [Example 2 – Ids vs Vgs over Constant Vds](#example-2--ids-vs-vgs-over-constant-vds)  
-13. [Threshold Voltage Extraction: The Detective Work](#-threshold-voltage-extraction-the-detective-work)  
-14. [The CMOS Inverter Connection](#-the-cmos-inverter-connection)  
-15. [Load-Line Analysis: Finding the Switching Point](#-load-line-analysis-finding-the-switching-point)  
-16. [Key Insights & Takeaways](#-key-insights--takeaways)  
-17. [The Designer’s Dilemma](#️-the-designers-dilemma)
+1. [Objective](#-objective-from-content)  
+2. [Voltage Transfer Characteristics: SPICE Simulations](#1-voltage-transfer-characteristics-spice-simulations)  
+3. [Static Behavior Evaluation: CMOS Inverter Robustness and Switching Threshold (Vm)](#static-behavior-evaluation-cmos-inverter-robustness-and-switching-threshold-vm)  
+4. [Velocity Saturation and Switching Threshold (Vm) Analysis](#velocity-saturation-and-switching-threshold-vm-analysis)  
+5. [Applications of CMOS Inverter in Clock Network and STA](#applications-of-cmos-inverter-in-clock-network-and-sta)  
+6. [LABS](#labs)  
+   - [Simulation 1 - Transient Analysis](#simulation-1---transient-analysis)  
+   - [Simulation 2 - Voltage Transfer Characteristics (VTC)](#simulation-2---voltage-transfer-chracteristics-vtc)  
+7. [Summary: Day 3 – CMOS Inverter Analysis](#summary-day-3--cmos-inverter-analysis)  
+8. [Key Observations and Learning Points](#key-observations-and-learning-points)  
+9. [Overall Outcome for Day 3](#overall-outcome-for-day-3)  
+10. [Propagation Delay](#propagation-delay)  
+11. [Simple Summary](#-simple-summary)  
+12. [Repository Info](#repository-info)
+---
+# 🎯 Objective (from content)
+
+To analyze MOSFET behavior at lower technology nodes using SPICE simulations, focusing on:
+- Exploring CMOS inverter static and dynamic characteristics.
+- Performing transient and DC simulations using NGSPICE and Sky130 PDK.
+- Understanding switching threshold (Vm) and propagation delay in CMOS logic.
 
 ---
+  
 # 1. Voltage Transfer Characteristics: SPICE Simulations
 
 To explore the behavior of a **CMOS inverter** in SPICE, careful attention to circuit setup and parameters is essential. Think of it as **building a miniature digital world**, where every connection and value matters:
@@ -271,3 +271,26 @@ This produces the Vout vs Vin curve, from which we can determine the inverter’
   
 - **Propagation Delay:**  
   The time difference (measured at 50% of input-output transition) between the input signal change and the corresponding output signal switch in a logic gate (e.g., inverter).
+
+  ---
+
+# 🧾 Simple Summary
+
+In this session, we used SPICE simulations with the Sky130 PDK to study how MOSFETs behave at lower nodes and how velocity saturation affects their performance.
+We simulated a CMOS inverter to observe its transient (dynamic) and VTC (static) behavior, measured rise/fall times, propagation delay, and identified the switching threshold (Vm).
+We also analyzed how changing PMOS/NMOS sizes affects the inverter’s operation and learned how these concepts relate to clock networks and timing analysis in VLSI design.
+
+---
+
+<div align="center">
+
+**📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  
+**👨‍💻 Author:** [Jayessh25](https://github.com/Jayessh25)  
+**📚 Program:** VLSI System Design (VSD)
+
+[![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
+[![Stars](https://img.shields.io/github/stars/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD?style=social)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)
+
+</div>
+
+---

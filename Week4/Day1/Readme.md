@@ -1,4 +1,4 @@
-# 🚀 Week 4 Day 1: BabySoC Fundamentals & Functional Modelling
+# 🚀 Week 4 Day 1: NMOS Drain Current (Id) vs Drain-to-Source Voltage (Vds)
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)

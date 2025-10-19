@@ -98,6 +98,48 @@ These noise margins define the tolerance of a circuit to noise without compromis
 # LABS
 ##  Static behavior evaluation: CMOS inverter robustness, Noise margin
 ##### Noise Margin - sky130 Inverter (Wp/Lp=1u/0.15u, Wn/Ln=0.36u/0.15u)
+
+## Step 1: Navigate to the Design Directory
+
+We start by moving into the design directory where the Day 4 SPICE file is located:
+
+```
+cd sky130CircuitDesignWorkshop/design/
+```
+
+This ensures we are in the correct folder for running the SPICE simulation.
+
+
+## Step 2: Analyze CMOS Inverter Noise Margin
+
+The simulation file for Day 4 is:
+
+```
+day4_inv_noisemargin_wp1_wn036.spice
+```
+
+## Info about the File Being Simulated
+
+This SPICE file sets up a CMOS inverter and performs a DC sweep to evaluate its noise margins.
+
+### Transistor parameters:
+
+*PMOS Width (Wp)* = 1 µm
+
+*NMOS Width (Wn)* = 0.36 µm
+
+**Purpose:** To determine the inverter’s logic high (VOH), logic low (VOL), and noise margin levels (NMH, NML).
+
+**Simulation Type:** DC sweep of Vin.
+
+
+## Step 3: View the File's Contents
+
+We inspect the netlist using:
+
+```
+vim day4_inv_noisemargin_wp1_wn036.spice
+```
 ```
 *Model Description
 .param temp=27
@@ -133,6 +175,60 @@ display
 
 .end
 ```
-
  ![ Image ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/ngspicenoicemarginwave.png)
- ![ Image ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/ngspicenoicemarginwavemidpoint.png)
+
+Open the SPICE file in vim, allowing us to review transistor sizing, input sweep range, and output node definitions.
+
+
+## Step 2b: Run the Simulation
+
+We run the simulation in NGSPICE:
+
+```
+ngspice day4_inv_noisemargin_wp1_wn036.spice
+plot out vs in
+```
+![ Image ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/ngspicenoicemarginwave.png)
+![ Image ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/ngspicenoicemarginwavemidpoint.png)
+
+
+
+This generates the Vout vs Vin curve, from which we can calculate the inverter’s noise margins (NMH and NML).
+
+
+
+## Summary: Day 4 – CMOS Inverter Noise Margin Analysis
+
+**Objective:**
+
+- To evaluate the noise immunity of a CMOS inverter.
+
+- To determine logic levels and noise margin values for robust digital circuit design.
+
+**Activities Performed:**
+
+- Navigated to the design directory.
+
+- Opened the SPICE file in vim to inspect transistor sizes and DC sweep setup.
+
+- Executed the simulation in NGSPICE and plotted Vout vs Vin.
+
+- Measured VOH, VOL, NMH, and NML from the VTC curve.
+
+**Key Observations and Learning Points:**
+
+- Identified the logic high (VOH) and logic low (VOL) levels.
+
+- Calculated noise margins (NMH, NML) to evaluate inverter tolerance to input noise.
+
+- Understood the impact of transistor sizing on inverter noise margins.
+
+- Reinforced skills in DC sweep analysis and inverter characterization.
+
+**Overall Outcome for Day 4:**
+
+- Learned how to quantify inverter noise margins using SPICE simulations.
+
+- Gained practical understanding of how CMOS inverters maintain reliable logic operation despite input noise.
+
+- Prepared for more advanced CMOS circuit analyses involving device and supply variations.

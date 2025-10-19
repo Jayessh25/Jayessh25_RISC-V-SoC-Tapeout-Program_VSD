@@ -239,6 +239,17 @@ plot out vs in
 
 This generates the Vout vs Vin curve, from which we can calculate the inverter’s noise margins (NMH and NML).
 
+## Estimated results (nearest values)
+
+- VOH (Output high) ≈ 1.80 V
+- VOL (Output low) ≈ 0.00 V
+- Vm (switching midpoint from NGSPICE) ≈ 0.89 V (Vin where Vout ≈ 0.80 V — shown in terminal)
+- VIH (input high threshold, approx.) ≈ 1.06 V
+- VIL (input low threshold, approx.) ≈ 0.72 V
+
+From those:
+- NMH = VOH − VIH = 1.80 − 1.06 = 0.74 V
+- NML = VIL − VOL = 0.72 − 0.00 = 0.72 V
 
 
 ## Summary: Day 4 – CMOS Inverter Noise Margin Analysis

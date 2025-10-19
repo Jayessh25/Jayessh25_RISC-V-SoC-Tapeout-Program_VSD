@@ -92,7 +92,7 @@ This voltage induces a conductive channel between **drain** and **source**, allo
 
 ---
 
-### ⚡ Threshold Voltage and Body Effect
+###  Threshold Voltage and Body Effect
 
 The threshold voltage is not constant — it changes with substrate bias (Vsb).  
 SPICE models use parameters such as **body-effect coefficient (γ)** and **Fermi potential (ΦF)** to calculate this variation.
@@ -109,13 +109,13 @@ These are foundry-defined parameters embedded in the **Sky130 model files** to e
 
 ---
 
-## 📊 3. NMOS Operation Regions  
+##  3. NMOS Operation Regions  
 
 The NMOS transistor operates in two major regions based on **Vds** and **Vgs**:
 
 ---
 
-### 🔹 (a) Resistive / Linear Region
+###  (a) Resistive / Linear Region
 
 Occurs when **Vds < (Vgs - Vt)**.  
 Here, the channel is continuous, and the transistor behaves like a **voltage-controlled resistor**.
@@ -146,7 +146,7 @@ As **Vds** approaches **Vgs - Vt**, the linear behavior transitions into saturat
 
 ---
 
-### 🔹 (b) Saturation / Pinch-off Region
+###  (b) Saturation / Pinch-off Region
 
 Occurs when **Vds ≥ (Vgs - Vt)**.  
 The channel pinches off near the drain, and current becomes almost constant.
@@ -171,7 +171,7 @@ Here, **Id** is primarily controlled by **Vgs**, making this region essential fo
 
 ---
 
-## 🧪 4. Introduction to SPICE Simulation Setup  
+##  4. Introduction to SPICE Simulation Setup  
 
 SPICE simulation bridges **theory** and **practical device behavior**.  
 A typical SPICE file contains:
@@ -183,7 +183,7 @@ A typical SPICE file contains:
 Example (Conceptual):
 
 
-## 🧩 SPICE Netlist Example or Spice setup
+##  SPICE Netlist Example or Spice setup
 
 Below is an example SPICE netlist used to simulate NMOS characteristics.
 
@@ -212,7 +212,7 @@ setplot dc1
 .end
 ```
 
-## 🔍 Explanation
+##  Explanation
 
 **Circuit Description:**
 
@@ -233,7 +233,7 @@ This circuit defines all the essential components, parameters, and node connecti
 ![Screenshot]()
 ![Screenshot]()
 
-## 🧾 Summary
+##  Summary
 
 | Concept | Description |
 |----------|--------------|
@@ -242,15 +242,15 @@ This circuit defines all the essential components, parameters, and node connecti
 | **Threshold Voltage** | Minimum gate voltage for conduction |
 ---
 
-## 🧪 LABS
+##  LABS
 
-### 1️⃣ Introduction to SPICE
+###  Introduction to SPICE
 **SPICE** (Simulation Program with Integrated Circuit Emphasis) is a powerful software tool used to **simulate and validate circuit performance**.  
 It allows designers to analyze **voltage**, **current**, and **power behavior** before the actual hardware is fabricated.
 
 ---
 
-### 2️⃣ SPICE with Sky130 Models
+###  SPICE with Sky130 Models
 
 To run SPICE simulations using the **Sky130 PDK**, clone the official workshop repository:
 
@@ -278,13 +278,13 @@ You can download ngspice for Windows from the official source using the followin
     ngspice day1_nfet_idvds_L2_W5.spice
     plot -vdd#branch
 
-## 📈 NMOS Id–Vds Simulation Output
+##  NMOS Id–Vds Simulation Output
 
 The following plots are obtained from SPICE simulations of an NMOS transistor using **Sky130 models**. They show how the **drain current (Id)** varies with **drain-to-source voltage (Vds)** for different gate voltages (Vgs).
 
 ---
 
-### **1️⃣ Id vs Vds for Multiple Gate Voltages**
+### ** Id vs Vds for Multiple Gate Voltages**
 
 ![Screenshot]()
 
@@ -300,7 +300,7 @@ This plot verifies the expected NMOS behavior and clearly distinguishes the line
 
 ---
 
-### **2️⃣ Zoomed View of Linear Region**
+### ** Zoomed View of Linear Region**
 
 ![Screenshot]()
 
@@ -315,7 +315,7 @@ The linear region is clearly visible, providing insight into how the device will
 
 ---
 
-### **3️⃣ Id vs Vds in Saturation Region**
+### ** Id vs Vds in Saturation Region**
 
 ![Screenshot]()
 
@@ -336,7 +336,7 @@ This plot helps understand current limiting in NMOS transistors, critical for an
 - **Transition:** Occurs near Vds = Vgs - Vt.  
 - SPICE results align well with theoretical NMOS behavior.
 
-## 📈 Outcome  
+##  Outcome  
 
 By completing **Day 1**, you’ll gain a solid understanding of how NMOS transistors behave under various voltage conditions and how SPICE simulations bring theory to life.  
 You’ll learn how to interpret transistor characteristics, analyze current-voltage behavior, and generate plots that reveal real design insights.  

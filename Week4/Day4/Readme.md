@@ -1,3 +1,39 @@
+# 🚀 Week 4 Day 4:  Transient analysis  & Voltage Transfer Chracteristics (VTC) For a CMOS Inverter
+<div align="center">
+
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Week-4-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+
+</div>
+
+Welcome to **Week 4** **Day 3** of the **NgspiceSky130 learning series**!  
+This day begins your journey into Analyze the behavior of MOSFETs at Exploring CMOS inverter static and dynamic characteristics. Performing transient and DC simulations using NGSPICE and Sky130 PDK.
+
+---
+## 📑 Table of Contents
+
+1. [Objective](#-objective-from-content)  
+2. [Voltage Transfer Characteristics: SPICE Simulations](#1-voltage-transfer-characteristics-spice-simulations)  
+3. [Static Behavior Evaluation: CMOS Inverter Robustness and Switching Threshold (Vm)](#static-behavior-evaluation-cmos-inverter-robustness-and-switching-threshold-vm)  
+4. [Velocity Saturation and Switching Threshold (Vm) Analysis](#velocity-saturation-and-switching-threshold-vm-analysis)  
+5. [Applications of CMOS Inverter in Clock Network and STA](#applications-of-cmos-inverter-in-clock-network-and-sta)  
+6. [LABS](#labs)  
+   - [Simulation 1 - Transient Analysis](#simulation-1---transient-analysis)  
+   - [Simulation 2 - Voltage Transfer Characteristics (VTC)](#simulation-2---voltage-transfer-chracteristics-vtc)  
+7. [Summary: Day 3 – CMOS Inverter Analysis](#summary-day-3--cmos-inverter-analysis)  
+8. [Key Observations and Learning Points](#key-observations-and-learning-points)  
+9. [Overall Outcome for Day 3](#overall-outcome-for-day-3)  
+10. [Repository Info](#repository-info)
+---
+# 🎯 Objective (from content)
+
+To analyze MOSFET behavior at lower technology nodes using SPICE simulations, focusing on:
+- Exploring CMOS inverter static and dynamic characteristics.
+- Performing transient and DC simulations using NGSPICE and Sky130 PDK.
+- Understanding switching threshold (Vm) and propagation delay in CMOS logic.
+
+---
 # **Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin**
 
 ### Understanding Noise Margin

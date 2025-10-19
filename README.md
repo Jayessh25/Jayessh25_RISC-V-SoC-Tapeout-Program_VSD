@@ -1,9 +1,9 @@
 <h1 align="center">
 🚀 RISC-V Reference SoC Tapeout Program  
 
-<p align="center">
 
-</p>
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week0/Installation%20Images/Screenshot%202025-10-19%20231424.png)
+
 <p align="center">
   <a href="https://riscv.org/">
     <img src="https://img.shields.io/badge/RISC--V-Open%20ISA-blue?style=flat-square&logo=risc-v" alt="RISC-V"/>

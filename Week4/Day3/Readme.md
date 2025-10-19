@@ -25,8 +25,7 @@ This day begins your journey into Analyze the behavior of MOSFETs at Exploring C
 8. [Key Observations and Learning Points](#key-observations-and-learning-points)  
 9. [Overall Outcome for Day 3](#overall-outcome-for-day-3)  
 10. [Propagation Delay](#propagation-delay)  
-11. [Simple Summary](#-simple-summary)  
-12. [Repository Info](#repository-info)
+11. [Repository Info](#repository-info)
 ---
 # 🎯 Objective (from content)
 
@@ -274,13 +273,6 @@ This produces the Vout vs Vin curve, from which we can determine the inverter’
 
   ---
 
-# 🧾 Simple Summary
-
-In this session, we used SPICE simulations with the Sky130 PDK to study how MOSFETs behave at lower nodes and how velocity saturation affects their performance.
-We simulated a CMOS inverter to observe its transient (dynamic) and VTC (static) behavior, measured rise/fall times, propagation delay, and identified the switching threshold (Vm).
-We also analyzed how changing PMOS/NMOS sizes affects the inverter’s operation and learned how these concepts relate to clock networks and timing analysis in VLSI design.
-
----
 
 <div align="center">
 

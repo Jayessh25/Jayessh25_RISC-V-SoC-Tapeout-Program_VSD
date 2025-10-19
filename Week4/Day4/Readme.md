@@ -24,7 +24,7 @@ Consider **two CMOS inverters connected back-to-back**. The **Voltage Transfer C
 - **Piece-wise Linear VTC:** Simplified approximation highlighting critical switching points.  
 - **Realistic VTC:** Real-world simulation showing gradual transitions and non-ideal behavior.  
 
-![Noise Margin Illustration]()
+![Noise Margin Illustration](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194220.png)
 
 ---
 
@@ -82,18 +82,18 @@ The **VTC curve** contains critical points, **VIL** (Input Low Voltage) and **VI
      ```  
 
 These noise margins define the tolerance of a circuit to noise without compromising its logical operation.
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194234.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194252.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194302.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194312.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194321.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194331.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194341.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194353.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194424.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194436.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194452.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/Screenshot%202025-10-19%20194510.png)
 
 # LABS
 ##  Static behavior evaluation: CMOS inverter robustness, Noise margin
@@ -134,5 +134,5 @@ display
 .end
 ```
 
- ![ Image ]()
- ![ Image ]()
+ ![ Image ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/ngspicenoicemarginwave.png)
+ ![ Image ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/ngspicenoicemarginwavemidpoint.png)

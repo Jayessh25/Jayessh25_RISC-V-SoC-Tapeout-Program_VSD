@@ -14,33 +14,32 @@ We’ll explore the electrical behavior of the **NMOS transistor** and understan
 ---
 ## 📑 Table of Contents
 
-1. [🧩Learning Objectives](#🧩-learning-objectives)  
-2. [🧾Introduction to Circuit Design and SPICE Simulations](#🧾-1-introduction-to-circuit-design-and-spice-simulations)  
-3. [Why SPICE?](#📘-why-spice)  
-4. [NMOS Device Fundamentals](#⚙️-2-nmos-device-fundamentals)  
-5. [Threshold Voltage and Body Effect](#⚡-threshold-voltage-and-body-effect)  
-6. [NMOS Operation Regions](#📊-3-nmos-operation-regions)  
-   - [Resistive / Linear Region](#🔹-a-resistive--linear-region)  
-   - [Saturation / Pinch-off Region](#🔹-b-saturation--pinch-off-region)  
-7. [SPICE Simulation Setup](#🧪-4-introduction-to-spice-simulation-setup)  
-8. [SPICE Netlist Example or Setup](#🧩-spice-netlist-example-or-spice-setup)  
-9. [Explanation of Circuit](#🔍-explanation)  
-10. [Summary Table](#🧾-summary)  
-11. [LABS](#🧪-labs)  
-    - [Introduction to SPICE](#1️⃣-introduction-to-spice)  
-    - [SPICE with Sky130 Models](#2️⃣-spice-with-sky130-models)  
+1. [Learning Objectives](#learning-objectives)  
+2. [Introduction to Circuit Design and SPICE Simulations](#1-introduction-to-circuit-design-and-spice-simulations)  
+3. [Why SPICE?](#why-spice)  
+4. [NMOS Device Fundamentals](#2-nmos-device-fundamentals)  
+5. [Threshold Voltage and Body Effect](#threshold-voltage-and-body-effect)  
+6. [NMOS Operation Regions](#3-nmos-operation-regions)  
+   - [Resistive / Linear Region](#a-resistive--linear-region)  
+   - [Saturation / Pinch-off Region](#b-saturation--pinch-off-region)  
+7. [SPICE Simulation Setup](#4-introduction-to-spice-simulation-setup)  
+8. [SPICE Netlist Example or Setup](#spice-netlist-example-or-spice-setup)  
+9. [Explanation of Circuit](#explanation)  
+10. [Summary Table](#summary)  
+11. [LABS](#labs)  
+    - [Introduction to SPICE](#introduction-to-spice)  
+    - [SPICE with Sky130 Models](#spice-with-sky130-models)  
 12. [Plotting Waveforms in ngspice](#to-plot-the-waveforms-in-ngspice)  
-13. [NMOS Id–Vds Simulation Output](#📈-nmos-idvds-simulation-output)  
-    - [Id vs Vds for Multiple Gate Voltages](#1️⃣-id-vs-vds-for-multiple-gate-voltages)  
-    - [Zoomed View of Linear Region](#2️⃣-zoomed-view-of-linear-region)  
-    - [Id vs Vds in Saturation Region](#3️⃣-id-vs-vds-in-saturation-region)  
+13. [NMOS Id–Vds Simulation Output](#nmos-idvds-simulation-output)  
+    - [Id vs Vds for Multiple Gate Voltages](#id-vs-vds-for-multiple-gate-voltages)  
+    - [Zoomed View of Linear Region](#zoomed-view-of-linear-region)  
+    - [Id vs Vds in Saturation Region](#id-vs-vds-in-saturation-region)  
 14. [Summary of Observations](#summary-of-observations)  
-15. [Outcome](#📈-outcome)  
-16. [Repository & Author Info](#📂-repository-jayessh25_risc-v-soc-tapeout-program_vsd)  
+15. [Outcome](#outcome)  
 
 ---
 
-## 🧩 Learning Objectives
+##  Learning Objectives
 
 By the end of this session, you will:
 
@@ -51,7 +50,7 @@ By the end of this session, you will:
 
 ---
 
-## 🧾 1. Introduction to Circuit Design and SPICE Simulations  
+##  1. Introduction to Circuit Design and SPICE Simulations  
 
 SPICE (Simulation Program with Integrated Circuit Emphasis) is a powerful tool for **predicting circuit performance** before fabrication.  
 It allows us to simulate device behavior, verify electrical parameters, and visualize circuit responses to different inputs.
@@ -64,7 +63,7 @@ Key Topics:
 
 ---
 
-### 📘 Why SPICE?
+###  Why SPICE?
 
 In circuit design, SPICE provides a **virtual lab environment** that replicates real-world device behavior.  
 For instance, consider a CMOS **inverter**:
@@ -77,7 +76,7 @@ SPICE allows designers to confirm correct switching behavior, analyze **propagat
 
 ---
 
-## ⚙️ 2. NMOS Device Fundamentals  
+##  2. NMOS Device Fundamentals  
 
 ### 🧠 Understanding the NMOS Transistor
 

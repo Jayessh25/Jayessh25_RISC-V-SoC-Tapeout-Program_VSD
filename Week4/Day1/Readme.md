@@ -1,8 +1,38 @@
-# ⚡ Day 1 — NMOS Drain Current (Id) vs Drain-to-Source Voltage (Vds)
+# 🚀 Week 4 Day 1: BabySoC Fundamentals & Functional Modelling
+<div align="center">
 
-Welcome to **Day 1** of the **NgspiceSky130 learning series**!  
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Day-6-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+
+</div>
+
+Welcome to **Week 4** **Day 1** of the **NgspiceSky130 learning series**!  
 This day begins your journey into **transistor-level design and SPICE simulation** using the open-source **Sky130 PDK**.  
-We’ll explore the electrical behavior of the **NMOS transistor** and understand how **drain current (Id)** varies with **drain-to-source voltage (Vds)** under different gate bias conditions.
+We’ll explore the electrical behavior of the **NMOS transistor** and understand how **drain current (Id)** varies with **drain-to-source voltage (Vds)** under different gate bias conditions. Day 1 — NMOS Drain Current (Id) vs Drain-to-Source Voltage (Vds)
+
+---
+## 📑 Table of Contents
+
+- [1. What is a System-on-Chip (SoC)?](#1-what-is-a-system-on-chip-soc)
+- [2. Types of SoCs](#2-types-of-socs)
+- [3. Components of a Typical SoC](#3-components-of-a-typical-soc)
+- [4. Introduction to VSDBabySoC](#4-introduction-to-vsdbabysoc)
+- [5. What is VSDBabySoC?](#5-what-is-vsdbabysoc)
+- [6. Problem Statement](#6-problem-statement)
+- [7. What is SoC?](#7-what-is-soc)
+- [8. What is RVMYTH?](#8-what-is-rvmyth)
+- [9. What is PLL?](#9-what-is-pll)
+- [10. What is DAC?](#10-what-is-dac)
+- [11. Project Structure](#11-project-structure)
+- [12. TLV to Verilog Conversion for RVMYTH](#12-tlv-to-verilog-conversion-for-rvmyth)
+- [13. Simulation Steps](#13-simulation-steps)
+  - [13.1 Pre-Synthesis Simulation](#131-pre-synthesis-simulation)
+  - [13.2 Viewing Waveform in GTKWave](#132-viewing-waveform-in-gtkwave)
+  - [13.3 Viewing DAC Output in Analog Mode](#133-viewing-dac-output-in-analog-mode)
+  - [13.4 Trouble Shooting Tips](#134-trouble-shooting-tips)
+- [14. Why Pre-Synthesis and Post-Synthesis?](#14-why-pre-synthesis-and-post-synthesis)
+- [15. Summary](#15-summary)
 
 ---
 

@@ -1,3 +1,42 @@
+# 🚀 Week 4 Day 3:  SPICE Simulation for Lower Nodes and Velocity Saturation Effect
+<div align="center">
+
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Week-4-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+
+</div>
+
+Welcome to **Week 4** **Day 2** of the **NgspiceSky130 learning series**!  
+This day begins your journey into Analyze the behavior of MOSFETs at lower nodes using SPICE simulations.Study **velocity saturation effects** in short-channel devices.Understand **CMOS inverter characteristics** and **MOSFET as a switch**.  
+
+---
+## 📑 Table of Contents
+
+1. [Objective](#objective)  
+2. [SPICE Simulation for Lower Nodes](#spice-simulation-for-lower-nodes)  
+3. [Ids vs Vgs Characteristics](#ids-vs-vgs-characteristics)  
+4. [Velocity vs Electric Field Characteristics](#velocity-vs-electric-field-characteristics)  
+5. [Ids vs Vds with Velocity Saturation](#ids-vs-vds-with-velocity-saturation)  
+6. [CMOS Inverter Characteristics](#cmos-inverter-characteristics)  
+7. [MOSFET as a Switch](#mosfet-as-a-switch)  
+8. [Introduction to Standard MOS Voltage-Current Parameters](#introduction-to-standard-mos-voltage-current-parameters)  
+9. [PMOS/NMOS Drain Current vs Drain Voltage](#pmosnmos-drain-current-vs-drain-voltage)  
+10. [Steps for CMOS VTC Derivation](#steps-for-cmos-vtc-derivation)  
+    - [Step 1: Convert PMOS Gate-Source Voltage](#step1-convert-pmos-gate-source-voltage-to-vin)  
+    - [Step 2 & 3: Convert PMOS/NMOS Drain-Source Voltages](#step-2--step-3)  
+    - [Step 4: Merge PMOS and NMOS Load Curves](#step-4-merge-the-pmos-and-nmos-load-curves)  
+11. [Enter Velocity Saturation: The Plot Twist!](#-enter-velocity-saturation-the-plot-twist)  
+12. [LABS](#labs)  
+    - [Example 1 – Ids vs Vds over Constant Vgs](#example-1--ids-vs-vds-over-constant-vgs)  
+    - [Example 2 – Ids vs Vgs over Constant Vds](#example-2--ids-vs-vgs-over-constant-vds)  
+13. [Threshold Voltage Extraction: The Detective Work](#-threshold-voltage-extraction-the-detective-work)  
+14. [The CMOS Inverter Connection](#-the-cmos-inverter-connection)  
+15. [Load-Line Analysis: Finding the Switching Point](#-load-line-analysis-finding-the-switching-point)  
+16. [Key Insights & Takeaways](#-key-insights--takeaways)  
+17. [The Designer’s Dilemma](#️-the-designers-dilemma)
+
+---
 # 1. Voltage Transfer Characteristics: SPICE Simulations
 
 To explore the behavior of a **CMOS inverter** in SPICE, careful attention to circuit setup and parameters is essential. Think of it as **building a miniature digital world**, where every connection and value matters:

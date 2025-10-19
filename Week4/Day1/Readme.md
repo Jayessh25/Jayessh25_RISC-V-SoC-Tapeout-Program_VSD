@@ -14,8 +14,8 @@ We’ll explore the electrical behavior of the **NMOS transistor** and understan
 ---
 ## 📑 Table of Contents
 
-1. [Learning Objectives](#🎯-learning-objectives)  
-2. [Introduction to Circuit Design and SPICE Simulations](#🧩-1-introduction-to-circuit-design-and-spice-simulations)  
+1. [Learning Objectives](#learning-objectives)  
+2. [Introduction to Circuit Design and SPICE Simulations](#1-introduction-to-circuit-design-and-spice-simulations)  
 3. [Why SPICE?](#📘-why-spice)  
 4. [NMOS Device Fundamentals](#⚙️-2-nmos-device-fundamentals)  
 5. [Threshold Voltage and Body Effect](#⚡-threshold-voltage-and-body-effect)  
@@ -40,7 +40,7 @@ We’ll explore the electrical behavior of the **NMOS transistor** and understan
 
 ---
 
-## 🎯 Learning Objectives
+##  Learning Objectives
 
 By the end of this session, you will:
 
@@ -51,7 +51,7 @@ By the end of this session, you will:
 
 ---
 
-## 🧩 1. Introduction to Circuit Design and SPICE Simulations  
+##  1. Introduction to Circuit Design and SPICE Simulations  
 
 SPICE (Simulation Program with Integrated Circuit Emphasis) is a powerful tool for **predicting circuit performance** before fabrication.  
 It allows us to simulate device behavior, verify electrical parameters, and visualize circuit responses to different inputs.

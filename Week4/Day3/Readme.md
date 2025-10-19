@@ -107,6 +107,43 @@ In the **velocity-saturated** case, the **switching threshold (Vm)** is the poin
 # LABS
 ## Simulation 1 - Transient analysis
 
+## 🎯 Mission: Capture the Switching Event
+
+**The Challenge**: Stop analyzing DC behavior and start measuring **real-time switching**. How fast can this inverter actually flip states?
+
+**What We're After**:
+- ⏱️ **Rise Time (tr)**: How long to go LOW → HIGH
+- ⏱️ **Fall Time (tf)**: How long to go HIGH → LOW  
+- ⚡ **Propagation Delays**: When does the output respond to input changes?
+- 📊 **Overshoot/Undershoot**: Any transient glitches?
+
+### 💡 Why Timing Matters
+
+```
+Faster Rise/Fall Time → Higher Maximum Clock Frequency
+                     → Better Performance
+                     → But also more dynamic power!
+```
+
+---
+
+## 🧪 The Experiment Setup
+
+### 🎛️ Input Stimulus: The PULSE Source
+
+We're hitting the inverter with a **square wave** to simulate real logic transitions:
+
+```spice
+Vin in 0 PULSE(0 1.8 0 1n 1n 10n 20n)
+                │  │  │  │  │  │   └─ Period (20ns → 50 MHz)
+                │  │  │  │  │  └───── Pulse width (10ns)
+                │  │  │  │  └──────── Fall time (1ns)
+                │  │  │  └─────────── Rise time (1ns)
+                │  │  └────────────── Delay (start immediately)
+                │  └───────────────── High level (VDD)
+                └──────────────────── Low level (0V)
+```
+
 
 ### Step 1: Navigate to the Design Directory
 
@@ -170,9 +207,147 @@ plot out vs time in
 
 This generates the input and output waveforms of the CMOS inverter, allowing us to measure rise/fall times and propagation delay.
 
+### 🎯 Measured Timing Parameters
+
+<table>
+<tr>
+<th>Parameter</th>
+<th>Symbol</th>
+<th>Measured Value</th>
+<th>Measurement Points</th>
+<th>Quality</th>
+</tr>
+
+<tr>
+<td><strong>🔺 Rise Time</strong></td>
+<td>tr</td>
+<td><strong>661.76 ps</strong></td>
+<td>10% → 90% (0.18V → 1.62V)</td>
+<td>🟢 Fast</td>
+</tr>
+
+<tr>
+<td><strong>🔻 Fall Time</strong></td>
+<td>tf</td>
+<td><strong>475.07 ps</strong></td>
+<td>90% → 10% (1.62V → 0.18V)</td>
+<td>🟢 Faster!</td>
+</tr>
+
+<tr>
+<td><strong>⏱️ Prop. Delay (LH)</strong></td>
+<td>tPLH</td>
+<td>~662 ps</td>
+<td>Vin=50% → Vout=50%</td>
+<td>🟡 Moderate</td>
+</tr>
+
+<tr>
+<td><strong>⏱️ Prop. Delay (HL)</strong></td>
+<td>tPHL</td>
+<td>~475 ps</td>
+<td>Vin=50% → Vout=50%</td>
+<td>🟢 Better</td>
+</tr>
+
+<tr>
+<td><strong>🔝 Peak High</strong></td>
+<td>VOH(peak)</td>
+<td>1.809 V</td>
+<td>Slight overshoot</td>
+<td>✅ Normal</td>
+</tr>
+
+<tr>
+<td><strong>🔻 Peak Low</strong></td>
+<td>VOL(peak)</td>
+<td>−4.94 mV</td>
+<td>Minimal undershoot</td>
+<td>✅ Excellent</td>
+</tr>
+</table>
+
+## 🧠 Performance Insights
+
+### 📊 Design Trade-offs Table
+
+| Want Better... | Action Required | Side Effect |
+|:---------------|:----------------|:------------|
+| 🚀 **Faster Rise** | Increase PMOS width (Wp) | + Area, + Input cap, + Power |
+| 🚀 **Faster Fall** | Increase NMOS width (Wn) | + Area, + Input cap, + Power |
+| ⚖️ **Balanced tr/tf** | Adjust Wp/Wn ratio | Changes Vm position |
+| 💚 **Lower Power** | Reduce widths | − Speed (slower edges) |
+| 🎯 **Less Overshoot** | Add series resistance | − Speed, + Area |
+
 
 
 ## Simulation 2 - Voltage Transfer Chracteristics (VTC)
+
+## 🏗️ Our Inverter Architecture
+
+### 📐 Design Specifications
+
+<table>
+<tr>
+<th>Component</th>
+<th>Parameter</th>
+<th>Value</th>
+<th>Design Rationale</th>
+</tr>
+
+<tr>
+<td rowspan="2"><strong>🔵 PMOS (M1)</strong></td>
+<td>Width (W)</td>
+<td>0.84 µm</td>
+<td rowspan="2">2.33× wider than NMOS to compensate for lower hole mobility</td>
+</tr>
+<tr>
+<td>Length (L)</td>
+<td>0.15 µm</td>
+</tr>
+
+<tr>
+<td rowspan="2"><strong>🟢 NMOS (M2)</strong></td>
+<td>Width (W)</td>
+<td>0.36 µm</td>
+<td rowspan="2">Minimum size for acceptable drive strength</td>
+</tr>
+<tr>
+<td>Length (L)</td>
+<td>0.15 µm</td>
+</tr>
+
+<tr>
+<td><strong>⚡ Load Cap</strong></td>
+<td>Cload</td>
+<td>50 fF</td>
+<td>Typical fanout capacitance</td>
+</tr>
+
+<tr>
+<td><strong>🔌 Supply</strong></td>
+<td>VDD</td>
+<td>1.8 V</td>
+<td>Standard Sky130 nominal voltage</td>
+</tr>
+</table>
+
+### 🧮 The Sizing Sweet Spot
+
+**Why Wp/Wn ≈ 2.33?**
+
+```
+Goal: Balanced Vm ≈ VDD/2
+
+Challenge: μn ≈ 2.5 × μp (electrons faster than holes!)
+
+Solution: Make PMOS wider
+         Wp/Wn ≈ μn/μp ≈ 2.5
+
+Reality: We use 0.84/0.36 = 2.33 (close enough!)
+```
+
+---
 
 ### Step 1: Voltage Transfer Characteristics (VTC) of a CMOS Inverter
 
@@ -224,6 +399,17 @@ plot out vs in
 ![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/ngspicevtc%20plotout%20vs%20time%20ingraph.png)
 
 This produces the Vout vs Vin curve, from which we can determine the inverter’s switching threshold and noise margins.
+
+### 🎯 Measured Parameters
+
+| Parameter | Symbol | Measured Value | Expected Range | Status |
+|:----------|:------:|:--------------:|:--------------:|:------:|
+| **Switching Threshold** | Vm | **0.878723 V** | 0.8 - 1.0 V | ✅ Excellent |
+| **Output High** | VOH | 1.800 V | ≈ VDD | ✅ Perfect |
+| **Output Low** | VOL | ~0 V | < 50 mV | ✅ Perfect |
+| **Supply Voltage** | VDD | 1.800 V | 1.8 V nominal | ✅ Nominal |
+
+---
 
 ## Summary: Day 3 – CMOS Inverter Analysis
 

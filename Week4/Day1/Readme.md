@@ -14,8 +14,8 @@ We’ll explore the electrical behavior of the **NMOS transistor** and understan
 ---
 ## 📑 Table of Contents
 
-1. [Learning Objectives](#learning-objectives)  
-2. [Introduction to Circuit Design and SPICE Simulations](#1-introduction-to-circuit-design-and-spice-simulations)  
+1. [🧩Learning Objectives](#🧩-learning-objectives)  
+2. [🧾Introduction to Circuit Design and SPICE Simulations](#🧾-1-introduction-to-circuit-design-and-spice-simulations)  
 3. [Why SPICE?](#📘-why-spice)  
 4. [NMOS Device Fundamentals](#⚙️-2-nmos-device-fundamentals)  
 5. [Threshold Voltage and Body Effect](#⚡-threshold-voltage-and-body-effect)  

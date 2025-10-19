@@ -26,9 +26,15 @@ This day begins your journey into Analyze the behavior of MOSFETs at lower nodes
     - [Step 1: Convert PMOS Gate-Source Voltage](#step1-convert-pmos-gate-source-voltage-to-vin)  
     - [Step 2 & 3: Convert PMOS/NMOS Drain-Source Voltages](#step-2--step-3)  
     - [Step 4: Merge PMOS and NMOS Load Curves](#step-4-merge-the-pmos-and-nmos-load-curves)  
-11. [LABS](#labs)  
+11. [Enter Velocity Saturation: The Plot Twist!](#-enter-velocity-saturation-the-plot-twist)  
+12. [LABS](#labs)  
     - [Example 1 – Ids vs Vds over Constant Vgs](#example-1--ids-vs-vds-over-constant-vgs)  
-    - [Example 2 – Ids vs Vgs over Constant Vds](#example-2--ids-vs-vgs-over-constant-vds)
+    - [Example 2 – Ids vs Vgs over Constant Vds](#example-2--ids-vs-vgs-over-constant-vds)  
+13. [Threshold Voltage Extraction: The Detective Work](#-threshold-voltage-extraction-the-detective-work)  
+14. [The CMOS Inverter Connection](#-the-cmos-inverter-connection)  
+15. [Load-Line Analysis: Finding the Switching Point](#-load-line-analysis-finding-the-switching-point)  
+16. [Key Insights & Takeaways](#-key-insights--takeaways)  
+17. [The Designer’s Dilemma](#️-the-designers-dilemma)
 
 ---
 
@@ -349,15 +355,14 @@ plot -vdd#branch
 
 <div align="center">
 
-![MOSFET Switch Model](Images/Task2_11.png)
-
+![MOSFET Switch Model](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143847.png)
 *Individual MOSFET as a switch—controlled by gate voltage*
 
 </div>
 
 <div align="center">
 
-![CMOS Inverter](Images/Task2_12.png)
+![CMOS Inverter](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143936.png)
 
 *Two switches working together = digital inverter!*
 
@@ -384,19 +389,19 @@ plot -vdd#branch
 <tr>
 <td><strong>1️⃣</strong></td>
 <td>Express PMOS gate voltage<br/><code>VgsP = Vin − VDD</code></td>
-<td><img src="Images/Task2_14.png" alt="Step 1"/></td>
+<td><img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20144002.png"  alt="Step 1"/></td>
 </tr>
 
 <tr>
 <td><strong>2️⃣</strong></td>
 <td>Substitute internal nodes<br/>Replace with Vout everywhere</td>
-<td><img src="Images/Task2_15.png" alt="Step 2"/></td>
+<td><img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20144028.png" alt="Step 2"/></td>
 </tr>
 
 <tr>
 <td><strong>3️⃣</strong></td>
 <td>Find the crossover point<br/><code>IdN = IdP</code> → <strong>Vm</strong></td>
-<td><img src="Images/Task2_16.png" alt="Step 3"/></td>
+<td><img src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20144138.png" alt="Step 3"/></td>
 </tr>
 </table>
 
@@ -459,24 +464,6 @@ Trade-off: More area, more capacitance
 
 ---
 
-## 🧠 Connecting to Circuit Design
-
-### 🔗 From Transistor to Timing
-
-```
-MOSFET Id-Vgs curve
-       ↓
-Threshold voltage (Vt)
-       ↓
-Switching threshold (Vm) of inverter
-       ↓
-Noise margins (NML, NMH)
-       ↓
-Timing margins & setup/hold times
-       ↓
-Maximum clock frequency!
-```
-
 ### ⚖️ The Designer's Dilemma
 
 | Want More... | Must Accept... | Design Knob |
@@ -486,7 +473,6 @@ Maximum clock frequency!
 | 🎯 Drive strength | 📏 Larger area | Increase W |
 | 🛡️ Noise immunity | 📉 Smaller swing | Adjust Wp/Wn ratio |
 
----
 ---
 
 <div align="center">

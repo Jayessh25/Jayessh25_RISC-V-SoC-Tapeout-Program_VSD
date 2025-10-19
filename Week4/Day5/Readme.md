@@ -86,9 +86,175 @@ This approach helps visualize how supply scaling impacts both **logic integrity*
 ![screenshot]()
 ![screenshot]()
 
+# Labs
 ## Static behavior evaluation: CMOS inverter robustness, Power supply variation
 ### Smart SPICE simulation for power supply variations
+# Labs On Day 5
 
+## Simulation 1 - Inverter Device Variation
+
+### Step 1: Navigate to the Design Directory
+
+We start by moving into the design directory where the Day 5 SPICE files are located:
+
+```
+cd sky130CircuitDesignWorkshop/design/
+```
+
+This ensures we are in the correct folder for running the SPICE simulations.
+
+
+### Step 2: Inverter Device Variation Analysis
+
+The simulation file for device variation is:
+
+```
+day5_inv_devicevariation_wp7_wn042.spice
+```
+
+#### Info about the File Being Simulated
+
+This SPICE file simulates a CMOS inverter while varying transistor sizing to observe its impact on inverter behavior.
+
+**Transistor parameters:**
+
+- *PMOS Width (Wp)* = 7 µm
+
+- *NMOS Width (Wn)* = 0.42 µm
+
+**Purpose:** To study how changes in transistor dimensions affect propagation delay, switching thresholds, and output characteristics.
+
+**Simulation Type:** Transient or DC analysis, depending on the netlist setup.
+
+
+### Step 3: View the File Contents
+
+We inspect the SPICE netlist using:
+
+```
+vim day5_inv_devicevariation_wp7_wn042.spice
+```
+
+![screenshot]()
+
+Open the SPICE file in vim to review transistor sizes, connections, and simulation setup.
+
+
+### Step 4: Run the Simulation
+
+We run the simulation in NGSPICE:
+
+```
+ngspice day5_inv_devicevariation_wp7_wn042.spice
+plot out vs in
+```
+
+![screenshot]()
+![screenshot]()
+
+
+This produces the input and output waveforms of the inverter, allowing us to observe the effects of device size variation.
+
+![screenshot]()
+
+
+## Simulation 2 - Inverter Supply Voltage Variation
+
+
+### Step 1: Inverter Supply Voltage Variation Analysis
+
+The simulation file for supply variation is:
+
+```
+day5_inv_supplyvariation_Wp1_Wn036.spice
+```
+
+#### Info about the File Being Simulated
+
+This SPICE file simulates the CMOS inverter under different supply voltage (VDD) conditions.
+
+**Transistor parameters:**
+
+- *PMOS Width (Wp)* = 1 µm
+
+- *NMOS Width (Wn)* = 0.36 µm
+
+**Purpose:** To observe how VDD variations impact inverter performance, including logic levels, propagation delay, and noise margins.
+
+**Simulation Type:** Transient or DC analysis depending on the netlist.
+
+
+### Step 2: View the File Contents
+
+We open the netlist in vim:
+
+```
+vim day5_inv_supplyvariation_Wp1_Wn036.spice
+```
+
+![screenshot]()
+
+
+Letting us review the SPICE file to see the supply voltage setup and inverter configuration.
+
+
+### Step 3: Run the Simulation
+
+We run the simulation in NGSPICE:
+
+```
+ngspice day5_inv_supplyvariation_Wp1_Wn036.spice
+plot out vs in
+```
+
+![screenshot]()
+
+![screenshot]()
+
+
+This generates the inverter waveforms under varying supply voltages, helping us evaluate performance changes.
+
+![screenshot]()
+
+## Summary: Day 5 – CMOS Inverter Device and Supply Variation Analysis
+
+**Objective:**
+
+- To study how transistor sizing and supply voltage variations affect CMOS inverter behavior.
+
+- To evaluate the impact on propagation delay, switching thresholds, and output levels.
+
+**Activities Performed:**
+
+**Simulation 1: Device Variation (day5_inv_devicevariation_wp7_wn042.spice):**
+
+- Navigated to the design directory.
+
+- Opened the SPICE file in vim to inspect transistor sizing and circuit setup.
+
+- Ran the simulation in NGSPICE and observed the inverter input/output waveforms.
+
+**Simulation 2: Supply Variation (day5_inv_supplyvariation_Wp1_Wn036.spice):**
+
+- Opened the SPICE file in vim to review supply voltage settings and circuit configuration.
+
+- Executed the simulation in NGSPICE and analyzed the inverter response under different VDD values.
+
+**Key Observations and Learning Points:**
+
+- Observed the impact of transistor size on propagation delay and output levels.
+
+- Evaluated how supply voltage variations affect logic levels, rise/fall times, and noise margins.
+
+- Reinforced understanding of CMOS inverter robustness and design considerations for reliable digital circuits.
+
+**Overall Outcome for Day 5:**
+
+- Learned to analyze inverter performance under device and supply variations.
+
+- Gained practical experience in evaluating real-world design tolerances.
+
+- Completed hands-on characterization of CMOS inverters across multiple operating conditions.
 ```
 *Model Description
 .param temp=27

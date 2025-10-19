@@ -1,4 +1,4 @@
-# 🚀 Week 4 Day 4:  Transient analysis  & Voltage Transfer Chracteristics (VTC) For a CMOS Inverter
+# 🚀 Week 4 Day 4:  Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
@@ -8,38 +8,30 @@
 </div>
 
 Welcome to **Week 4** **Day 3** of the **NgspiceSky130 learning series**!  
-This day begins your journey into Analyze the behavior of MOSFETs at Exploring CMOS inverter static and dynamic characteristics. Performing transient and DC simulations using NGSPICE and Sky130 PDK.
+This day begins your journey into Analyze the behavior of MOSFETs at Exploring CMOS inverter Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin using NGSPICE and Sky130 PDK.
 
 ---
 ## 📑 Table of Contents
 
-1. [Objective](#-objective-from-content)  
-2. [Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin](#-static-behavior-evaluation-cmos-inverter-robustness-and-noise-margin)  
+ 
+1. [Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin](#-static-behavior-evaluation-cmos-inverter-robustness-and-noise-margin)  
    - [Understanding Noise Margin](#understanding-noise-margin)  
    - [Why Noise Margin Matters](#why-noise-margin-matters)  
    - [Visualizing Noise Margin with VTC](#visualizing-noise-margin-with-vtc)  
    - [Key Points: VIL and VIH](#key-points-vil-and-vih)  
    - [Noise Margins in CMOS Logic Gates](#noise-margins-in-cmos-logic-gates)  
-3. [LABS](#labs)  
+2. [LABS](#labs)  
    - [Static Behavior Evaluation: CMOS Inverter Robustness, Noise Margin](#static-behavior-evaluation-cmos-inverter-robustness-noise-margin)  
    - [Step 1: Navigate to the Design Directory](#step-1-navigate-to-the-design-directory)  
    - [Step 2: Analyze CMOS Inverter Noise Margin](#step-2-analyze-cmos-inverter-noise-margin)  
    - [Step 3: View the File's Contents](#step-3-view-the-files-contents)  
    - [Step 2b: Run the Simulation](#step-2b-run-the-simulation)  
-4. [Summary: Day 4 – CMOS Inverter Noise Margin Analysis](#summary-day-4--cmos-inverter-noise-margin-analysis)  
+3. [Summary: Day 4 – CMOS Inverter Noise Margin Analysis](#summary-day-4--cmos-inverter-noise-margin-analysis)  
    - [Objective](#objective-1)  
    - [Activities Performed](#activities-performed)  
    - [Key Observations and Learning Points](#key-observations-and-learning-points)  
    - [Overall Outcome for Day 4](#overall-outcome-for-day-4)  
-5. [Repository Info](#repository-info)
-
----
-# 🎯 Objective (from content)
-
-To analyze MOSFET behavior at lower technology nodes using SPICE simulations, focusing on:
-- Exploring CMOS inverter static and dynamic characteristics.
-- Performing transient and DC simulations using NGSPICE and Sky130 PDK.
-- Understanding switching threshold (Vm) and propagation delay in CMOS logic.
+4. [Repository Info](#repository-info)
 
 ---
 # **Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin**

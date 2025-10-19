@@ -276,7 +276,7 @@ git clone https://github.com/kunalg123/sky130CircuitDesignWorkshop.git
 
 You can download ngspice for Windows from the official source using the following link:
 
-[ngspice Downloads - SourceForge]()
+[ngspice Downloads - SourceForge](https://sourceforge.net/projects/ngspice/files/)
 
 ### To plot the waveforms in ngspice
     ngspice day1_nfet_idvds_L2_W5.spice

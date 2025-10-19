@@ -251,6 +251,7 @@ From those:
 - NMH = VOH − VIH = 1.80 − 1.06 = 0.74 V
 - NML = VIL − VOL = 0.72 − 0.00 = 0.72 V
 
+--- 
 
 ## Summary: Day 4 – CMOS Inverter Noise Margin Analysis
 

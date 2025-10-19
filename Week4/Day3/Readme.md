@@ -24,8 +24,7 @@ This day begins your journey into Analyze the behavior of MOSFETs at Exploring C
 7. [Summary: Day 3 – CMOS Inverter Analysis](#summary-day-3--cmos-inverter-analysis)  
 8. [Key Observations and Learning Points](#key-observations-and-learning-points)  
 9. [Overall Outcome for Day 3](#overall-outcome-for-day-3)  
-10. [Propagation Delay](#propagation-delay)  
-11. [Repository Info](#repository-info)
+10. [Repository Info](#repository-info)
 ---
 # 🎯 Objective (from content)
 

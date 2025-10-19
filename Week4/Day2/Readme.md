@@ -20,11 +20,15 @@
 - **Long-channel MOSFETs**: Quadratic increase.  
 - **Short-channel MOSFETs**: Linear Ids at higher Vgs due to **velocity saturation**.  
 
-![Ids vs Vgs 1]()  
-![Ids vs Vgs 2]()  
-![Ids vs Vgs 3]()  
-![Ids vs Vgs 4]()  
-![Ids vs Vgs 5]()  
+![Ids vs Vgs 1](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20142946.png
+)  
+![Ids vs Vgs 2](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143128.png) 
+![Ids vs Vgs 3](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143148.png
+)  
+![Ids vs Vgs 4](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143212.png
+)  
+![Ids vs Vgs 5](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143239.png
+)  
 
 **Observation:**  
 - Short-channel devices show **early saturation** at higher Vgs.  
@@ -36,9 +40,9 @@
 - **Low electric field:** Linear velocity increase.  
 - **High electric field:** Velocity **saturates**, leading to **velocity saturation effects** in short-channel devices.  
 
-![Velocity vs Electric Field 1]()  
-![Velocity vs Electric Field 2]()  
-![Velocity vs Electric Field 3]()  
+![Velocity vs Electric Field 1](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143259.png)  
+![Velocity vs Electric Field 2](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143317.png)  
+![Velocity vs Electric Field 3](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143342.png)  
 
 **Observation:**  
 - High field region leads to **Ids saturation** even when Vgs increases.  
@@ -50,27 +54,18 @@
 - Illustrates **Ids vs Vds** for different Vgs values considering **velocity saturation**.  
 - Short-channel devices reach saturation **earlier** than long-channel devices due to **Vdsat effect**.  
 
-![Vdsat Model 1]()  
-![Vdsat Model 2]()  
-![Vdsat Model 3]()  
+![Vdsat Model 1](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143401.png
+)  
+![Vdsat Model 2](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143425.png)  
+![Vdsat Model 3](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143439.png)  
 
 **Observation:**  
 - Saturation occurs when **Vds ≥ Vdsat**.  
 - Short-channel MOSFETs show **earlier flattening of Ids**, confirming velocity saturation.
-
----
-
-
 - **Linear region (Vds < Vdsat):** Ids increases linearly with Vds.  
 - **Saturation region (Vds ≥ Vdsat):** Ids becomes constant.  
 - NMOS: Ids depends on **Vgs - Vth**.  
 - PMOS: Ids depends on **Vth - Vgs**.  
-
-![Ids vs Vds NMOS 1]()  
-![Ids vs Vds PMOS 1]()  
-![Ids vs Vds Combined]()  
-
-**Observation:**  
 - NMOS and PMOS devices show **expected linear and saturation regions**.  
 - Confirms **non-linear resistor behavior** of MOSFETs.
 
@@ -80,9 +75,9 @@
 - **Vout is high** when Vin is low, and **Vout is low** when Vin is high.  
 - Transition region defines **switching threshold** where both NMOS and PMOS conduct simultaneously.  
 
-![CMOS VTC 1]()  
-![CMOS VTC 2]()  
-![CMOS VTC 3]()  
+![CMOS VTC 1](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143802.png)  
+![CMOS VTC 2](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143816.png)  
+![CMOS VTC 3](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143834.png)  
 **Velocity Saturation Drain Current Model:**  
 - **Technology Parameter:** Saturation voltage (**Vdsat**) – the voltage at which carrier velocity saturates, independent of **Vgs** or **Vds**.  
 - **Vgt** is minimum → FET is in **saturation region** (both long and short channel).  
@@ -93,12 +88,12 @@
 1. Vout is **high** when Vin is low, and Vout is **low** when Vin is high.  
 2. The **transition region** shows a steep drop where both NMOS and PMOS conduct, defining the switching threshold.
 #### MOSFET as a switch
-![Screenshot ]()
-![Screenshot]()
-![Screenshot ]()
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143847.png)
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143900.png)
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143924.png)
 **Introduction to Standard MOS Voltage-Current Parameters:**  
 In MOS devices, **Rp** (PMOS) and **Rn** (NMOS) act as **non-linear resistors**, where their resistance is a **function of drain current (Ids)**, influenced by gate voltage (Vgs) and drain voltage (Vds).
-![Screenshot ]()
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20143936.png)
 **PMOS/NMOS Drain Current vs. Drain Voltage:**
 
 1. **Linear Region (Vds < Vdsat):**  
@@ -109,21 +104,21 @@ In MOS devices, **Rp** (PMOS) and **Rn** (NMOS) act as **non-linear resistors**,
    - Drain current (**Ids**) becomes **constant** and independent of Vds.  
    - For **NMOS**, Ids depends on **Vgs - Vth**.  
    - For **PMOS**, Ids depends on **Vth - Vgs**.  
-![Screenshot ]()
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20144002.png)
  #### Step1. Convert **PMOS gate-source voltage** to **Vin**.  
  Replace internal node voltages with **Vin**, **Vdd**, **Vss**, and **Vout**.  
  Simulate and plot the **VTC** by varying **Vin** and analyzing **Vout**.
-![Screenshot ]()
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20144028.png)
 **Step 2 & Step 3:**  
 - Convert **PMOS** and **NMOS drain-source voltages** to **Vout**.  
 - Relate the drain-source voltages of both devices to the output voltage (**Vout**) by considering their respective operating regions (linear or saturation).
-![Screenshot ]()
-![Screenshot ]()
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20144047.png)
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20144115.png)
 **Step 4:**  
 - **Merge the PMOS and NMOS load curves** by combining their drain current (Ids) characteristics with respect to **Vout**.  
 - **Plot the Voltage Transfer Characteristic (VTC)** by mapping **Vout** against **Vin**, showing the transition from low to high output voltage.
-![Screenshot ]()
-![screenshot]()
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/Screenshot%202025-10-19%20144138.png)
+
 
 # LABS
 ## SPICE simulation for lower nodes and velocity saturation effect
@@ -154,8 +149,9 @@ In MOS devices, **Rp** (PMOS) and **Rn** (NMOS) act as **non-linear resistors**,
        .end
 
 #### The plot of Ids vs Vds over constant Vgs:
-![Image ]()
-![Image ]()
+![Image ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/ngspice%20day2vdsnetlistcode.png
+)
+![Image ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/ngspice%20day2vdswaveform%2Bcommand.png)
 
 ##### EXAMPLE 2
       *Model Description
@@ -182,5 +178,6 @@ In MOS devices, **Rp** (PMOS) and **Rn** (NMOS) act as **non-linear resistors**,
          .endc
          .end
 ####  The plot of Ids vs Vgs over constant Vds:
-![ Image ]()
-![ Image ]()
+![ Image ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/ngspice%20day2vgsnetlistcode.png
+)
+![ Image ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day2/Photo/ngspice%20day2vgswaveform%2Bcommand.png)

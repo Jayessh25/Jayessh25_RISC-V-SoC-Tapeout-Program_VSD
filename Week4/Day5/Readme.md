@@ -1,4 +1,4 @@
-# 🚀 Week 4 Day 4:  Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin
+# 🚀 Week 4 Day 5:  CMOS Power Supply & Device Variation Robustness
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
@@ -7,30 +7,37 @@
 
 </div>
 
-Welcome to **Week 4** **Day 3** of the **NgspiceSky130 learning series**!  
-This day begins your journey into Analyze the behavior of MOSFETs at Exploring CMOS inverter Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin using NGSPICE and Sky130 PDK.
+Welcome to **Week 4** **Day 5** of the **NgspiceSky130 learning series**!  
+This day begins your journey into Analyze the behavior of CMOS inverter is strongly influenced by its **power supply voltage (VDD)**. Changing VDD doesn’t just alter the output voltage swing; it also affects the **switching threshold, noise margins, and overall circuit reliability**. Understanding these effects is crucial for designing robust digital circuits under varying operating conditions using NGSPICE and Sky130 PDK.
 
 ---
 ## 📑 Table of Contents
 
- 
-1. [Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin](#-static-behavior-evaluation-cmos-inverter-robustness-and-noise-margin)  
-   - [Understanding Noise Margin](#understanding-noise-margin)  
-   - [Why Noise Margin Matters](#why-noise-margin-matters)  
-   - [Visualizing Noise Margin with VTC](#visualizing-noise-margin-with-vtc)  
-   - [Key Points: VIL and VIH](#key-points-vil-and-vih)  
-   - [Noise Margins in CMOS Logic Gates](#noise-margins-in-cmos-logic-gates)  
-2. [LABS](#labs)  
-   - [Static Behavior Evaluation: CMOS Inverter Robustness, Noise Margin](#static-behavior-evaluation-cmos-inverter-robustness-noise-margin)  
-   - [Step 1: Navigate to the Design Directory](#step-1-navigate-to-the-design-directory)  
-   - [Step 2: Analyze CMOS Inverter Noise Margin](#step-2-analyze-cmos-inverter-noise-margin)  
-   - [Step 3: View the File's Contents](#step-3-view-the-files-contents)  
-   - [Step 2b: Run the Simulation](#step-2b-run-the-simulation)  
-3. [Summary: Day 4 – CMOS Inverter Noise Margin Analysis](#summary-day-4--cmos-inverter-noise-margin-analysis)  
-   - [Objective](#objective-1)  
+1. [Static Behavior Evaluation: CMOS Inverter Robustness – Power Supply Variation](#1-static-behavior-evaluation-cmos-inverter-robustness--power-supply-variation)  
+   - [Overview](#overview)  
+   - [SPICE Simulation Approach](#spice-simulation-approach)  
+   - [Key Observations](#key-observations)  
+   - [Simulation Observations: Power Supply Variations](#simulation-observations-power-supply-variations)  
+   - [Limitations of Operating at Low Supply Voltages](#limitations-of-operating-at-low-supply-voltages)  
+   - [CMOS Inverter Robustness to Device Variations](#cmos-inverter-robustness-to-device-variations)  
+   - [Sources of Variation: Oxide Thickness](#sources-of-variation-oxide-thickness)  
+2. [Labs](#labs)  
+   - [Static Behavior Evaluation: CMOS Inverter Robustness, Power Supply Variation](#static-behavior-evaluation-cmos-inverter-robustness-power-supply-variation)  
+   - [Simulation 1 - Inverter Device Variation](#simulation-1---inverter-device-variation)  
+     - [Step 1: Navigate to the Design Directory](#step-1-navigate-to-the-design-directory)  
+     - [Step 2: Inverter Device Variation Analysis](#step-2-inverter-device-variation-analysis)  
+     - [Step 3: View the File Contents](#step-3-view-the-file-contents)  
+     - [Step 4: Run the Simulation](#step-4-run-the-simulation)  
+   - [Simulation 2 - Inverter Supply Voltage Variation](#simulation-2---inverter-supply-voltage-variation)  
+     - [Step 1: Inverter Supply Voltage Variation Analysis](#step-1-inverter-supply-voltage-variation-analysis)  
+     - [Step 2: View the File Contents](#step-2-view-the-file-contents)  
+     - [Step 3: Run the Simulation](#step-3-run-the-simulation-1)  
+     - [Table 1: Power Supply Variation (The Voltage Starvation Study)](#-table-1-power-supply-variation-the-voltage-starvation-study)  
+3. [Summary: Day 5 – CMOS Inverter Device and Supply Variation Analysis](#summary-day-5--cmos-inverter-device-and-supply-variation-analysis)  
+   - [Objective](#objective)  
    - [Activities Performed](#activities-performed)  
    - [Key Observations and Learning Points](#key-observations-and-learning-points)  
-   - [Overall Outcome for Day 4](#overall-outcome-for-day-4)  
+   - [Overall Outcome for Day 5](#overall-outcome-for-day-5)  
 4. [Repository Info](#repository-info)
 
 ---
@@ -120,10 +127,12 @@ This approach helps visualize how supply scaling impacts both **logic integrity*
 ![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203923.png)
 ![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203938.png)
 
+---
+
 # Labs
 ## Static behavior evaluation: CMOS inverter robustness, Power supply variation
 ### Smart SPICE simulation for power supply variations
-# Labs On Day 5
+
 
 ## Simulation 1 - Inverter Device Variation
 
@@ -169,7 +178,7 @@ We inspect the SPICE netlist using:
 vim day5_inv_devicevariation_wp7_wn042.spice
 ```
 
-![screenshot]()
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/ngspicedevicevariationcode.png)
 
 Open the SPICE file in vim to review transistor sizes, connections, and simulation setup.
 
@@ -183,13 +192,25 @@ ngspice day5_inv_devicevariation_wp7_wn042.spice
 plot out vs in
 ```
 
-![screenshot]()
-![screenshot]()
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/ngspicedevicevariationgraph.png)
+
 
 
 This produces the input and output waveforms of the inverter, allowing us to observe the effects of device size variation.
 
-![screenshot]()
+### **CMOS Inverter Robustness: Extreme Device Width Variation**
+
+- **Robustness to Width Variation:**  
+   The CMOS inverter remains functional even under extreme variations in device width (W) due to its static behavior properties.  
+
+- **Effect on Switching Threshold:**  
+   Large deviations in device width primarily affect the switching threshold \( V_M \) but do not drastically impact the inverter's ability to operate as a logic gate.  
+
+- **Impact on Noise Margins:**  
+   Variations in width cause asymmetry in the noise margins, with one margin (high or low) reducing while the other increases.
+
+- **Key Insight:**  
+   The CMOS inverter exhibits robust static behavior, tolerating extreme width variations without functional failure.
 
 
 ## Simulation 2 - Inverter Supply Voltage Variation
@@ -226,7 +247,7 @@ We open the netlist in vim:
 vim day5_inv_supplyvariation_Wp1_Wn036.spice
 ```
 
-![screenshot]()
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/ngspicevoltagevariationcode.png)
 
 
 Letting us review the SPICE file to see the supply voltage setup and inverter configuration.
@@ -241,14 +262,37 @@ ngspice day5_inv_supplyvariation_Wp1_Wn036.spice
 plot out vs in
 ```
 
-![screenshot]()
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/ngspicevoltagevariationgraph.png)
 
-![screenshot]()
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/ngspicevoltagevariationgraph1.png)
 
 
 This generates the inverter waveforms under varying supply voltages, helping us evaluate performance changes.
 
-![screenshot]()
+### ⚡ Table 1: Power Supply Variation (The Voltage Starvation Study)
+
+| VDD (V) | ⚡ VOH (V) | 🛑 VOL (V) | 🔽 VIL (V) | 🔼 VIH (V) | 🔁 Vm (V) | 🟢 NM_L (V) | 🔴 NM_H (V) | Health Status |
+|:-------:|:----------:|:----------:|:----------:|:----------:|:---------:|:-----------:|:-----------:|:-------------:|
+| **1.8** | 1.800 | ~0 | 0.744 | 0.744 | — | 0.744 | 1.056 | 🟢 Excellent |
+| **1.6** | 1.600 | ~0 | 0.687 | 0.687 | 0.791 | 0.687 | 0.913 | 🟢 Good |
+| **1.4** | 1.400 | ~0 | 0.621 | 0.787 | 0.700 | 0.621 | 0.613 | 🟡 Marginal |
+| **1.2** | 1.200 | ~0 | 0.549 | 0.685 | 0.611 | 0.549 | 0.515 | 🟠 Risky |
+| **1.0** | 1.000 | ~0 | 0.482 | 0.594 | 0.531 | 0.482 | 0.406 | 🔴 Danger Zone |
+| **0.8** | 0.800 | ~0 | 0.419 | 0.514 | 0.458 | 0.419 | 0.286 | 🔴 Critical |
+
+**📉 Trend Alert**: Notice how noise margins collapse as VDD drops—at 0.8V, you're one hiccup away from logic errors!
+---
+
+</div>
+
+**🔍 Key Discoveries:**
+
+- 📉 **Vm Migration**: The switching threshold shifts downward as VDD decreases—like watching the floor drop out from under your logic levels
+- 🚨 **Shrinking Safety Margins**: Noise margins compress dangerously, making your circuit more vulnerable to glitches
+- 🎯 **VOH Degradation**: High output voltage drops (obviously—you can't get 1.8V out when you only put 0.8V in!)
+- ✅ **VOL Stability**: Low output voltage stays rock-solid near ground
+
+---
 
 ## Summary: Day 5 – CMOS Inverter Device and Supply Variation Analysis
 
@@ -289,104 +333,7 @@ This generates the inverter waveforms under varying supply voltages, helping us 
 - Gained practical experience in evaluating real-world design tolerances.
 
 - Completed hands-on characterization of CMOS inverters across multiple operating conditions.
-```
-*Model Description
-.param temp=27
 
-
-*Including sky130 library files
-.lib "sky130_fd_pr/models/sky130.lib.spice" tt
-
-
-*Netlist Description
-
-
-XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=1 l=0.15
-XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.36 l=0.15
-
-
-Cload out 0 50fF
-
-Vdd vdd 0 1.8V
-Vin in 0 1.8V
-
-.control
-
-let powersupply = 1.8
-alter Vdd = powersupply
-	let voltagesupplyvariation = 0
-	dowhile voltagesupplyvariation < 6
-	dc Vin 0 1.8 0.01
-	let powersupply = powersupply - 0.2
-	alter Vdd = powersupply
-	let voltagesupplyvariation = voltagesupplyvariation + 1
-      end
- 
-plot dc1.out vs in dc2.out vs in dc3.out vs in dc4.out vs in dc5.out vs in dc6.out vs in xlabel "input voltage(V)" ylabel "output voltage(V)" title "Inveter dc characteristics as a function of supply voltage"
-
-.endc
-
-```
-
-![ Image ]()
-![ Image ]()
-
-
-
-### **CMOS Inverter Robustness: Extreme Device Width Variation**
-
-- **Robustness to Width Variation:**  
-   The CMOS inverter remains functional even under extreme variations in device width (W) due to its static behavior properties.  
-
-- **Effect on Switching Threshold:**  
-   Large deviations in device width primarily affect the switching threshold \( V_M \) but do not drastically impact the inverter's ability to operate as a logic gate.  
-
-- **Impact on Noise Margins:**  
-   Variations in width cause asymmetry in the noise margins, with one margin (high or low) reducing while the other increases.
-
-- **Key Insight:**  
-   The CMOS inverter exhibits robust static behavior, tolerating extreme width variations without functional failure.
-
-  
-```
-*Model Description
-.param temp=27
-
-
-*Including sky130 library files
-.lib "sky130_fd_pr/models/sky130.lib.spice" tt
-
-
-*Netlist Description
-
-
-XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=7 l=0.15
-XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.42 l=0.15
-
-
-Cload out 0 50fF
-
-Vdd vdd 0 1.8V
-Vin in 0 1.8V
-
-*simulation commands
-
-.op
-
-.dc Vin 0 1.8 0.01
-
-.control
-run
-setplot dc1
-display
-.endc
-
-.end
-
-```
-![screenshot]()
-![screenshot]()
-![screenshot]()
 
 ---
 

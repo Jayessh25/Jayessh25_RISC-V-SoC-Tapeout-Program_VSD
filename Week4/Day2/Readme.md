@@ -13,8 +13,6 @@ This day begins your journey into Analyze the behavior of MOSFETs at lower nodes
 ---
 ## 📑 Table of Contents
 
-## 📑 Table of Contents
-
 1. [Objective](#objective)  
 2. [SPICE Simulation for Lower Nodes](#spice-simulation-for-lower-nodes)  
 3. [Ids vs Vgs Characteristics](#ids-vs-vgs-characteristics)  

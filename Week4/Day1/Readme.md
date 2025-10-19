@@ -83,7 +83,8 @@ SPICE allows designers to confirm correct switching behavior, analyze **propagat
 An **NMOS transistor** conducts when a **positive gate voltage (Vgs)** exceeds the **threshold voltage (Vt)**.  
 This voltage induces a conductive channel between **drain** and **source**, allowing current flow.
 
-![NMOS Structure]()
+![NMOS Structure](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Screenshot%202025-10-19%20112848.png
+)
 
 **Key Parameters:**
 - **Vt (Threshold Voltage):** Minimum gate voltage required to form an inversion channel.  
@@ -105,7 +106,7 @@ SPICE models use parameters such as **body-effect coefficient (γ)** and **Fermi
 
 These are foundry-defined parameters embedded in the **Sky130 model files** to ensure simulation accuracy.
 
-![Threshold Variation]()
+![Threshold Variation](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Screenshot%202025-10-19%20113120.png)
 
 ---
 
@@ -120,7 +121,8 @@ The NMOS transistor operates in two major regions based on **Vds** and **Vgs**:
 Occurs when **Vds < (Vgs - Vt)**.  
 Here, the channel is continuous, and the transistor behaves like a **voltage-controlled resistor**.
 
-![Linear Region]()
+![Linear Region](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Screenshot%202025-10-19%20113138.png
+)
 
 **Current Equation:**
 \[
@@ -132,7 +134,7 @@ Where:
 - **Cox:** Oxide capacitance per unit area  
 - **W/L:** Width-to-length ratio of the MOSFET  
 
-![Drift-Diffusion Model]()
+![Drift-Diffusion Model](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Screenshot%202025-10-19%20113159.png)
 
 The **drain current (Id)** increases linearly with **Vds**, forming the initial slope in the Id–Vds plot.
 
@@ -142,7 +144,7 @@ The **drain current (Id)** increases linearly with **Vds**, forming the initial 
 In simulation, for each **Vgs** value, **Vds** is swept, and Id is plotted.  
 As **Vds** approaches **Vgs - Vt**, the linear behavior transitions into saturation.
 
-![Resistive SPICE Curve]()
+![Resistive SPICE Curve](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Screenshot%202025-10-19%20113229.png)
 
 ---
 
@@ -151,7 +153,7 @@ As **Vds** approaches **Vgs - Vt**, the linear behavior transitions into saturat
 Occurs when **Vds ≥ (Vgs - Vt)**.  
 The channel pinches off near the drain, and current becomes almost constant.
 
-![Saturation Concept]()
+![Saturation Concept](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Screenshot%202025-10-19%20113246.png)
 
 **Current Equation:**
 \[
@@ -160,14 +162,14 @@ I_d = \frac{1}{2} μ_n C_{ox} \frac{W}{L} (V_{gs} - V_t)^2
 
 Here, **Id** is primarily controlled by **Vgs**, making this region essential for analog amplifiers and current sources.
 
-![Saturation Graphs]()
+![Saturation Graphs](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Screenshot%202025-10-19%20113341.png)
 
 **SPICE Observation (Saturation Mode):**
 - Id saturates with increasing Vds.  
 - The saturation level rises with higher Vgs values.  
 - The transition point (**Vds = Vgs - Vt**) is clearly visible in the simulated plots.
 
-![SPICE Saturation Curves]()
+![SPICE Saturation Curves](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Screenshot%202025-10-19%20113405.png)
 
 ---
 
@@ -228,10 +230,12 @@ Vin in 0 2.5
 - **Vin in 0 2.5** — Acts as the **input voltage source**.  
 
 This circuit defines all the essential components, parameters, and node connections required for a **SPICE simulation**.
-![Screenshot]()
-![Screenshot]()
-![Screenshot]()
-![Screenshot]()
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Screenshot%202025-10-19%20113434.png)
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Screenshot%202025-10-19%20113451.png)
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Screenshot%202025-10-19%20113507.png)
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Screenshot%202025-10-19%20113523.png)
+
+
 
 ##  Summary
 
@@ -278,6 +282,8 @@ You can download ngspice for Windows from the official source using the followin
     ngspice day1_nfet_idvds_L2_W5.spice
     plot -vdd#branch
 
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Run%20Day1ngspicecommand.png)
+
 ##  NMOS Id–Vds Simulation Output
 
 The following plots are obtained from SPICE simulations of an NMOS transistor using **Sky130 models**. They show how the **drain current (Id)** varies with **drain-to-source voltage (Vds)** for different gate voltages (Vgs).
@@ -286,7 +292,7 @@ The following plots are obtained from SPICE simulations of an NMOS transistor us
 
 ### ** Id vs Vds for Multiple Gate Voltages**
 
-![Screenshot]()
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/Netlistday1.png)
 
 **Description:**
 - Shows **Id–Vds characteristics** for several Vgs values.  
@@ -302,7 +308,7 @@ This plot verifies the expected NMOS behavior and clearly distinguishes the line
 
 ### ** Zoomed View of Linear Region**
 
-![Screenshot]()
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/ID%20vs%20VDs%20Graph.png)
 
 **Description:**
 - Focused on the **low Vds region** of the NMOS.  
@@ -317,7 +323,7 @@ The linear region is clearly visible, providing insight into how the device will
 
 ### ** Id vs Vds in Saturation Region**
 
-![Screenshot]()
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day1/Photo/ID%20vs%20VDs%20Graph.png)
 
 **Description:**
 - Focused on the **high Vds region**, where Id becomes nearly constant.  

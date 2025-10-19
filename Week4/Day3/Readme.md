@@ -125,14 +125,13 @@ We execute the simulation in NGSPICE:
 
 ```
 ngspice day3_inv_tran_Wp084_Wn036.spice
-plot out vs in
+plot out vs time in
 ```
-![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
-![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/ngspicetrans%20plotout%20vs%20time%20ingraph.png)
+
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/ngspicetrans%20plotout%20vs%20time%20ingraph%20values%20rise%20and%20fall%20delay.png)
 
 This generates the input and output waveforms of the CMOS inverter, allowing us to measure rise/fall times and propagation delay.
-
-![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
 
 
 
@@ -169,7 +168,7 @@ We check the netlist with:
 vim day3_inv_vtc_Wp084_Wn036.spice
 ```
 
-![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/ngspicevtc.png)
 
 
 Allowing us to see the DC sweep setup, transistor sizing, and output node definition.
@@ -181,15 +180,13 @@ We run the simulation in NGSPICE:
 
 ```
 ngspice day3_inv_vtc_Wp084_Wn036.spice
-plot out vs time in
+plot out vs in
 ```
 
-![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
-![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
+
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/ngspicevtc%20plotout%20vs%20time%20ingraph.png)
+
 This produces the Vout vs Vin curve, from which we can determine the inverter’s switching threshold and noise margins.
-
-![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
-
 
 ## Summary: Day 3 – CMOS Inverter Analysis
 

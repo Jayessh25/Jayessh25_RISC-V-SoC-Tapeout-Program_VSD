@@ -113,7 +113,7 @@ We inspect the SPICE netlist using:
 vim day3_inv_tran_Wp084_Wn036.spice
 ```
 
-![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/ngspicetrans.png)
 
 
 Open the netlist in vim so we can review transistor connections, input waveform, and transient analysis commands.

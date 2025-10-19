@@ -43,9 +43,9 @@ This approach helps visualize how supply scaling impacts both **logic integrity*
 
 4. **Transition Region Width:**  
    - The width of the transition region reduces when the supply voltage is scaled down from the original VDD.
-   ![Screenshot ]()
-   ![Screenshot ]()
-![screenshot]()
+   ![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203641.png)
+   ![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203651.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203704.png)
 
 ### **Limitations of Operating at Low Supply Voltages**
 
@@ -57,7 +57,7 @@ This approach helps visualize how supply scaling impacts both **logic integrity*
 
 3. **Reduced Signal Swing:**  
    - Scaling VDD reduces signal swing, lowering internal noise (e.g., crosstalk) but increasing sensitivity to external noise sources, which do not scale proportionally.
-![Screenshot]()
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203717.png)
 ### **CMOS Inverter Robustness to Device Variations**
 
 1. **Design vs. Real Operating Conditions:**  
@@ -69,22 +69,20 @@ This approach helps visualize how supply scaling impacts both **logic integrity*
 3. **Sources of Variation:**  
    - One common source of variation is the etching process during fabrication, which can affect device parameters.
    ### SOURCES OF ETCHING PROCESS
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203731.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203741.png)
+
 ### Sources of variation: Oxide Thickness
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![Screenshot 2024-12-14 064317]()
-![Screenshot 2024-12-14 064325]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203750.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203801.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203814.png)
+![Screenshot 2024-12-14 064317](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203827.png)
+![Screenshot 2024-12-14 064325](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203837.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203849.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203859.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203914.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203923.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day5/Photo/Screenshot%202025-10-19%20203938.png)
 
 # Labs
 ## Static behavior evaluation: CMOS inverter robustness, Power supply variation

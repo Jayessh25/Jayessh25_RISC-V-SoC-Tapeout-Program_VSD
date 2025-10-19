@@ -14,17 +14,25 @@ This day begins your journey into Analyze the behavior of MOSFETs at Exploring C
 ## 📑 Table of Contents
 
 1. [Objective](#-objective-from-content)  
-2. [Voltage Transfer Characteristics: SPICE Simulations](#1-voltage-transfer-characteristics-spice-simulations)  
-3. [Static Behavior Evaluation: CMOS Inverter Robustness and Switching Threshold (Vm)](#static-behavior-evaluation-cmos-inverter-robustness-and-switching-threshold-vm)  
-4. [Velocity Saturation and Switching Threshold (Vm) Analysis](#velocity-saturation-and-switching-threshold-vm-analysis)  
-5. [Applications of CMOS Inverter in Clock Network and STA](#applications-of-cmos-inverter-in-clock-network-and-sta)  
-6. [LABS](#labs)  
-   - [Simulation 1 - Transient Analysis](#simulation-1---transient-analysis)  
-   - [Simulation 2 - Voltage Transfer Characteristics (VTC)](#simulation-2---voltage-transfer-chracteristics-vtc)  
-7. [Summary: Day 3 – CMOS Inverter Analysis](#summary-day-3--cmos-inverter-analysis)  
-8. [Key Observations and Learning Points](#key-observations-and-learning-points)  
-9. [Overall Outcome for Day 3](#overall-outcome-for-day-3)  
-10. [Repository Info](#repository-info)
+2. [Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin](#-static-behavior-evaluation-cmos-inverter-robustness-and-noise-margin)  
+   - [Understanding Noise Margin](#understanding-noise-margin)  
+   - [Why Noise Margin Matters](#why-noise-margin-matters)  
+   - [Visualizing Noise Margin with VTC](#visualizing-noise-margin-with-vtc)  
+   - [Key Points: VIL and VIH](#key-points-vil-and-vih)  
+   - [Noise Margins in CMOS Logic Gates](#noise-margins-in-cmos-logic-gates)  
+3. [LABS](#labs)  
+   - [Static Behavior Evaluation: CMOS Inverter Robustness, Noise Margin](#static-behavior-evaluation-cmos-inverter-robustness-noise-margin)  
+   - [Step 1: Navigate to the Design Directory](#step-1-navigate-to-the-design-directory)  
+   - [Step 2: Analyze CMOS Inverter Noise Margin](#step-2-analyze-cmos-inverter-noise-margin)  
+   - [Step 3: View the File's Contents](#step-3-view-the-files-contents)  
+   - [Step 2b: Run the Simulation](#step-2b-run-the-simulation)  
+4. [Summary: Day 4 – CMOS Inverter Noise Margin Analysis](#summary-day-4--cmos-inverter-noise-margin-analysis)  
+   - [Objective](#objective-1)  
+   - [Activities Performed](#activities-performed)  
+   - [Key Observations and Learning Points](#key-observations-and-learning-points)  
+   - [Overall Outcome for Day 4](#overall-outcome-for-day-4)  
+5. [Repository Info](#repository-info)
+
 ---
 # 🎯 Objective (from content)
 
@@ -268,3 +276,19 @@ This generates the Vout vs Vin curve, from which we can calculate the inverter�
 - Gained practical understanding of how CMOS inverters maintain reliable logic operation despite input noise.
 
 - Prepared for more advanced CMOS circuit analyses involving device and supply variations.
+
+---
+
+
+<div align="center">
+
+**📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  
+**👨‍💻 Author:** [Jayessh25](https://github.com/Jayessh25)  
+**📚 Program:** VLSI System Design (VSD)
+
+[![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
+[![Stars](https://img.shields.io/github/stars/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD?style=social)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)
+
+</div>
+
+---

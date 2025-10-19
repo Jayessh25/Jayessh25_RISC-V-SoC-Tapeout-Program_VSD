@@ -221,7 +221,7 @@ This generates the input and output waveforms of the CMOS inverter, allowing us 
 <tr>
 <td><strong>🔺 Rise Time</strong></td>
 <td>tr</td>
-<td><strong>661.76 ps</strong></td>
+<td><strong>223.8 ps</strong></td>
 <td>10% → 90% (0.18V → 1.62V)</td>
 <td>🟢 Fast</td>
 </tr>
@@ -229,7 +229,7 @@ This generates the input and output waveforms of the CMOS inverter, allowing us 
 <tr>
 <td><strong>🔻 Fall Time</strong></td>
 <td>tf</td>
-<td><strong>475.07 ps</strong></td>
+<td><strong>285.8 ps</strong></td>
 <td>90% → 10% (1.62V → 0.18V)</td>
 <td>🟢 Faster!</td>
 </tr>
@@ -237,7 +237,7 @@ This generates the input and output waveforms of the CMOS inverter, allowing us 
 <tr>
 <td><strong>⏱️ Prop. Delay (LH)</strong></td>
 <td>tPLH</td>
-<td>~662 ps</td>
+<td>~223.8 ps</td>
 <td>Vin=50% → Vout=50%</td>
 <td>🟡 Moderate</td>
 </tr>
@@ -245,7 +245,7 @@ This generates the input and output waveforms of the CMOS inverter, allowing us 
 <tr>
 <td><strong>⏱️ Prop. Delay (HL)</strong></td>
 <td>tPHL</td>
-<td>~475 ps</td>
+<td>~285.8 ps</td>
 <td>Vin=50% → Vout=50%</td>
 <td>🟢 Better</td>
 </tr>

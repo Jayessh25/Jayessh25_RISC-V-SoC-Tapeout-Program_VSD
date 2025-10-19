@@ -175,7 +175,7 @@ display
 
 .end
 ```
- ![ Image ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/ngspicenoicemarginwave.png)
+ ![ Image ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day4/Photo/ngspicenoicemarginwavecode.png)
 
 Open the SPICE file in vim, allowing us to review transistor sizing, input sweep range, and output node definitions.
 

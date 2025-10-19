@@ -9,30 +9,30 @@ To explore the behavior of a **CMOS inverter** in SPICE, careful attention to ci
 
 > By thoughtfully connecting and naming every piece of the circuit, SPICE becomes a powerful microscope to visualize how the inverter switches between logic states.
 
-![Screenshot]()
-![SCREESHOT]()
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20162407.png)
+![SCREESHOT](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20162421.png)
 ### SPICE simulation for CMOS inverter
 SPICE Netlist for CMOS Inverter
 A **SPICE netlist** for a CMOS inverter includes transistor models, power supply connections, input voltage source, transistor specifications (PMOS and NMOS), and simulation commands (e.g., `.tran` for transient analysis).
-![Screenshot]()
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20162435.png)
 Same Wn/Ln = Wp/Lp = 1.5. Plot out vs in:
-![Screenshot ]()
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20162457.png)
 Now, Wn/Ln = 1.5 and Wp/Lp = 3.75. Plot out vs in:
-![Screenshot]()
-![screen]()
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20163539.png)
+![screen](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20163603.png)
 ## **Static Behavior Evaluation: CMOS Inverter Robustness and Switching Threshold (Vm)**  
 The **switching threshold (Vm)** is the point where **Vin = Vout**, and both transistors are in saturation (since **Vds = Vgs**). At **Vm**, maximum power is drawn due to large current, and it can be graphically found at the intersection of the **VTC** with the **Vin = Vout** line. The analytical expression for **Vm** is obtained by equating the drain currents of PMOS and NMOS (**IDSn = IDSp**).
-![Screenshot ]()
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20163652.png)
 
 
 In the **velocity-saturated** case, the **switching threshold (Vm)** is the point where both **NMOS** and **PMOS** transistors are in saturation, and the drain currents are equal. This occurs when the **VDS** of both devices is less than the saturation voltage, i.e., **VDSAT < (Vm − VT)**. The threshold voltage **Vm** can be derived by equating the drain currents of both transistors, with the device widths and lengths (W/L ratios) playing a key role in determining the point where both transistors conduct equally.
-![Screenshot ]()
-![Screenshot]()
-![Screenshot ]()
-![Screenshot ]()
-![Screenshot ]()
-![Screenshot]()
-![screenshot]()
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20171857.png)
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20171913.png)
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20171934.png)
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20171947.png
+)
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172004.png)
+![Screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172016.png)
 
 
 ---
@@ -58,76 +58,16 @@ In the **velocity-saturated** case, the **switching threshold (Vm)** is the poin
   - Increasing NMOS width shifts **Vm** downwards.  
   - **Vm** is relatively stable with small variations in transistor ratios.
 
-![Screenshot ]()
-![screenshot]()
-![screenshot]()
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172031.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172114.png)
+
 ### Applications of CMOS inverter in clock network and STA
-![Screenshot ]()
-![Screenshot ]()
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172129.png)
+
+---
 
 # LABS
-## 1. Voltage transfer characteristics: SPICE simulations
-#### Sky130 SPICE simulation for CMOS - VTC
-     *Model Description
-     .param temp=27
-
-      *Including sky130 library files
-      .lib "sky130_fd_pr/models/sky130.lib.spice" tt
-
-      *Netlist Description
-       XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=0.84 l=0.15
-       XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.36 l=0.15
-       Cload out 0 50fF
-       Vdd vdd 0 1.8V
-       Vin in 0 1.8V
-
-       *simulation commands
-        .op
-       .dc Vin 0 1.8 0.01
-
-        .control
-         run
-        setplot dc1
-        display
-        .endc
-        .end
-        
-![ Image ]()
-![ Image ]()
-
-- **Switching Threshold (VM):**  
-  The input voltage (**Vin**) at which the output voltage (**Vout**) equals the input voltage.  
-  - It is the intersection point on the Voltage Transfer Curve (VTC).  
-  - Also referred to as the **midpoint voltage** of the CMOS inverter.
-
-  ### Sky130 SPICE simulation for CMOS - Transient Analysis
-      *Model Description
-       .param temp=27
-
-      *Including sky130 library files
-        .lib "sky130_fd_pr/models/sky130.lib.spice" tt
-
-        *Netlist Description
-         XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=0.84 l=0.15
-         XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.36 l=0.15
-         Cload out 0 50fF
-         Vdd vdd 0 1.8V
-         Vin in 0 PULSE(0V 1.8V 0 0.1ns 0.1ns 2ns 4ns)
-
-         *simulation commands
-         .tran 1n 10n
-         .control
-          run
-          .endc
-          .end
-  
-  ![ Image ]()
-  ![ Image ]()
-  ![Image]()
-
-  # Labs On Day 3
-
-
 ## Simulation 1 - Transient analysis
 
 
@@ -173,7 +113,7 @@ We inspect the SPICE netlist using:
 vim day3_inv_tran_Wp084_Wn036.spice
 ```
 
-
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
 
 
 Open the netlist in vim so we can review transistor connections, input waveform, and transient analysis commands.
@@ -187,12 +127,12 @@ We execute the simulation in NGSPICE:
 ngspice day3_inv_tran_Wp084_Wn036.spice
 plot out vs in
 ```
-
-
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
 
 This generates the input and output waveforms of the CMOS inverter, allowing us to measure rise/fall times and propagation delay.
 
-
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
 
 
 
@@ -229,7 +169,7 @@ We check the netlist with:
 vim day3_inv_vtc_Wp084_Wn036.spice
 ```
 
-
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
 
 
 Allowing us to see the DC sweep setup, transistor sizing, and output node definition.
@@ -244,11 +184,11 @@ ngspice day3_inv_vtc_Wp084_Wn036.spice
 plot out vs time in
 ```
 
-
-
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
 This produces the Vout vs Vin curve, from which we can determine the inverter’s switching threshold and noise margins.
 
-
+![Screenshot ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/Day3/Photo/Screenshot%202025-10-19%20172144.png)
 
 
 ## Summary: Day 3 – CMOS Inverter Analysis

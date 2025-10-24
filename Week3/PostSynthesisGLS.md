@@ -35,13 +35,11 @@ We move from ideal logic to the actual gate-level representation, ensuring that 
     - [Step 8: Write the Synthesized Netlist](#step-8-write-the-synthesized-netlist)
   - [POST-SYNTHESIS SIMULATION AND WAVEFORMS](#post_synthesis-simulation-and-waveforms)
     - [Step 1: Compile the Testbench](#step-1-compile-the-testbench)
-    - [Common Errors and Fixes](#common-errors-and-fixes)
     - [Step 2: Navigate to the Post-Synthesis Simulation Output Directory](#step-2-navigate-to-the-post-synthesis-simulation-output-directory)
     - [Step 3: Run the Simulation](#step-3-run-the-simulation)
     - [Step 4: View the Waveforms in GTKWave](#step-4-view-the-waveforms-in-gtkwave)
   - [Comparing Pre-Synthesis and Post-Synthesis Output](#comparing-pre-synthesis-and-post-synthesis-output)
   - [Outcome](#outcome)
-  - [Repository & Author Info](#repository--author-info)
 
 ---
 ## Objective
@@ -51,7 +49,7 @@ The objective of this session was to perform post-synthesis gate-level simulatio
 ---
 ## POST-SYNTHESIS SIMULATION
 
-### 🧪 Gate-Level Simulation (GLS) – Post-Synthesis Verification
+###  Gate-Level Simulation (GLS) – Post-Synthesis Verification
 - **Gate-Level Simulation** (GLS), also known as **Post-Synthesis Simulation**, is performed to validate the **functional and timing correctness of a design after synthesis**. 
 - While RTL (Register Transfer Level) simulations also referred as behavioral or pre-synthesis simulation — operates at a higher abstraction to verify design intent in terms of functionality — GLS runs on the synthesized netlist. This netlist contains the actual logic gates and interconnections mapped to the target technology.
 - GLS ensures that the synthesized design behaves consistently with the RTL simulation results in terms of both logic and timing, now accounting for realistic timing delays and cell-level implementations. 
@@ -59,7 +57,7 @@ The objective of this session was to perform post-synthesis gate-level simulatio
     
 
 
-### 🔍 Why Pre-Synthesis and Post-Synthesis?
+###  Why Pre-Synthesis and Post-Synthesis?
 #### Pre-Synthesis Simulation:
 - Focuses solely on verifying functionality based on the RTL code.
 - Operates in a zero-delay environment; all events occur precisely on clock edges.

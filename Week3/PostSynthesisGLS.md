@@ -114,7 +114,7 @@ Read the following in the Yosys environment
 -  main vsdbabysoc.v RTL file
 -  rvmyth.v with the include path using -I option.
 -  clk_gate.v with the include path using -I option.
--
+
 -  To Do So run:
 ```yosys
 
@@ -248,13 +248,13 @@ iverilog -o output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTION
 | **Option / Argument**                                                      | **Purpose / Description**                                                            |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | `iverilog`                                                                 | Icarus Verilog compiler used to compile Verilog files into a simulation executable.  |
-| `-o /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/output/post_synth_sim/post_synth_sim.out` | Specifies the output binary file for simulation.                                     |
+| `-o output/post_synth_sim/post_synth_sim.out`                              | Specifies the output binary file for simulation.                                     |
 | `-DPOST_SYNTH_SIM`                                                         | Defines the macro `POST_SYNTH_SIM` (used in testbench to switch simulation modes).   |
 | `-DFUNCTIONAL`                                                             | Defines `FUNCTIONAL` to use behavioral models instead of detailed gate-level timing. |
 | `-DUNIT_DELAY=#1`                                                          | Assigns a unit delay of `#1` to all gates for post-synthesis simulation.             |
-| `-I /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/include`                              | Adds the `include` directory to the search path for `\`include\` directives.         |
-| `-I /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/module`                               | Adds the `module` directory to the include path for additional module references.    |
-| `/home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/module/testbench.v`                      | Specifies the testbench file as the top-level design for simulation.                 |
+| `-I src/include`                                                           | Adds the `include` directory to the search path for `\`include\` directives.         |
+| `-I src/module'                            `                               | Adds the `module` directory to the include path for additional module references.    |
+| `src/module/testbench.v`                                                   | Specifies the testbench file as the top-level design for simulation.                 |
 
 #### ❗Note - You may encounter these errors:
 You may encounter following errors:
@@ -263,7 +263,7 @@ You may encounter following errors:
 
 ```bash
 
-/home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/module/testbench.v:10: Include file vsdbabysoc.synth.v not found
+/VSDBabySoC/src/module/testbench.v:10: Include file vsdbabysoc.synth.v not found
 No top level modules, and no -s option.
 ```
 <strong> 🟢 To resolve this error copy the vsdbabysoc.synth.v from output/post_synth_sim directory to src/module directory</strong> 
@@ -271,7 +271,7 @@ No top level modules, and no -s option.
 <strong> 🔴 Error 2:</strong>
 
 ```bash
-/home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/module/sky130_fd_sc_hd.v:74452: syntax error
+/VSDBabySoC/src/module/sky130_fd_sc_hd.v:74452: syntax error
 I give up.
 ```
 
@@ -303,9 +303,7 @@ gtkwave post_synth_sim.vcd
 ```
 ![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command15.png)
 ![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Post_Synthesis01.png)
-**IMAGE_17**
-**IMAGE_18**
-**IMAGE_18a**
+
 
 #### To view output in analog mode
 ![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Post_Synthesis02.png)

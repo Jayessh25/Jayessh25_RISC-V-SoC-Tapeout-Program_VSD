@@ -1,3 +1,17 @@
+# 🚀 Week 4 Day 1: NMOS Drain Current (Id) vs Drain-to-Source Voltage (Vds)
+<div align="center">
+
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Week-4-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+
+</div>
+
+Welcome to **Week 4** **Day 1** of the **NgspiceSky130 learning series**!  
+This day begins your journey into **transistor-level design and SPICE simulation** using the open-source **Sky130 PDK**.  
+We’ll explore the electrical behavior of the **NMOS transistor** and understand how **drain current (Id)** varies with **drain-to-source voltage (Vds)** under different gate bias conditions. Day 1 — NMOS Drain Current (Id) vs Drain-to-Source Voltage (Vds)
+
+---
 # ⚙️ Part 1 — Post Synthesis GLS: “Bringing BabySoC to Life”
 
 Welcome to **Part 1 of Week 3!** 🚀  

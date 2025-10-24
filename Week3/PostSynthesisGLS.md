@@ -318,7 +318,7 @@ Both simulations were run using GTKWave, and the resulting waveforms were observ
 
 #### Pre-Synthesis Simulation Waveform
 
-![]()
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/vsdbaby%20gtkwave%203.png)
 
 #### Post-Synthesis Simulation Waveform
 

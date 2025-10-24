@@ -322,7 +322,7 @@ Both simulations were run using GTKWave, and the resulting waveforms were observ
 
 #### Post-Synthesis Simulation Waveform
 
-![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Post_Synthesis01.png)
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Post_Synthesis03.png)
 
 <strong> Observation:</strong> ✅ _The outputs of post-synthesis simulation match exactly with pre-synthesis simulation waveforms, confirming that the functionality is preserved across the synthesis flow._
 

@@ -153,7 +153,7 @@ can't open include file "sandpiper_gen.vh'
 _To avoid these errors, make sure to copy the required include files into your working directory! This ensures Yosys can resolve them correctly during parsing, even if the -I option is used._
 ---
 
-#### ✅ Step 2: Load the Liberty Files for Synthesis
+####  Step 2: Load the Liberty Files for Synthesis
 Inside the same Yosys shell, run:
 ```yosys
 yosys> read_liberty -lib /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/avsdpll.lib 
@@ -164,7 +164,7 @@ yosys> read_liberty -lib /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sky
 
 ---
 
-#### ✅ Step 3: Run Synthesis Targeting vsdbabysoc
+####  Step 3: Run Synthesis Targeting vsdbabysoc
 ```bash
 yosys> synth -top vsdbabysoc
 ```
@@ -175,7 +175,7 @@ yosys> synth -top vsdbabysoc
 
 ---
 
-#### ✅ Step 4: Map D Flip-Flops to Standard Cells
+####  Step 4: Map D Flip-Flops to Standard Cells
 ```yosys
 yosys> dfflibmap -liberty /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
@@ -183,7 +183,7 @@ yosys> dfflibmap -liberty /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sk
 
 ---
 
-#### ✅ Step 5: Perform Optimization and Technology Mapping
+####  Step 5: Perform Optimization and Technology Mapping
 
 ```bash
 yosys> opt
@@ -205,7 +205,7 @@ yosys> abc -liberty /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sky130_f
 
 ---
 
-#### ✅ Step 6: Perform Final Clean-Up and Renaming
+####  Step 6: Perform Final Clean-Up and Renaming
 
 ```bash
 yosys> flatten
@@ -224,7 +224,7 @@ yosys> rename -enumerate
 
 ---
 
-#### ✅ Step 7: Check Statistics
+####  Step 7: Check Statistics
 
 ```bash
 yosys> stat
@@ -236,7 +236,7 @@ yosys> stat
 ![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command12.png)
 ![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command13.png)
 
-#### ✅ Step 8: Write the Synthesized Netlist
+####  Step 8: Write the Synthesized Netlist
 
 ```bash
 yosys> write_verilog -noattr/home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/output/post_synth_sim/vsdbabysoc.synth.v
@@ -248,7 +248,7 @@ yosys> write_verilog -noattr/home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/output/p
 
 ### POST_SYNTHESIS SIMULATION AND WAVEFORMS
 ---
-#### ✅ Step 1: Compile the Testbench
+####  Step 1: Compile the Testbench
 - To ensure that the synthesized Verilog file _(vsdbabysoc.synth.v)_ is available in the src/module directory for further processing or simulation, it is important to follow the below steps
 - Before running the iverilog command, **copy** the necessary **standard cell** and **primitive models**:
 - These files **must be present** in the same **directory** as the **testbench** (src/module) to resolve all module references during compilation.
@@ -308,17 +308,17 @@ I give up.
 `endif // SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V
 ```
 ---
-#### ✅ Step 2: Navigate to the Post-Synthesis Simulation Output Directory
+####  Step 2: Navigate to the Post-Synthesis Simulation Output Directory
 ```bash
 cd output/post_synth_sim/
 ```
-#### ✅ Step 3: Run the Simulation
+####  Step 3: Run the Simulation
 ```bash
 ./post_synth_sim.out
 ```
 ---
 
-#### ✅ Step 4: View the Waveforms in GTKWave
+####  Step 4: View the Waveforms in GTKWave
 ```bash
 gtkwave post_synth_sim.vcd
 ```

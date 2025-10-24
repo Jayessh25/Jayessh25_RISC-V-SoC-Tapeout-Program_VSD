@@ -99,25 +99,11 @@ The following cp commands copy **essential header files** from the **src/include
   - **sandpiper.vh** – holds integration-related definitions for SandPiper
   - **sandpiper_gen.vh** – may include auto-generated or tool-generated parameters
 
-```bash
-cd ~/VSD_RISCV_Kasturi/VSDBabySoC/
-cp -r src/include/sp_verilog.vh .
-cp -r src/include/sandpiper.vh .
-cp -r src/include/sandpiper_gen.vh .
-```
-
-```
-ls
-images  LICENSE  Makefile  output  README.md  sandpiper_gen.vh  sandpiper.vh  sp_env  sp_verilog.vh  src
-```
-
-![]()
-
 
 #### **Step 1: Load the Top-Level Design and Supporting Modules**
 - Launch the Yosys synthesis tool from your working directory.
   ```bash
-  cd ~/VSD_RISCV_Kasturi/VSDBabySoc
+  cd ~/VLSI/VSDBabySoc/src/module
   yosys
   ```
 ![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command1.png)
@@ -132,9 +118,9 @@ Read the following in the Yosys environment
 -  To Do So run:
 ```yosys
 
-read_verilog /home/VSD_RISCV_Kasturi/VSDBabySoC/src/module/vsdbabysoc.v
-read_verilog -I /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/include /home/VSD_RISCV_Kasturi/src/module/rvmyth.v
-read_verilog -I /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/include /home/VSD_RISCV_Kasturi/src/module/clk_gate.v
+read_verilog vsdbabysoc.v
+read_verilog -sv -I ../include rvmyth.v
+read_verilog -I ../include clk_gate.v
 
 ```
 ![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command1.png)
@@ -154,9 +140,9 @@ _To avoid these errors, make sure to copy the required include files into your w
 ####  Step 2: Load the Liberty Files for Synthesis
 Inside the same Yosys shell, run:
 ```yosys
-yosys> read_liberty -lib /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/avsdpll.lib 
-yosys> read_liberty -lib /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/avsddac.lib 
-yosys> read_liberty -lib /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+yosys> read_liberty -lib lib/avsdpll.lib 
+yosys> read_liberty -lib lib/avsddac.lib 
+yosys> read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 ![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command2.png)
 
@@ -175,7 +161,7 @@ yosys> synth -top vsdbabysoc
 
 ####  Step 4: Map D Flip-Flops to Standard Cells
 ```yosys
-yosys> dfflibmap -liberty /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+yosys> dfflibmap -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 ![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command7.png)
 
@@ -185,7 +171,7 @@ yosys> dfflibmap -liberty /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sk
 
 ```bash
 yosys> opt
-yosys> abc -liberty /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -script +strash;scorr;ifraig;retime;{D};strash;dch,-f;map,-M,1,{D}
+yosys> abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib -script +strash;scorr;ifraig;retime;{D};strash;dch,-f;map,-M,1,{D}
 ```
 ![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command8.png)
 ![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command9.png)
@@ -237,10 +223,11 @@ yosys> stat
 ####  Step 8: Write the Synthesized Netlist
 
 ```bash
-yosys> write_verilog -noattr/home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/output/post_synth_sim/vsdbabysoc.synth.v
+yosys> write_verilog -noattr output/post_synth_sim/vsdbabysoc.synth.v
 ```
 ![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command14.png)
 
+After running this file copy the .v from the module directory in that there will be same output directory and paste it in after vsdbabysoc there output directory will be available
 
 ---
 
@@ -250,17 +237,11 @@ yosys> write_verilog -noattr/home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/output/p
 - To ensure that the synthesized Verilog file _(vsdbabysoc.synth.v)_ is available in the src/module directory for further processing or simulation, it is important to follow the below steps
 - Before running the iverilog command, **copy** the necessary **standard cell** and **primitive models**:
 - These files **must be present** in the same **directory** as the **testbench** (src/module) to resolve all module references during compilation.
-  ```bash
-  cd /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/module
-  cp -r ~/VSD_RISCV_Kasturi/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v .
-  cp -r ~/VSD_RISCV_Kasturi/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v .
-  ```
-
 
 Run the following `iverilog` command to compile the testbench:
 ```bash
 cd ~/VSD_RISCV_Kasturi/VSDBabySoC/
-iverilog -o /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/include -I /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/module /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/module/testbench.v
+iverilog -o output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I src/include -I src/module -I output/post_synth_sim src/module/testbench.v
 ```
 
 

@@ -1,4 +1,4 @@
- ### 🚀 Week 3 Part 1: Post Synthesis GLS: “BabySOC”
+ # 🚀 Week 3 Part 1: Post Synthesis GLS: “BabySOC”
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
@@ -16,23 +16,33 @@ We move from ideal logic to the actual gate-level representation, ensuring that 
 
 ---
 
-### 📚 Contents
+## 📚 **Table of Contents**
 
-- [Overview](#vsdbabysoc-post-synthesis-simulation)
-- [Step 1: Load the Top-Level Design and Supporting Modules](#step-1-load-the-top-level-design-and-supporting-modules)
-- [Step 2: Load the Liberty Files for Synthesis](#step-2-load-the-liberty-files-for-synthesis)
-- [Step 3: Run Synthesis Targeting `vsdbabysoc`](#step-3-run-synthesis-targeting-vsdbabysoc)
-- [Step 4: Map D Flip-Flops to Standard Cells](#step-4-map-d-flip-flops-to-standard-cells)
-- [Step 5: Perform Optimization and Technology Mapping](#step-5-perform-optimization-and-technology-mapping)
-- [Step 6: Perform Final Clean-Up and Renaming](#step-6-perform-final-clean-up-and-renaming)
-- [Step 7: Check Statistics](#step-7-check-statistics)
-- [Step 8: Write the Synthesized Netlist](#step-8-write-the-synthesized-netlist)
-- [POST_SYNTHESIS SIMULATION AND WAVEFORMS](#post_synthesis-simulation-and-waveforms)
-  - [Step 1: Compile the Testbench](#step-1-compile-the-testbench)
-  - [Step 2: Navigate to the Post-Synthesis Simulation Output Directory](#step-2-navigate-to-the-post-synthesis-simulation-output-directory)
-  - [Step 3: Run the Simulation](#step-3-run-the-simulation)
-  - [Step 4: View the Waveforms in GTKWave](#step-4-view-the-waveforms-in-gtkwave)
-- [Comparing Pre-Synthesis and Post-Synthesis Output](#comparing-pre-synthesis-and-post-synthesis-output)
+- [🚀 Week 3 Part 1: Post Synthesis GLS — “BabySoC”](#-week-3-part-1-post-synthesis-gls--babysoc)
+  - [📖 Overview](#-overview)
+  - [🎯 Objective](#-objective)
+  - [⚙️ POST-SYNTHESIS SIMULATION](#️-post-synthesis-simulation)
+    - [🧪 Gate-Level Simulation (GLS) — Post-Synthesis Verification](#-gate-level-simulation-gls--post-synthesis-verification)
+    - [🔍 Why Pre-Synthesis and Post-Synthesis?](#-why-pre-synthesis-and-post-synthesis)
+    - [📊 Key Aspects of GLS for BabySoC](#-key-aspects-of-gls-for-babysoc)
+  - [🧩 Step-by-Step Execution Plan for Running Commands](#-step-by-step-execution-plan-for-running-commands)
+    - [✅ Step 1: Load the Top-Level Design and Supporting Modules](#-step-1-load-the-top-level-design-and-supporting-modules)
+    - [✅ Step 2: Load the Liberty Files for Synthesis](#-step-2-load-the-liberty-files-for-synthesis)
+    - [✅ Step 3: Run Synthesis Targeting `vsdbabysoc`](#-step-3-run-synthesis-targeting-vsdbabysoc)
+    - [✅ Step 4: Map D Flip-Flops to Standard Cells](#-step-4-map-d-flip-flops-to-standard-cells)
+    - [✅ Step 5: Perform Optimization and Technology Mapping](#-step-5-perform-optimization-and-technology-mapping)
+    - [✅ Step 6: Perform Final Clean-Up and Renaming](#-step-6-perform-final-clean-up-and-renaming)
+    - [✅ Step 7: Check Statistics](#-step-7-check-statistics)
+    - [✅ Step 8: Write the Synthesized Netlist](#-step-8-write-the-synthesized-netlist)
+  - [📈 POST-SYNTHESIS SIMULATION AND WAVEFORMS](#-post-synthesis-simulation-and-waveforms)
+    - [✅ Step 1: Compile the Testbench](#-step-1-compile-the-testbench)
+    - [⚠️ Common Errors and Fixes](#️-common-errors-and-fixes)
+    - [✅ Step 2: Navigate to the Post-Synthesis Simulation Output Directory](#-step-2-navigate-to-the-post-synthesis-simulation-output-directory)
+    - [✅ Step 3: Run the Simulation](#-step-3-run-the-simulation)
+    - [✅ Step 4: View the Waveforms in GTKWave](#-step-4-view-the-waveforms-in-gtkwave)
+  - [🧠 Comparing Pre-Synthesis and Post-Synthesis Output](#-comparing-pre-synthesis-and-post-synthesis-output)
+  - [🏁 Outcome](#-outcome)
+  - [💻 Repository & Author Info](#-repository--author-info)
 
 ---
 ## Objective

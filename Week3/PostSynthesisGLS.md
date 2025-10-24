@@ -19,7 +19,7 @@ We move from ideal logic to the actual gate-level representation, ensuring that 
 ## 📚 **Table of Contents**
 
 - [🚀 Week 3 Part 1: Post Synthesis GLS — “BabySoC”](#-week-3-part-1-post-synthesis-gls--babysoc)
-  - [🎯 Objective](#-objective)
+  - [🎯 Objective](#objective)
   - [⚙️ POST-SYNTHESIS SIMULATION](#️-post-synthesis-simulation)
     - [Gate-Level Simulation (GLS) — Post-Synthesis Verification](#gate-level-simulation-gls--post-synthesis-verification)
     - [Why Pre-Synthesis and Post-Synthesis?](#why-pre-synthesis-and-post-synthesis)

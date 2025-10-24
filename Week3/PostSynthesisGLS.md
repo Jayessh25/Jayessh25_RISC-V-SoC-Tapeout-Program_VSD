@@ -1,18 +1,11 @@
-# 🚀 Week 4 Day 1: NMOS Drain Current (Id) vs Drain-to-Source Voltage (Vds)
+ ### 🚀 Week 3 Part 1: Post Synthesis GLS: “BabySOC”
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
-![Day](https://img.shields.io/badge/Week-4-orange?style=for-the-badge)
+![Day](https://img.shields.io/badge/Week-3-orange?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
 </div>
-
-Welcome to **Week 4** **Day 1** of the **NgspiceSky130 learning series**!  
-This day begins your journey into **transistor-level design and SPICE simulation** using the open-source **Sky130 PDK**.  
-We’ll explore the electrical behavior of the **NMOS transistor** and understand how **drain current (Id)** varies with **drain-to-source voltage (Vds)** under different gate bias conditions. Day 1 — NMOS Drain Current (Id) vs Drain-to-Source Voltage (Vds)
-
----
-# ⚙️ Part 1 — Post Synthesis GLS: “Bringing BabySoC to Life”
 
 Welcome to **Part 1 of Week 3!** 🚀  
 Up to now, your BabySoC has lived in the world of RTL — abstract, fast, and ideal.  
@@ -40,8 +33,13 @@ We move from ideal logic to the actual gate-level representation, ensuring that 
   - [Step 3: Run the Simulation](#step-3-run-the-simulation)
   - [Step 4: View the Waveforms in GTKWave](#step-4-view-the-waveforms-in-gtkwave)
 - [Comparing Pre-Synthesis and Post-Synthesis Output](#comparing-pre-synthesis-and-post-synthesis-output)
-    
 
+---
+## Objective
+
+The objective of this session was to perform post-synthesis gate-level simulation (GLS) of the BabySoC design to verify its functionality after synthesis. The task focused on understanding how RTL code is transformed into a gate-level netlist using Yosys and how to simulate it using Icarus Verilog (iverilog). It also aimed to familiarize students with handling synthesis-related errors, managing include files, and linking Sky130 standard cell libraries for accurate verification.
+
+---
 ## POST-SYNTHESIS SIMULATION
 
 ### 🧪 Gate-Level Simulation (GLS) – Post-Synthesis Verification
@@ -347,6 +345,11 @@ _This validates that the synthesized netlist is functionally equivalent to the R
 
 ---
 
+## Outcome
+
+By completing this session, the BabySoC design was successfully synthesized and simulated at the gate level. The simulation confirmed that the synthesized netlist preserved the same functionality as the RTL design. Learners gained hands-on experience with Yosys synthesis, Icarus Verilog (iverilog) simulation, and debugging of missing include files and library modules. The waveform comparison validated the correctness of synthesis and improved understanding of the complete RTL-to-GLS flow in digital design.
+
+---
 <div align="center">
 
 **📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  

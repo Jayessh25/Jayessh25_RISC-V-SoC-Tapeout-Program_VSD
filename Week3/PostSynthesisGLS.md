@@ -9,199 +9,25 @@ We move from ideal logic to the actual gate-level representation, ensuring that 
 
 ---
 
-## 🧠 What Is GLS?
+### 📚 Contents
 
-**Gate-Level Simulation (GLS)** is the stage where your synthesized design is tested in its true hardware form.  
-After synthesis, your design turns into a **netlist** — a file describing how real logic gates are connected.  
-GLS takes this netlist and runs simulations to verify that functionality is preserved **and** that timing behaves as expected.
+- [Overview](#vsdbabysoc-post-synthesis-simulation)
+- [Step 1: Load the Top-Level Design and Supporting Modules](#step-1-load-the-top-level-design-and-supporting-modules)
+- [Step 2: Load the Liberty Files for Synthesis](#step-2-load-the-liberty-files-for-synthesis)
+- [Step 3: Run Synthesis Targeting `vsdbabysoc`](#step-3-run-synthesis-targeting-vsdbabysoc)
+- [Step 4: Map D Flip-Flops to Standard Cells](#step-4-map-d-flip-flops-to-standard-cells)
+- [Step 5: Perform Optimization and Technology Mapping](#step-5-perform-optimization-and-technology-mapping)
+- [Step 6: Perform Final Clean-Up and Renaming](#step-6-perform-final-clean-up-and-renaming)
+- [Step 7: Check Statistics](#step-7-check-statistics)
+- [Step 8: Write the Synthesized Netlist](#step-8-write-the-synthesized-netlist)
+- [POST_SYNTHESIS SIMULATION AND WAVEFORMS](#post_synthesis-simulation-and-waveforms)
+  - [Step 1: Compile the Testbench](#step-1-compile-the-testbench)
+  - [Step 2: Navigate to the Post-Synthesis Simulation Output Directory](#step-2-navigate-to-the-post-synthesis-simulation-output-directory)
+  - [Step 3: Run the Simulation](#step-3-run-the-simulation)
+  - [Step 4: View the Waveforms in GTKWave](#step-4-view-the-waveforms-in-gtkwave)
+- [Comparing Pre-Synthesis and Post-Synthesis Output](#comparing-pre-synthesis-and-post-synthesis-output)
+    
 
-Unlike RTL simulation:
-- GLS includes **propagation delays** from real hardware.
-- The testbench remains the same, but the underlying logic now mirrors **post-synthesis reality**.
-- It helps detect issues that may not appear at the RTL level.
-
----
-
-## 🔍 Why BabySoC Needs GLS
-
-Your **BabySoC** integrates multiple modules — the RISC-V core, PLL, DAC, and more.  
-Each has its own timing behavior and clock domain. GLS ensures that when these modules talk to each other, they **stay synchronized** and **stable** under real timing constraints.  
-
-Here’s what GLS validates:
-- ⏱️ **Timing Consistency:** Signals meet setup and hold times defined in the Standard Delay Format (SDF).  
-- ⚡ **Functional Integrity:** The synthesized design still performs the intended operations.  
-- 🧩 **Inter-Module Interaction:** No unexpected glitches or metastability during communication between components.
-
----
-
-## 🧰 Tools You’ll Use
-
-To bring your BabySoC to life at the gate level, you’ll work with:
-
-- 🧠 **Icarus Verilog** — for compiling and simulating the gate-level netlist.  
-- 🌈 **GTKWave** — for waveform visualization and debugging timing delays.  
-- 📄 **SDF Files** — to inject real-world delay data into your simulations.  
-
-These tools together allow you to view how your design transitions from **“logical correctness”** to **“hardware readiness.”**
-
----
-
-## 🧭 The Real Purpose
-
-Think of GLS as the **truth test** for synthesis.  
-It answers one simple but critical question:
-
-> “Does my design still behave correctly when it becomes hardware?”
-
-When you see your BabySoC waveforms align perfectly under timing delays — that’s your moment of validation. ✨  
-
----
-
-## 💬 In a Nutshell
-
-> “Gate-Level Simulation is where your SoC stops being an idea and starts acting like a chip —  
-> precise, timed, and ready for silicon.” ⚙️  
-
----
-
-Here is the step-by-step execution plan for running the  commands manually:
----
-### **Step 1: Load the Top-Level Design and Supporting Modules**
-```bash
-yosys
-```
-
-![Screenshot from ](). 
-
-
-Inside the Yosys shell, run:
-```yosys
-read_verilog /home/jaynandan/vsd/VLSI/VSDBabySoC/src/module/vsdbabysoc.v
-read_verilog -sv -I /home/jaynandan/vsd/VLSI/VSDBabySoC/src/include /home/jaynandan/vsd/VLSI/VSDBabySoC/src/module/rvmyth.v
-read_verilog -I /home/jaynandan/vsd/VLSI/VSDBabySoC/src/include /home/jaynandan/vsd/VLSI/VSDBabySoC/src/module/clk_gate.v
-
-```
-![Screenshot from ](). 
-
----
-
-### **Step 2: Load the Liberty Files for Synthesis**
-Inside the same Yosys shell, run:
-```yosys
-read_liberty -lib  /home/jaynandan/vsd/VLSI/VSDBabySoC/src/lib/avsdpll.lib
-read_liberty -lib  /home/jaynandan/vsd/VLSI/VSDBabySoC/src/lib/avsddac.lib
-read_liberty -lib  /home/jaynandan/vsd/VLSI/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-```
-![WhatsApp Image ]()
-
----
-
-### **Step 3: Run Synthesis Targeting `vsdbabysoc`**
-```yosys
-synth -top vsdbabysoc
-```
-![WhatsApp Image ]()
-![WhatsApp Image ]()
-![WhatsApp Image )]()
-![WhatsApp Image ]()
-![WhatsApp Image ]()
-
-
----
-
-### **Step 4: Map D Flip-Flops to Standard Cells**
-```yosys
-dfflibmap -liberty /home/jaynandan/vsd/VLSI/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-```
-![WhatsApp Image )]()
-
----
-
-### **Step 5: Perform Optimization and Technology Mapping**
-```yosys
-opt
-abc -liberty /home/jaynandan/vsd/VLSI/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -script +strash;scorr;ifraig;retime;{D};strash;dch,-f;map,-M,1,{D}
-```
-![WhatsApp Image ]()
-![WhatsApp Image ]()
-
----
-
-### **Step 6: Perform Final Clean-Up and Renaming**
-```yosys
-flatten
-setundef -zero
-clean -purge
-rename -enumerate
-```
-![WhatsApp Image ]()
-
----
-
-### **Step 7: Check Statistics**
-```yosys
-stat
-```
-![WhatsApp Image ]()
-![WhatsApp Image ]()
-
-
----
-
-### **Step 8: Write the Synthesized Netlist**
-```yosys
-write_verilog -noattr /home/jaynandan/vsd/VLSI/VSDBabySoC/output/post_synth_sim/vsdbabysoc.synth.v
-```
-![WhatsApp Image ]()
-
----
-
-## POST_SYNTHESIS SIMULATION AND WAVEFORMS
----
-
-### **Step 1: Compile the Testbench & Run Simulation**
-Run the following `iverilog` command to compile the testbench and genrate the .vcd file:
-```bash
-iverilog -o /home/jaynadan/vsd/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out \
--DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 \
--I /home/jaynadan/vsd/VLSI/VSDBabySoC/src/include \
--I /home/jaynadan/vsd/VLSI/VSDBabySoC/src/module \
--I /home/jaynadan/vsd/VLSI/VSDBabySoC/output/synth \
-/home/jaynadan/vsd/VLSI/VSDBabySoC/src/module/testbench.v
-
-vvp /home/jaynadan/vsd/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out
-
-```
-
----
-### **Step 2: View the Waveforms in GTKWave**
-
-```bash
-gtkwave post_synth_sim.vcd
-```
----
-
-![WhatsApp Image ]()
-
-
-
-
-
-
-
-
-
-
-
-
-
-# RISC-V-Reference_SoC-VSD-IITGN-Week_3
-This repository documents the labs of week 3 of the program - RISC-V Reference SoC - Design to Silicon Tapeout conducted by VSD and IIT Gandhi Nagar (sky130RTLDesignAndSynthesisWorkshop). It covers simulation and synthesis flow from RTL to Netlist generation, **Icarus Verilog**, **gtkwave**,**Yosys**, **open Lane** tailored for Sky130 process
-# GLS OF BABYSOC
-********************************************************************************************
-Weeh 3 of 10 week program on ...........
-********************************************************************************************
-   
 ## POST-SYNTHESIS SIMULATION
 
 ### 🧪 Gate-Level Simulation (GLS) – Post-Synthesis Verification
@@ -244,24 +70,6 @@ Weeh 3 of 10 week program on ...........
 4. **Importance for BabySoC:**
    - BabySoC consists of multiple modules like the RISC-V processor, PLL, and DAC. GLS ensures that these modules interact correctly and meet the timing requirements in the synthesized design.
 
-### 📚 Contents
-
-- [Overview](#vsdbabysoc-post-synthesis-simulation)
-- [Step 1: Load the Top-Level Design and Supporting Modules](#step-1-load-the-top-level-design-and-supporting-modules)
-- [Step 2: Load the Liberty Files for Synthesis](#step-2-load-the-liberty-files-for-synthesis)
-- [Step 3: Run Synthesis Targeting `vsdbabysoc`](#step-3-run-synthesis-targeting-vsdbabysoc)
-- [Step 4: Map D Flip-Flops to Standard Cells](#step-4-map-d-flip-flops-to-standard-cells)
-- [Step 5: Perform Optimization and Technology Mapping](#step-5-perform-optimization-and-technology-mapping)
-- [Step 6: Perform Final Clean-Up and Renaming](#step-6-perform-final-clean-up-and-renaming)
-- [Step 7: Check Statistics](#step-7-check-statistics)
-- [Step 8: Write the Synthesized Netlist](#step-8-write-the-synthesized-netlist)
-- [POST_SYNTHESIS SIMULATION AND WAVEFORMS](#post_synthesis-simulation-and-waveforms)
-  - [Step 1: Compile the Testbench](#step-1-compile-the-testbench)
-  - [Step 2: Navigate to the Post-Synthesis Simulation Output Directory](#step-2-navigate-to-the-post-synthesis-simulation-output-directory)
-  - [Step 3: Run the Simulation](#step-3-run-the-simulation)
-  - [Step 4: View the Waveforms in GTKWave](#step-4-view-the-waveforms-in-gtkwave)
-- [Comparing Pre-Synthesis and Post-Synthesis Output](#comparing-pre-synthesis-and-post-synthesis-output)
-    
 
 Step-by-Step execution plan for running the  commands manually:
 ---
@@ -293,7 +101,7 @@ images  LICENSE  Makefile  output  README.md  sandpiper_gen.vh  sandpiper.vh  sp
   cd ~/VSD_RISCV_Kasturi/VSDBabySoc
   yosys
   ```
-![]()
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command1.png)
 
 
 Inside the Yosys shell, 
@@ -310,7 +118,7 @@ read_verilog -I /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/include /home/VS
 read_verilog -I /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/include /home/VSD_RISCV_Kasturi/src/module/clk_gate.v
 
 ```
-![]()
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command1.png)
 
 
 ### ❗Note:
@@ -331,7 +139,7 @@ yosys> read_liberty -lib /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/avs
 yosys> read_liberty -lib /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/avsddac.lib 
 yosys> read_liberty -lib /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
-![]()
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command2.png)
 
 ---
 
@@ -339,9 +147,10 @@ yosys> read_liberty -lib /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sky
 ```bash
 yosys> synth -top vsdbabysoc
 ```
-![]()
-![]()
-![]()
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command3.png)
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command4.png)
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command5.png)
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command6.png)
 
 ---
 
@@ -349,8 +158,7 @@ yosys> synth -top vsdbabysoc
 ```yosys
 yosys> dfflibmap -liberty /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
-![]()
-![]()
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command7.png)
 
 ---
 
@@ -360,7 +168,9 @@ yosys> dfflibmap -liberty /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sk
 yosys> opt
 yosys> abc -liberty /home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -script +strash;scorr;ifraig;retime;{D};strash;dch,-f;map,-M,1,{D}
 ```
-![]()
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command8.png)
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command9.png)
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command10.png)
 
 | Step           | Purpose                                                              |
 | -------------- | -------------------------------------------------------------------- |
@@ -382,7 +192,7 @@ yosys> setundef -zero
 yosys> clean -purge
 yosys> rename -enumerate
 ```
-![]()
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command11.png)
 
 | **Command**         | **Purpose / Usage**                                                                    |
 | ------------------- | -------------------------------------------------------------------------------------- |
@@ -402,16 +212,16 @@ yosys> stat
 
 === vsdbabysoc ===
 
-![]()
-![]()
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command12.png)
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command13.png)
 
 #### ✅ Step 8: Write the Synthesized Netlist
 
 ```bash
 yosys> write_verilog -noattr/home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/output/post_synth_sim/vsdbabysoc.synth.v
 ```
-![]()
-![]()
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command14.png)
+
 
 ---
 
@@ -426,7 +236,7 @@ yosys> write_verilog -noattr/home/pkasturi/VSD_RISCV_Kasturi/VSDBabySoC/output/p
   cp -r ~/VSD_RISCV_Kasturi/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v .
   cp -r ~/VSD_RISCV_Kasturi/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v .
   ```
-![]()
+
 
 Run the following `iverilog` command to compile the testbench:
 ```bash
@@ -485,23 +295,20 @@ cd output/post_synth_sim/
 ```bash
 ./post_synth_sim.out
 ```
-![]()
 ---
 
 #### ✅ Step 4: View the Waveforms in GTKWave
 ```bash
 gtkwave post_synth_sim.vcd
 ```
-![]()
-![]()
-![]()
-
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Command15.png)
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Post_Synthesis01.png)
 **IMAGE_17**
 **IMAGE_18**
 **IMAGE_18a**
 
 #### To view output in analog mode
-![]()
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Post_Synthesis02.png)
 
 ---
 
@@ -517,13 +324,9 @@ Both simulations were run using GTKWave, and the resulting waveforms were observ
 
 #### Post-Synthesis Simulation Waveform
 
-![]()
+![](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Images/Post_Synthesis01.png)
 
 <strong> Observation:</strong> ✅ _The outputs of post-synthesis simulation match exactly with pre-synthesis simulation waveforms, confirming that the functionality is preserved across the synthesis flow._
 
 _This validates that the synthesized netlist is functionally equivalent to the RTL design._
-![WhatsApp Image]()
 
-![WhatsApp Image )]()
-
-![WhatsApp Image ]()

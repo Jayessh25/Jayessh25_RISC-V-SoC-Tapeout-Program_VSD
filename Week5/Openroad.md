@@ -16,34 +16,50 @@ OpenROAD-flow-scripts (ORFS) is a fully autonomous, RTL-GDSII flow for rapid arc
 ---
 ## 📑 Table of Contents
 
-1. [Static Behavior Evaluation: CMOS Inverter Robustness – Power Supply Variation](#1-static-behavior-evaluation-cmos-inverter-robustness--power-supply-variation)  
-   - [Overview](#overview)  
-   - [SPICE Simulation Approach](#spice-simulation-approach)  
-   - [Key Observations](#key-observations)  
-   - [Simulation Observations: Power Supply Variations](#simulation-observations-power-supply-variations)  
-   - [Limitations of Operating at Low Supply Voltages](#limitations-of-operating-at-low-supply-voltages)  
-   - [CMOS Inverter Robustness to Device Variations](#cmos-inverter-robustness-to-device-variations)  
-   - [Sources of Variation: Oxide Thickness](#sources-of-variation-oxide-thickness)  
-2. [Labs](#labs)  
-   - [Static Behavior Evaluation: CMOS Inverter Robustness, Power Supply Variation](#static-behavior-evaluation-cmos-inverter-robustness-power-supply-variation)  
-   - [Simulation 1 - Inverter Device Variation](#simulation-1---inverter-device-variation)  
-     - [Step 1: Navigate to the Design Directory](#step-1-navigate-to-the-design-directory)  
-     - [Step 2: Inverter Device Variation Analysis](#step-2-inverter-device-variation-analysis)  
-     - [Step 3: View the File Contents](#step-3-view-the-file-contents)  
-     - [Step 4: Run the Simulation](#step-4-run-the-simulation)  
-   - [Simulation 2 - Inverter Supply Voltage Variation](#simulation-2---inverter-supply-voltage-variation)  
-     - [Step 1: Inverter Supply Voltage Variation Analysis](#step-1-inverter-supply-voltage-variation-analysis)  
-     - [Step 2: View the File Contents](#step-2-view-the-file-contents)  
-     - [Step 3: Run the Simulation](#step-3-run-the-simulation-1)  
-     - [Table 1: Power Supply Variation (The Voltage Starvation Study)](#-table-1-power-supply-variation-the-voltage-starvation-study)  
-3. [Summary: Day 5 – CMOS Inverter Device and Supply Variation Analysis](#summary-day-5--cmos-inverter-device-and-supply-variation-analysis)  
-   - [Objective](#objective)  
-   - [Activities Performed](#activities-performed)  
-   - [Key Observations and Learning Points](#key-observations-and-learning-points)  
-   - [Overall Outcome for Day 5](#overall-outcome-for-day-5)  
-4. [Repository Info](#repository-info)
+1. [Objective](#objective)
+2. [What is OpenROAD?](#what-is-openroad)
+3. [Understanding ORFS Directory Structure](#understanding-orfs-directory-structure)
+4. [OpenROAD Installation & Execution Flow](#-openroad-installation--execution-flow)
+   - [OpenROAD vs OpenROAD-Flow-Scripts](#⚖️-openroad-vs-openroad-flow-scripts)
+   - [Comments to Installation](#1-comments-to-installation)
+   - [Required Packages](#required-packages)
+   - [Error No. 1](#error-no-1)
+   - [Error No. 2](#error-no-2)
+   - [Steps to Install OpenROAD and Run GUI](#steps-to-install-openroad-and-run-gui)
+5. [Executing the Flow](#2-executing-the-flow)
+   - [Launching the Flow up to Placement](#launching-the-flow-up-to-placement)
+6. [Visualizing the Physical Layout](#3-visualizing-the-physical-layout)
+   - [Method 1 – OpenROAD GUI](#method-1-openroad-gui)
+   - [Method 2 – Viewing through KLayout](#method-2-viewing-through-klayout)
+     - [Converting ODB to DEF](#converting-odb-to-def)
+     - [Verify Files Generated](#verify-files-are-generated)
+     - [Opening in KLayout](#opening-in-klayout)
+7. [Notes and Tips](#6-notes-and-tips)
+8. [Results Snapshot](#7-results-snapshot)
+9. [Final Thoughts](#8-final-thoughts)
+10. [Summary](#summary)
+
 
 ---
+
+### Objective
+
+The objective of Week 5 is to gain practical understanding of the OpenROAD flow, an open-source RTL-to-GDSII automation framework.
+This week focuses on transitioning a digital design from RTL description to placed layout, exploring how each step in the physical design process contributes to silicon realization.
+
+Through this lab, you will:
+
+- Install and configure OpenROAD and all required dependencies.
+- Understand the OpenROAD-Flow-Scripts (ORFS) directory structure and workflow.
+- Execute the OpenROAD flow to perform synthesis, floorplanning, and placement.
+- Visualize design layouts using both OpenROAD GUI and KLayout.
+- Analyze and interpret intermediate results, ensuring proper flow execution.
+- Identify and resolve common installation or build issues encountered during setup.
+
+This module marks the transition from RTL design abstraction to physical layout generation, bridging the gap between front-end and back-end VLSI design.
+
+---
+
 ##  What is OpenROAD?
 
 **OpenROAD** is an open-source, fully automated **RTL-to-GDSII flow** for digital IC design. It transforms your hardware description into actual silicon layout through synthesis, floorplanning, placement, clock tree synthesis, routing, and final layout generation.

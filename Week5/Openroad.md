@@ -308,7 +308,26 @@ source ~/.bashrc
 
 With everything built and configured, the next step is to **run the flow** for our design.
 
-### Launching the Flow up to Placement
+##### ** Step  Run the OpenROAD Flow**
+
+           cd flow
+           make
+
+
+##### ** Step  Launch the graphical user interface (GUI) to visualize the final layout:**
+
+         make gui_final
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Openroadpic1.png)
+
+Notes
+
+Always ```source env.sh ``` before running any flow.
+If any dependency fails, rebuild using:
+
+    make clean_all
+    make
+Logs can be checked under flow/reports/ or flow/logs/.
+
 
 Inside the flow directory, execute:
 
@@ -447,7 +466,7 @@ By mastering this open-source workflow, you’ve effectively experienced the **f
 * Validated the structure and layout geometry successfully
 
 ---
----
+
 
 
 <div align="center">

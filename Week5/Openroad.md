@@ -23,8 +23,6 @@ OpenROAD-flow-scripts (ORFS) is a fully autonomous, RTL-GDSII flow for rapid arc
    - [OpenROAD vs OpenROAD-Flow-Scripts](#⚖️-openroad-vs-openroad-flow-scripts)
    - [Comments to Installation](#1-comments-to-installation)
    - [Required Packages](#required-packages)
-   - [Error No. 1](#error-no-1)
-   - [Error No. 2](#error-no-2)
    - [Steps to Install OpenROAD and Run GUI](#steps-to-install-openroad-and-run-gui)
 5. [Executing the Flow](#2-executing-the-flow)
    - [Launching the Flow up to Placement](#launching-the-flow-up-to-placement)
@@ -410,7 +408,7 @@ This view provides a lightweight alternative to the GUI, excellent for verifying
 
 ---
 
-## 📊 6. Notes and Tips
+##  6. Notes and Tips
 
 * Always source `env.sh` when launching a new terminal.
 * For missing macros or warnings in KLayout, ensure both `.tlef` and `.lef` files are loaded.
@@ -418,7 +416,7 @@ This view provides a lightweight alternative to the GUI, excellent for verifying
 
 ---
 
-## 🔍 7. Results Snapshot
+##  7. Results Snapshot
 
 | Stage         | File Type      | Description                             |
 | :------------ | :------------- | :-------------------------------------- |
@@ -428,7 +426,7 @@ This view provides a lightweight alternative to the GUI, excellent for verifying
 
 ---
 
-## 🎯 8. Final Thoughts
+##  8. Final Thoughts
 
 Through this exercise, you completed a **partial OpenROAD physical design flow** — transitioning a design from **RTL to its physical placement** using open-source infrastructure.
 
@@ -440,7 +438,7 @@ By mastering this open-source workflow, you’ve effectively experienced the **f
 ---
 
 
-## 🧾 Summary
+##  Summary
 
 * Installed and built OpenROAD-flow-scripts
 * Resolved dependency issues

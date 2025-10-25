@@ -278,7 +278,8 @@ You will see like this
       jayesshsk@jayesshsk:/home/jayesshsk/VLSI/OpenROAD-flow-scripts# source env.sh
        OPENROAD: /home/jayesshsk/VLSI/OpenROAD-flow-scripts/tools/OpenROAD
      jayesshsk@jayesshsk:/home/jayesshsk/VLSI/OpenROAD-flow-scripts# openroad -gui
-
+     
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command13.png)
 ![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command10.png)
 
 if you find yosys error the do this step otherwise no need
@@ -372,13 +373,15 @@ read_db results/nangate45/gcd/base/3_place.odb
 write_def results/nangate45/gcd/base/3_place.def
 exit
 ```
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command11.png)
+
 #### Verify files are generated
 
 ```bash
 ls -lh results/nangate45/gcd/base/2_floorplan.def results/nangate45/gcd/base/3_place.def
 ```
 
-<img width="1213" height="79" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command10.png" />
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command12.png)
 
 #### Opening in KLayout
 

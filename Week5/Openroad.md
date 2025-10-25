@@ -1,6 +1,89 @@
+# 🚀 Week 5 :  From RTL to Placement using OpenROAD Flow
+<div align="center">
 
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Week-5-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
-# 🚀 OpenROAD Installation Guide
+</div>
+
+Welcome to **Week 5** **OpenROAD Project** OpenROAD is an open-source, fully automated RTL-to-GDSII flow for digital integrated circuit (IC) design. It supports synthesis, floorplanning, placement, clock tree synthesis, routing, and final layout generation. OpenROAD enables rapid design iterations, making it ideal for academic research and industry prototyping.
+
+OpenROAD provides OpenROAD-flow-scripts as a native, ready-to-use prototyping and tapeout flow. However, it also enables the creation of any custom flow controllers based on the underlying tools, database and analysis engines. Please refer to the flow documentation here.
+
+OpenROAD-flow-scripts (ORFS) is a fully autonomous, RTL-GDSII flow for rapid architecture and design space exploration, early prediction of QoR and detailed physical design implementation. However, ORFS also enables manual intervention for finer user control of individual flow stages through Tcl commands and Python APIs.
+
+---
+## 📑 Table of Contents
+
+1. [Static Behavior Evaluation: CMOS Inverter Robustness – Power Supply Variation](#1-static-behavior-evaluation-cmos-inverter-robustness--power-supply-variation)  
+   - [Overview](#overview)  
+   - [SPICE Simulation Approach](#spice-simulation-approach)  
+   - [Key Observations](#key-observations)  
+   - [Simulation Observations: Power Supply Variations](#simulation-observations-power-supply-variations)  
+   - [Limitations of Operating at Low Supply Voltages](#limitations-of-operating-at-low-supply-voltages)  
+   - [CMOS Inverter Robustness to Device Variations](#cmos-inverter-robustness-to-device-variations)  
+   - [Sources of Variation: Oxide Thickness](#sources-of-variation-oxide-thickness)  
+2. [Labs](#labs)  
+   - [Static Behavior Evaluation: CMOS Inverter Robustness, Power Supply Variation](#static-behavior-evaluation-cmos-inverter-robustness-power-supply-variation)  
+   - [Simulation 1 - Inverter Device Variation](#simulation-1---inverter-device-variation)  
+     - [Step 1: Navigate to the Design Directory](#step-1-navigate-to-the-design-directory)  
+     - [Step 2: Inverter Device Variation Analysis](#step-2-inverter-device-variation-analysis)  
+     - [Step 3: View the File Contents](#step-3-view-the-file-contents)  
+     - [Step 4: Run the Simulation](#step-4-run-the-simulation)  
+   - [Simulation 2 - Inverter Supply Voltage Variation](#simulation-2---inverter-supply-voltage-variation)  
+     - [Step 1: Inverter Supply Voltage Variation Analysis](#step-1-inverter-supply-voltage-variation-analysis)  
+     - [Step 2: View the File Contents](#step-2-view-the-file-contents)  
+     - [Step 3: Run the Simulation](#step-3-run-the-simulation-1)  
+     - [Table 1: Power Supply Variation (The Voltage Starvation Study)](#-table-1-power-supply-variation-the-voltage-starvation-study)  
+3. [Summary: Day 5 – CMOS Inverter Device and Supply Variation Analysis](#summary-day-5--cmos-inverter-device-and-supply-variation-analysis)  
+   - [Objective](#objective)  
+   - [Activities Performed](#activities-performed)  
+   - [Key Observations and Learning Points](#key-observations-and-learning-points)  
+   - [Overall Outcome for Day 5](#overall-outcome-for-day-5)  
+4. [Repository Info](#repository-info)
+
+---
+##  What is OpenROAD?
+
+**OpenROAD** is an open-source, fully automated **RTL-to-GDSII flow** for digital IC design. It transforms your hardware description into actual silicon layout through synthesis, floorplanning, placement, clock tree synthesis, routing, and final layout generation.
+
+✨ **Why OpenROAD?**
+- 🚀 Rapid design iterations
+- 🎓 Perfect for academic research
+- 🏭 Industry-standard prototyping
+- 🆓 Completely open-source
+
+---
+
+##  Understanding ORFS Directory Structure
+
+### 🗂️ Root Level Organization
+```plaintext
+OpenROAD-flow-scripts/
+├── 🐳 docker/          → Docker-based installation & run scripts
+├── 📚 docs/            → Complete documentation
+├── ⚡ flow/            → Core RTL-to-GDS flow files
+├── 🧪 jenkins/         → Regression tests for builds
+├── 🛠️ tools/           → Required tools for the flow
+├── ⚙️ etc/             → Dependency installers
+└── 📌 setup_env.sh     → Environment configuration script
+```
+
+### 📁 Inside `flow/` Directory
+```plaintext
+flow/
+├── 🎨 designs/         → Built-in design examples across technology nodes
+├── 📝 Makefile         → Automated flow execution
+├── 🏭 platforms/       → Technology libraries (LEF, GDS, etc.)
+├── 📖 tutorials/       → Learning resources
+├── 🔧 util/            → Utility scripts
+└── 📜 scripts/         → Flow automation scripts
+```
+
+---
+
+# 🚀 OpenROAD Installation & Execution Flow
 
 Welcome to the **OpenROAD Project** — an open-source revolution in digital chip design!  
 OpenROAD (Open **Real-time Optimized Autonomous Design**) aims to deliver a **24-hour, no-human-in-the-loop RTL-to-GDSII flow**, empowering designers, researchers, and students to explore ASIC physical design freely.  
@@ -28,6 +111,9 @@ Whether you're a researcher tuning placement algorithms or an engineer running a
 ✨ **In short:**  
 - **OpenROAD** = the engine 🧠 that powers the flow.  
 - **OpenROAD-Flow-Scripts** = the vehicle 🚗 that drives from RTL to GDSII using that engine.  
+
+
+### 1. Comments to Installation
 
 Together, they make open-source silicon design faster, smarter, and truly accessible. 🌍💻
 
@@ -205,7 +291,7 @@ echo 'export YOSYS_EXE=/usr/local/bin/yosys' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## 🧠 4. Executing the Flow
+##  2. Executing the Flow
 
 With everything built and configured, the next step is to **run the flow** for our design.
 
@@ -235,7 +321,7 @@ results/sky130hd/gcd/base/
 
 ---
 
-## 🖥️ 5. Visualizing the Physical Layout
+##  3. Visualizing the Physical Layout
 
 The results of the OpenROAD flow can be explored using two visualization tools — **OpenROAD GUI** and **KLayout**.
 Before either is used, the environment variables must be set up properly:
@@ -337,21 +423,6 @@ By mastering this open-source workflow, you’ve effectively experienced the **f
 
 ---
 
-
-##### **Directory Structure **
-
-![screenshot]()
-
-📘  Notes
-
-Always ```source env.sh ``` before running any flow.
-If any dependency fails, rebuild using:
-
-    make clean_all
-    make
-Logs can be checked under flow/reports/ or flow/logs/.
-
----
 
 ## 🧾 Summary
 

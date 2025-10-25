@@ -210,12 +210,12 @@ and when you will run build command you will get fail here so first sure you dow
 #### **1. Clone the OpenROAD Repository**  
       git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
       cd OpenROAD-flow-script
-![screensot]()
-![screenshot]()
+![screensot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command1.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command2.png)
 #### **2. Run the Setup Script**  
        sudo ./setup.sh
        
-![screensot]()
+![screensot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command3.png)
 
 
 #### **3. Build OpenROAD**  
@@ -224,7 +224,7 @@ and when you will run build command you will get fail here so first sure you dow
 
 If here you not getting error its fine and good you can skip next some part from cloning again OpenRoad repo and installation of it but i also get here build error so i follows next stpes and i think everyone get here almost IN Below image you will get to know about the error if you also get this error worry not we have second option just follow all steps and you will win
 
-![screenshot]()
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command4.png)
 
 If you also get something like as above then follow next steps 
 
@@ -245,7 +245,6 @@ Now again Clone repository of OpenRoad and install it by following these steps
 
        make -j$(nproc)
        sudo make install
-![screenshot]()
 
 
 #### **Step 4 — Verify Installation**
@@ -254,9 +253,9 @@ Now again Clone repository of OpenRoad and install it by following these steps
 ✅ You should see version output like:
        v2.0-25739-g7319402f48
 
-![screenshot]()
-![screenshot]()
-![screeshot]()
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command6.png)
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command6.png)
+
 Now after this go inside your OpenROAD-flow-script directory which we already cloned in 1 step 
 ```
  cd OpenROAD-flow-script
@@ -278,10 +277,9 @@ You will see like this
       
       jayesshsk@jayesshsk:/home/jayesshsk/VLSI/OpenROAD-flow-scripts# source env.sh
        OPENROAD: /home/jayesshsk/VLSI/OpenROAD-flow-scripts/tools/OpenROAD
-     jayesshsk@jayesshsk:/home/jayesshsk/VLSI/OpenROAD-flow-scripts# 
+     jayesshsk@jayesshsk:/home/jayesshsk/VLSI/OpenROAD-flow-scripts# openroad -gui
 
-![screenshot]()
-![screenshot]()
+![screenshot](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command10.png)
 
 if you find yosys error the do this step otherwise no need
 

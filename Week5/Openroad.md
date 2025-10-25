@@ -315,7 +315,7 @@ After completion, layout files will be available in:
 ```
 results/nangate45/gcd/base/
 ```
-<img width="1210" height="773" alt="Image" src="" />
+<img width="1210" height="773" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Openroadpic2.png" />
 
 ---
 
@@ -339,21 +339,20 @@ cd flow
 openroad -gui
 ```
 
-<img width="1210" height="773" alt="Image" src="" />
 
 Then, through the GUI:
 
 * Navigate to `File → Open`
 * Load `results/nangate45/gcd/base/2_floorplan.odb` for the floorplan view
 
-  <img width="1280" height="800" alt="Image" src="" />
-  <img width="1210" height="773" alt="Image" src="" />
+  <img width="1280" height="800" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Openroadpic3.png" />
+  <img width="1210" height="773" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Openroadpic4.png" />
 
 * Similarly, open `3_place.odb` for the placement visualization
 You can explore the die area, cell rows, and standard cell placements within the window.
   
- <img width="1213" height="770" alt="Image" src="" />
- <img width="1210" height="773" alt="Image" src="" />
+ <img width="1213" height="770" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Openroadpic5.png" />
+ <img width="1210" height="773" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Openroadpic6.png" />
 
 ---
 
@@ -379,7 +378,7 @@ exit
 ls -lh results/nangate45/gcd/base/2_floorplan.def results/nangate45/gcd/base/3_place.def
 ```
 
-<img width="1213" height="79" alt="Image" src="" />
+<img width="1213" height="79" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Command10.png" />
 
 #### Opening in KLayout
 
@@ -388,7 +387,7 @@ klayout -l platforms/sky130hd/lef/sky130_fd_sc_hd.tlef -l platforms/sky130hd/lef
 ```
 This view provides a lightweight alternative to the GUI, excellent for verifying placement alignment and macro geometry.
 
-<img width="1210" height="773" alt="Image" src="" />
+<img width="1210" height="773" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/Images/Openroadpic7.png" />
 
 ---
 

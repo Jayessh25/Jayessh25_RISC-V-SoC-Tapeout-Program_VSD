@@ -315,7 +315,7 @@ The process stops automatically before clock tree synthesis, as per the target s
 After completion, layout files will be available in:
 
 ```
-results/sky130hd/gcd/base/
+results/nangate45/gcd/base/
 ```
 <img width="1210" height="773" alt="Image" src="" />
 
@@ -346,7 +346,7 @@ openroad -gui
 Then, through the GUI:
 
 * Navigate to `File → Open`
-* Load `results/sky130hd/gcd/base/2_floorplan.odb` for the floorplan view
+* Load `results/nangate45/gcd/base/2_floorplan.odb` for the floorplan view
 
   <img width="1280" height="800" alt="Image" src="" />
   <img width="1210" height="773" alt="Image" src="" />
@@ -369,16 +369,16 @@ KLayout works with `.def` format files. Since OpenROAD produces `.odb` outputs, 
 openroad
 read_lef platforms/sky130hd/lef/sky130_fd_sc_hd.tlef
 read_lef platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef
-read_db results/sky130hd/gcd/base/2_floorplan.odb
-write_def results/sky130hd/gcd/base/2_floorplan.def
-read_db results/sky130hd/gcd/base/3_place.odb
-write_def results/sky130hd/gcd/base/3_place.def
+read_db results/nangate45/gcd/base/2_floorplan.odb
+write_def results/nangate45/gcd/base/2_floorplan.def
+read_db results/nangate45/gcd/base/3_place.odb
+write_def results/nangate45/gcd/base/3_place.def
 exit
 ```
 #### Verify files are generated
 
 ```bash
-ls -lh results/sky130hd/gcd/base/2_floorplan.def results/sky130hd/gcd/base/3_place.def
+ls -lh results/nangate45/gcd/base/2_floorplan.def results/nangate45/gcd/base/3_place.def
 ```
 
 <img width="1213" height="79" alt="Image" src="" />
@@ -386,7 +386,7 @@ ls -lh results/sky130hd/gcd/base/2_floorplan.def results/sky130hd/gcd/base/3_pla
 #### Opening in KLayout
 
 ```bash
-klayout -l platforms/sky130hd/lef/sky130_fd_sc_hd.tlef -l platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef results/sky130hd/gcd/base/2_floorplan.def
+klayout -l platforms/sky130hd/lef/sky130_fd_sc_hd.tlef -l platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef results/nangate45/gcd/base/2_floorplan.def
 ```
 This view provides a lightweight alternative to the GUI, excellent for verifying placement alignment and macro geometry.
 
@@ -431,3 +431,20 @@ By mastering this open-source workflow, you’ve effectively experienced the **f
 * Ran the `gcd` design flow up to placement
 * Visualized results in both GUI and KLayout
 * Validated the structure and layout geometry successfully
+
+---
+---
+
+
+<div align="center">
+
+**📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  
+**👨‍💻 Author:** [Jayessh25](https://github.com/Jayessh25)  
+**📚 Program:** VLSI System Design (VSD)
+
+[![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
+[![Stars](https://img.shields.io/github/stars/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD?style=social)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)
+
+</div>
+
+---

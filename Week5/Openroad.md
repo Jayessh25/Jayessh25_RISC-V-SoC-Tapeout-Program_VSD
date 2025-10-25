@@ -21,20 +21,20 @@ OpenROAD-flow-scripts (ORFS) is a fully autonomous, RTL-GDSII flow for rapid arc
 3. [Understanding ORFS Directory Structure](#understanding-orfs-directory-structure)
 4. [OpenROAD Installation & Execution Flow](#-openroad-installation--execution-flow)
    - [OpenROAD vs OpenROAD-Flow-Scripts](#⚖️-openroad-vs-openroad-flow-scripts)
-   - [Comments to Installation](#1-comments-to-installation)
+   - [Comments to Installation](#comments-to-installation)
    - [Required Packages](#required-packages)
    - [Steps to Install OpenROAD and Run GUI](#steps-to-install-openroad-and-run-gui)
-5. [Executing the Flow](#2-executing-the-flow)
+5. [Executing the Flow](#executing-the-flow)
    - [Launching the Flow up to Placement](#launching-the-flow-up-to-placement)
-6. [Visualizing the Physical Layout](#3-visualizing-the-physical-layout)
+6. [Visualizing the Physical Layout](#visualizing-the-physical-layout)
    - [Method 1 – OpenROAD GUI](#method-1-openroad-gui)
    - [Method 2 – Viewing through KLayout](#method-2-viewing-through-klayout)
      - [Converting ODB to DEF](#converting-odb-to-def)
      - [Verify Files Generated](#verify-files-are-generated)
      - [Opening in KLayout](#opening-in-klayout)
-7. [Notes and Tips](#6-notes-and-tips)
-8. [Results Snapshot](#7-results-snapshot)
-9. [Final Thoughts](#8-final-thoughts)
+7. [Notes and Tips](#notes-and-tips)
+8. [Results Snapshot](#results-snapshot)
+9. [Final Thoughts](#final-thoughts)
 10. [Summary](#summary)
 
 
@@ -127,7 +127,7 @@ Whether you're a researcher tuning placement algorithms or an engineer running a
 - **OpenROAD-Flow-Scripts** = the vehicle 🚗 that drives from RTL to GDSII using that engine.  
 
 
-### 1. Comments to Installation
+###  Comments to Installation
 
 Together, they make open-source silicon design faster, smarter, and truly accessible. 🌍💻
 
@@ -304,7 +304,7 @@ echo 'export YOSYS_EXE=/usr/local/bin/yosys' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-##  2. Executing the Flow
+##   Executing the Flow
 
 With everything built and configured, the next step is to **run the flow** for our design.
 
@@ -334,7 +334,7 @@ results/nangate45/gcd/base/
 
 ---
 
-##  3. Visualizing the Physical Layout
+##   Visualizing the Physical Layout
 
 The results of the OpenROAD flow can be explored using two visualization tools — **OpenROAD GUI** and **KLayout**.
 Before either is used, the environment variables must be set up properly:
@@ -408,7 +408,7 @@ This view provides a lightweight alternative to the GUI, excellent for verifying
 
 ---
 
-##  6. Notes and Tips
+##   Notes and Tips
 
 * Always source `env.sh` when launching a new terminal.
 * For missing macros or warnings in KLayout, ensure both `.tlef` and `.lef` files are loaded.
@@ -416,7 +416,7 @@ This view provides a lightweight alternative to the GUI, excellent for verifying
 
 ---
 
-##  7. Results Snapshot
+##  Results Snapshot
 
 | Stage         | File Type      | Description                             |
 | :------------ | :------------- | :-------------------------------------- |
@@ -426,7 +426,7 @@ This view provides a lightweight alternative to the GUI, excellent for verifying
 
 ---
 
-##  8. Final Thoughts
+##  Final Thoughts
 
 Through this exercise, you completed a **partial OpenROAD physical design flow** — transitioning a design from **RTL to its physical placement** using open-source infrastructure.
 

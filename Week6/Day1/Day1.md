@@ -1,13 +1,49 @@
+# 🚀 Week 6 :  Sky130 Day 1 – Inception of Open-Source EDA, OpenLANE, and Sky130 PDK
+<div align="center">
 
-# 🧠 Sky130 Day 1 – Inception of Open-Source EDA, OpenLANE, and Sky130 PDK
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Week-6-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
+</div>
 
-## **Overview**
+Welcome to **Week 6** **OpenROAD Project** OpenROAD is an open-source, fully automated RTL-to-GDSII flow for digital integrated circuit (IC) design. It supports synthesis, floorplanning, placement, clock tree synthesis, routing, and final layout generation. OpenROAD enables rapid design iterations, making it ideal for academic research and industry prototyping.
 
-The **Sky130 open-source PDK** and **OpenLANE ASIC design flow** have revolutionized modern chip design by eliminating dependence on closed, expensive EDA tools.
-This framework enables students, researchers, and startups to design, simulate, and tape-out silicon chips using open-source software and a free PDK provided by SkyWater Technology Foundry.
+OpenROAD provides OpenROAD-flow-scripts as a native, ready-to-use prototyping and tapeout flow. However, it also enables the creation of any custom flow controllers based on the underlying tools, database and analysis engines. Please refer to the flow documentation here.
 
-The **Sky130 process node** (130 nm CMOS) may be legacy, but it remains widely used for its cost-effectiveness, tool maturity, and suitability for education and prototyping.
+OpenROAD-flow-scripts (ORFS) is a fully autonomous, RTL-GDSII flow for rapid architecture and design space exploration, early prediction of QoR and detailed physical design implementation. However, ORFS also enables manual intervention for finer user control of individual flow stages through Tcl commands and Python APIs.
+
+---
+## 📑 Table of Contents
+
+1. [Objective](#objective)
+2. [What is OpenROAD?](#what-is-openroad)
+3. [Understanding ORFS Directory Structure](#understanding-orfs-directory-structure)
+4. [OpenROAD Installation & Execution Flow](#-openroad-installation--execution-flow)
+   - [OpenROAD vs OpenROAD-Flow-Scripts](#⚖️-openroad-vs-openroad-flow-scripts)
+   - [Comments to Installation](#comments-to-installation)
+   - [Required Packages](#required-packages)
+   - [Steps to Install OpenROAD and Run GUI](#steps-to-install-openroad-and-run-gui)
+5. [Executing the Flow](#executing-the-flow)
+   - [Launching the Flow up to Placement](#launching-the-flow-up-to-placement)
+6. [Visualizing the Physical Layout](#visualizing-the-physical-layout)
+   - [Method 1 – OpenROAD GUI](#method-1-openroad-gui)
+   - [Method 2 – Viewing through KLayout](#method-2-viewing-through-klayout)
+     - [Converting ODB to DEF](#converting-odb-to-def)
+     - [Verify Files Generated](#verify-files-are-generated)
+     - [Opening in KLayout](#opening-in-klayout)
+7. [Notes and Tips](#notes-and-tips)
+8. [Results Snapshot](#results-snapshot)
+9. [Final Thoughts](#final-thoughts)
+10. [Summary](#summary)
+
+---
+## 🎯 **Objective**
+
+The primary objective of this project is to explore the **complete digital ASIC design flow** using the **Sky130 open-source PDK** and **OpenLANE EDA framework**.  
+It focuses on understanding each stage of the **RTL-to-GDSII flow**, from design synthesis to layout verification, using a real-world example — the **RISC-V-based SoC (picorv32a)**.  
+The project demonstrates the use of **open-source EDA tools** such as Yosys, OpenROAD, Magic, and Netgen to design, synthesize, and verify a chip ready for fabrication.  
+By the end, the goal is to achieve a functionally verified and DRC/LVS-clean layout on the **Sky130 130nm CMOS process node**, highlighting the accessibility and potential of **open-source silicon design**.
 
 ## **1. How to Talk to Computers**
 
@@ -243,9 +279,9 @@ This section provides a comprehensive overview of the **OpenLANE** end-to-end AS
 * Makes **ASIC design accessible** to students, researchers, and startups without access to costly proprietary EDA tools.
   
 <img width="1920" height="1080" alt="Image" src="" />
-
-## **3. Getting Familiar with Open Source EDA Tools (Lab)**
-
+### 3. Labs:
+##  Getting Familiar with Open Source EDA Tools (Lab)**
+ 
 ## 📂 Directory Setup
 
 Navigate to OpenLANE working directory:
@@ -361,5 +397,19 @@ Percentage\ of\ DFF = 0.108429685 \times 100
 | DFF Count   | **1613**    |
 | Flop Ratio  | **0.10843** |
 | DFF %       | **10.84%**  |
+
+---
+## 🧾 **Summary**
+
+This project successfully implements a **RISC-V processor core (picorv32a)** using the **OpenLANE RTL-to-GDSII flow**.  
+The design was synthesized, floorplanned, placed, routed, and verified on the **SkyWater Sky130 PDK**, demonstrating a fully open-source ASIC design methodology.  
+Key results include:
+
+- ✅ Verified synthesis reports with **10.84% DFF ratio** (1613 DFFs out of 14,876 cells).  
+- ✅ Successful flow execution from **RTL to GDSII**.  
+- ✅ Comprehensive understanding of **PDK files, standard cell libraries, and EDA tools**.  
+- ✅ Hands-on experience with **Magic**, **Netgen**, and **KLayout** for DRC, LVS, and visualization.  
+
+This work bridges theoretical VLSI design principles with practical ASIC implementation, showcasing how **open-source frameworks** empower education, research, and low-cost chip prototyping.
 
 ---

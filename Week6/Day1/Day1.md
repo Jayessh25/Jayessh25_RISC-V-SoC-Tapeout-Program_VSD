@@ -32,7 +32,7 @@ OpenROAD-flow-scripts (ORFS) is a fully autonomous, RTL-GDSII flow for rapid arc
    - [Challenges with Open-Source EDA](#💡-challenges-with-open-source-eda)
    - [Market and Technology Node Relevance](#💡-market-and-technology-node-relevance)
    - [Detailed OpenLANE ASIC Design Flow](#24-introduction-to-openlane-detailed-asic-design-flow)
-4. [🧪 Labs – Getting Familiar with Open Source EDA Tools](#3-labs-getting-familiar-with-open-source-eda-tools-lab)
+4. [🧪 Labs – Getting Familiar with Open Source EDA Tools](#3-labs)
    - [Directory Setup](#📂-directory-setup)
    - [Run Synthesis for `picorv32a`](#🚀-run-synthesis-for-picorv32a)
    - [Check Synthesis Reports](#📑-check-synthesis-reports)

@@ -14,29 +14,32 @@ OpenROAD provides OpenROAD-flow-scripts as a native, ready-to-use prototyping an
 OpenROAD-flow-scripts (ORFS) is a fully autonomous, RTL-GDSII flow for rapid architecture and design space exploration, early prediction of QoR and detailed physical design implementation. However, ORFS also enables manual intervention for finer user control of individual flow stages through Tcl commands and Python APIs.
 
 ---
+
 ## 📑 Table of Contents
 
-1. [Objective](#objective)
-2. [What is OpenROAD?](#what-is-openroad)
-3. [Understanding ORFS Directory Structure](#understanding-orfs-directory-structure)
-4. [OpenROAD Installation & Execution Flow](#-openroad-installation--execution-flow)
-   - [OpenROAD vs OpenROAD-Flow-Scripts](#⚖️-openroad-vs-openroad-flow-scripts)
-   - [Comments to Installation](#comments-to-installation)
-   - [Required Packages](#required-packages)
-   - [Steps to Install OpenROAD and Run GUI](#steps-to-install-openroad-and-run-gui)
-5. [Executing the Flow](#executing-the-flow)
-   - [Launching the Flow up to Placement](#launching-the-flow-up-to-placement)
-6. [Visualizing the Physical Layout](#visualizing-the-physical-layout)
-   - [Method 1 – OpenROAD GUI](#method-1-openroad-gui)
-   - [Method 2 – Viewing through KLayout](#method-2-viewing-through-klayout)
-     - [Converting ODB to DEF](#converting-odb-to-def)
-     - [Verify Files Generated](#verify-files-are-generated)
-     - [Opening in KLayout](#opening-in-klayout)
-7. [Notes and Tips](#notes-and-tips)
-8. [Results Snapshot](#results-snapshot)
-9. [Final Thoughts](#final-thoughts)
-10. [Summary](#summary)
-
+1. [🎯 Objective](#-objective)
+2. [🧠 How to Talk to Computers](#1-how-to-talk-to-computers)
+   - [Introduction to QFN-48 Package, Chip, Pads, Core, Die, and IPs](#11-introduction-to-qfn-48-package-chip-pads-core-die-and-ips)
+   - [Introduction to RISC-V](#12-introduction-to-risc-v)
+   - [From Software Applications to Hardware](#13-from-software-applications-to-hardware)
+3. [⚙️ SoC Design and OpenLANE](#2-soc-design-and-openlane)
+   - [Introduction to Open-Source Digital ASIC Design Components](#21-introduction-to-all-components-of-open-source-digital-asic-design)
+   - [Process Design Kit (PDK) Explanation](#💡-process-design-kit-pdk-explanation)
+   - [Simplified RTL-to-GDSII Flow](#22-simplified-rtl2gds-flow)
+   - [OpenLANE Platform Overview](#💡-openlane-platform-overview)
+   - [Introduction to Strive SoC and Chipsets](#23-introduction-to-openlane-and-strive-chipsets)
+   - [Strive SoC Family and Example Chips](#💡-strive-soc-family-and-example-chips)
+   - [Challenges with Open-Source EDA](#💡-challenges-with-open-source-eda)
+   - [Market and Technology Node Relevance](#💡-market-and-technology-node-relevance)
+   - [Detailed OpenLANE ASIC Design Flow](#24-introduction-to-openlane-detailed-asic-design-flow)
+4. [🧪 Labs – Getting Familiar with Open Source EDA Tools](#3-labs-getting-familiar-with-open-source-eda-tools-lab)
+   - [Directory Setup](#📂-directory-setup)
+   - [Run Synthesis for `picorv32a`](#🚀-run-synthesis-for-picorv32a)
+   - [Check Synthesis Reports](#📑-check-synthesis-reports)
+   - [Flop Ratio Calculation](#🧮-flop-ratio-calculation)
+5. [📊 Results & Report Summary](#📁-report-summary)
+6. [🧾 Project Summary](#🧾-summary)
+7. [📚 References & Repository](#📂-repository)
 ---
 ## 🎯 **Objective**
 
@@ -411,5 +414,18 @@ Key results include:
 - ✅ Hands-on experience with **Magic**, **Netgen**, and **KLayout** for DRC, LVS, and visualization.  
 
 This work bridges theoretical VLSI design principles with practical ASIC implementation, showcasing how **open-source frameworks** empower education, research, and low-cost chip prototyping.
+
+---
+
+<div align="center">
+
+**📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  
+**👨‍💻 Author:** [Jayessh25](https://github.com/Jayessh25)  
+**📚 Program:** VLSI System Design (VSD)
+
+[![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
+[![Stars](https://img.shields.io/github/stars/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD?style=social)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)
+
+</div>
 
 ---

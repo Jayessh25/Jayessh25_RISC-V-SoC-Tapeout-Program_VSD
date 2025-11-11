@@ -282,6 +282,9 @@ This section provides a comprehensive overview of the **OpenLANE** end-to-end AS
 * Makes **ASIC design accessible** to students, researchers, and startups without access to costly proprietary EDA tools.
   
 <img width="1920" height="1080" alt="Image" src="" />
+
+---
+
 ### 3. Labs:
 ##  Getting Familiar with Open Source EDA Tools (Lab)**
  

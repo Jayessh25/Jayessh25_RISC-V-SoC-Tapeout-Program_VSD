@@ -356,8 +356,7 @@ Open Yosys cell stat file:
 less 1-yosys_4.stat.rpt
 ```
 
-<img width="1280" height="768" alt="Image" src="" />
-<img width="1280" height="768" alt="Image" src="" />
+<img width="1280" height="768" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Commant12.png" />
 
 
 | Description           | Screenshot                                                   |

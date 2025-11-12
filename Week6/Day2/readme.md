@@ -7,6 +7,8 @@
 
 </div>
 
+Wlecome to **Day 2** – **Floorplanning Fundamentals**, the focus was on understanding and implementing the floorplanning stage of the ASIC design flow using the **Sky130 PDK** within the **OpenLANE environment**. The process involved defining key physical parameters such as die area, core utilization, and aspect ratio, followed by setting up I/O pin placements and establishing a robust power distribution network (PDN) with proper tap cell insertion. Using OpenLANE configuration switches, the floorplan was customized and optimized for design efficiency.
+
 ---
 
 ## 📑 Table of Contents

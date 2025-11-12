@@ -1,3 +1,46 @@
+# 🚀 Week 6 :  Sky130 Day 2 – Floorplanning Fundamentals LABS
+<div align="center">
+
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Week-6-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+
+</div>
+
+Wlecome to **Day 2** – **Floorplanning Fundamentals**, the focus was on understanding and implementing the floorplanning stage of the ASIC design flow using the **Sky130 PDK** within the **OpenLANE environment**. The process involved defining key physical parameters such as die area, core utilization, and aspect ratio, followed by setting up I/O pin placements and establishing a robust power distribution network (PDN) with proper tap cell insertion. Using OpenLANE configuration switches, the floorplan was customized and optimized for design efficiency.
+
+---
+
+## 📑 Table of Contents
+
+1. [🎯 Objective](#-objective)
+2. [1️⃣ Floorplan Fundamentals](#1-floorplan-fundamentals)
+   - [🗺️ What is Floorplanning?](#️-what-is-floorplanning)
+   - [🎯 Floorplan Quality Metrics](#-floorplan-quality-metrics)
+   - [✅ Good vs Bad Floorplan](#-good-vs-bad-floorplan)
+   - [⚠️ Floorplan Red Flags](#️-floorplan-red-flags)
+3. [2️⃣ Floorplan Configuration & Execution](#2-floorplan-configuration--execution)
+   - [🎛️ Essential Floorplan Switches](#️-essential-floorplan-switches)
+   - [📊 Configuration Guidelines](#-configuration-guidelines)
+   - [🚀 Running Floorplan in OpenLANE](#-running-floorplan-in-openlane)
+   - [📐 Area Calculation](#area-calculation)
+4. [3️⃣ Analyzing and Visualizing Floorplan Results](#3-analyzing-and-visualizing-floorplan-results)
+   - [📊 Floorplan Results Analysis](#-floorplan-results-analysis)
+   - [🧩 I/O Placer Log Analysis](#-io-placer-log-analysis)
+   - [📂 DEF File (Design Exchange Format)](#-def-file-design-exchange-format)
+   - [📈 Key Metrics Extraction](#-key-metrics-extraction)
+   - [🎨 Visualizing with MAGIC Layout Viewer](#-visualizing-with-magic-layout-viewer)
+   - [🔍 Critical Areas to Inspect](#-critical-areas-to-inspect)
+5. [4️⃣ Placement Commands](#placement-commands)
+   - [📂 Loading the .def File into Magic](#loading-the-def-file-into-magic)
+   - [✅ Quality Checks](#-quality-checks)
+   - [⚠️ Common Issues and Fixes](#️-common-issues-and-fixes)
+6. [💡 Key Takeaways](#-key-takeaways)
+7. [📚 Repository & Author](#-repository--author)
+   
+---
+
+## Objective
 
 In this document we will go through SPICE simulation of a inverter cell whose SPICE deck is obtained from the layout of an inverter on the opensource tool `magic`. We open a custom inverter design in magic and extract the post-layout SPICE deck for SPICE simulation. The document also goes through simple DRC violations that are fixed by updating the `sky130A.tech` file. 
 

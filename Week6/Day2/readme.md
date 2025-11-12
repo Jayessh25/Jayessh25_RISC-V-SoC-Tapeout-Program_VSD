@@ -1,4 +1,4 @@
-# 🚀 Week 6 :  Sky130 Day 2 – Floorplanning Fundamentals
+# 🚀 Week 6 :  Sky130 Day 2 – Floorplanning Fundamentals LABS
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
@@ -9,11 +9,6 @@
 
 ---
 
-## 📑 Table of Contents
-
-1. [Floorplan Fundamentals](#1-floorplan-fundamentals)
-2. [Floorplan Configuration & Execution](#2-floorplan-configuration--execution)
-3. [Analyzing and Visualizing Floorplan Results](#3-analyzing-and-visualizing-floorplan-results)
 ## 📑 Table of Contents
 
 1. [🎯 Objective](#-objective)

@@ -36,7 +36,7 @@ It focuses on understanding each stage of the **RTL-to-GDSII flow**, from design
    - [Flop Ratio Calculation](#🧮-flop-ratio-calculation)
 5. [📊 Results & Report Summary](#📁-report-summary)
 6. [🧾 Project Summary](#🧾-summary)
-7. [📚 References & Repository](#📂-repository)
+
 ---
 ## 🎯 **Objective**
 

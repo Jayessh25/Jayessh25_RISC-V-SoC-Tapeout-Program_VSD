@@ -138,6 +138,45 @@ exit
 ![Setup slack]()
 
 ---
+## 🎬 Final Output {#final-gdsii}
+
+### 📄 Final DEF File Structure
+
+The `picorv32a.def` file contains:
+
+```
+COMPONENTS <count>      # All placed cells
+PINS <count>            # I/O connections
+NETS <count>            # Routed nets
+SPECIALNETS <count>     # Power/ground
+VIAS <count>            # Inter-layer vias
+```
+
+![Final DEF File](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command19.png)
+The final GDS Picture is at " cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/11-11_19-35/results/routing/" there wil be one png file
+
+---
+
+## 🏆 Achievement Checklist
+
+- [x] 📍 Placement optimized and verified
+- [x] ⚡ PDN generated with proper grid
+- [x] 🌐 Global routing completed
+- [x] 🎯 Detailed routing with 0 DRC violations
+- [x] ✨ Final GDSII ready for fabrication
+
+---
+
+## 🎓 Key Takeaways
+
+| Concept | Why It Matters |
+|---------|---------------|
+| **PDN** | Powers every transistor reliably |
+| **Global Routing** | Plans congestion-free paths |
+| **Detailed Routing** | Produces manufacturable metal shapes |
+| **DRC Clean** | Ensures fabrication success |
+
+---
 
 
 <div align="center">

@@ -135,14 +135,14 @@ exit
 ```
 
 - Running OpenRoad
-![Running Openroad]()
-![Running Openroad]()
+![Running Openroad](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command21.png)
+![Running Openroad](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command22.png)
 
 - Post-route Hold Slack
-![hold slack]()
+![hold slack](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command23.png)
 
 - Post-route Setup Slack
-![Setup slack]()
+![Setup slack](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command24.png)
 
 ---
 ## 🎬 Final Output {#final-gdsii}

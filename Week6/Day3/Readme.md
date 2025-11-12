@@ -70,25 +70,25 @@ magic -T sky130A.tech sky130_inv.mag &
 
 To indentify NMOS and PMOS in the layout, simply hover over the white box shown in the image and press 's'. On the `tkcon 2.3 Main` file you can see it's description
 
-![NMOS]()
-![PMOS]()
+![NMOS](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Screenshot%202025-11-12%20174756.png)
+![PMOS](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Screenshot%202025-11-12%20174832.png)
 
 ## Indentifying Correct Connections
 In order to check the proper connectivity of the drain terminals of the transistor with the output port, the source terminal of PMOS with VDD and source terminal of NMOS with GND, simply hover over the terminals and press 's' two times and you will get the desired output as shown 
 
 - Output Port Connectivity
-![output]()
+![output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Screenshot%202025-11-12%20174854.png)
 
 - PMOS Source with VDD
-![PMOS SRC]()
+![PMOS SRC](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Screenshot%202025-11-12%20174911.png)
 
 - NMOS Source with GND
-![NMOS SRC]()
+![NMOS SRC](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Screenshot%202025-11-12%20174926.png)
 
 ## Deleting Parts to View DRC
 In magic, with a predefined layout, we can delete parts to check the DRC violations as shown below:
 
-![DRC Violation]()
+![DRC Violation](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Screenshot%202025-11-12%20174950.png)
 
 ## SPICE Extraction from Layout
 
@@ -173,7 +173,7 @@ It is defined as the the difference in timeing values at 50% voltage between inp
 - Outpu Signal Time at 1.65V = 4.04986 ns
 
 Therefore, the Rise Propogation Delay = 4.0779 - 4.04986 = 0.02804 ns
-
+![Installing the package](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Screenshot%202025-11-12%20175722.png)
 
 
 # Magic Examples

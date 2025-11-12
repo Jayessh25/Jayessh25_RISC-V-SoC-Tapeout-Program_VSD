@@ -125,7 +125,7 @@ read_def /openLANE_flow/designs/picorv32a/runs/30-10_03-34/results/routing/picor
 write_db pico_route.db
 read_db pico_route.db
 read_verilog /openLANE_flow/designs/picorv32a/runs/30-10_03-34/results/synthesis/picorv32a.synthesis_preroute.v
-read_liberty $::env(LIB_SYNTH_COMPLETE)
+read_liberty /openLANE_flow/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib
 link_design picorv32a
 read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
 set_propagated_clock [all_clocks]
@@ -139,10 +139,10 @@ exit
 ![Running Openroad](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command22.png)
 
 - Post-route Hold Slack
-![hold slack](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command23.png)
+![hold slack](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command24.png)
 
 - Post-route Setup Slack
-![Setup slack](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command24.png)
+![Setup slack](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command23.png)
 
 ---
 ## 🎬 Final Output {#final-gdsii}

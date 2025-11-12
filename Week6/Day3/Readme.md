@@ -203,11 +203,11 @@ magic -d XR &
 ## Incorrectly Implemented poly.9
 
 - Poly Rules 
-![Poly Rules]()
+![Poly Rules](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Screenshot%202025-10-31%20173051.png)
 
 For this we load the `poly.mag` file as shown below
-![Loding poly.mag]()
-![Polymag file]()
+![Loding poly.mag](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment5.9.png)
+![Polymag file](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment5.8opening%20poly.png)
 
 The DRC violation for the zoomed in images is shown below
 ![Violation]()
@@ -215,10 +215,10 @@ The DRC violation for the zoomed in images is shown below
 ### Lines Added in sky130A.tech file
 Inorder for these viloations to be fixed we add/update a few lines inside the sky130A.tech file.
 - Line updation 1
-![Line update 1]()
+![Line update 1](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment6.1.png)
 
 - Line Updation 2
-![Line Update 2]()
+![Line Update 2](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment6.2.png)
 
 Upon saving the `sky130A.tech` file, we can simply use the command given below so that it can be used in the existing magic session in the `tkon` window. 
 
@@ -229,22 +229,22 @@ drc why
 ```
 
 ### Additional Assignment
-![Additional Assignment fail]()
-![Additional Assignment pass]()
+![Additional Assignment fail](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment6.3.png)
+![Additional Assignment pass](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment6.8.png)
 
 # Incorrectly Implemented nwell.4 rules
 - nwell rules
 ![nwell]()
 
 No DRC violation even though no tap present 
-![drc vio1]()
+![drc vio1](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment6.5.png)
 
 We update the `sky130A.tech` file to fix the DRC violation
 
 - Updating sky130A.tech file
-![Update sky130A.tech file]()
-![Update sky130A.tech file]()
-![Update sky130A.tech file]()
+![Update sky130A.tech file](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment6.6.png)
+![Update sky130A.tech file](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment6.7.png)
+
 
 To include updated .tech file use the commads given below in the tkon window
 
@@ -254,10 +254,10 @@ drc check
 drc why
 ```
 - Output of DRC why
-![Nwell DRC]()
+![Nwell DRC](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment6.8.png)
 
 - Placing TAP and checking DRC
-![Nwell tap DRC]()
+![Nwell tap DRC](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment6.9.png)
 
 ---
 

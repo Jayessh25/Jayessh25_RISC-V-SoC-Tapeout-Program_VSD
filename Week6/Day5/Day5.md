@@ -1,3 +1,39 @@
+# 🚀 Week 6 :  Sky130 Day 3 – Custom Inverter Layout
+<div align="center">
+
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Week-6-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+
+</div>
+
+Wlecome to **Day 3** – **Custom Inverter Layout** we will go through SPICE simulation of a inverter cell whose SPICE deck is obtained from the layout of an inverter on the opensource tool `magic`. We open a custom inverter design in magic and extract the post-layout SPICE deck for SPICE simulation. The document also goes through simple DRC violations that are fixed by updating the `sky130A.tech` file. 
+
+---
+
+## 📑 Table of Contents
+
+1. [🎯 Objective](#-objective)
+2. [⚙️ Custom Inverter Layout Setup](#️-custom-inverter-layout-setup)
+3. [🔍 Identification of NMOS and PMOS](#-identification-of-nmos-and-pmos)
+4. [📏 Identifying Correct Connections](#-identifying-correct-connections)
+5. [⚠️ Deleting Parts to View DRC](#️-deleting-parts-to-view-drc)
+6. [🧩 SPICE Extraction from Layout](#-spice-extraction-from-layout)
+7. [⚡ SPICE Simulation](#-spice-simulation)
+8. [📊 Characterization of Inverter](#-characterization-of-inverter)
+   - [🔼 Rise Transition Time](#-rise-transition-time)
+   - [🔽 Fall Transition Time](#-fall-transision-time)
+   - [📈 Rise Propagation Delay](#-rise-propogation-delay)
+   - [📉 Fall Propagation Delay](#-fall-propogation-delay)
+9. [🏗️ Magic Examples and DRC Checks](#️-magic-examples)
+10. [📐 Incorrectly Implemented poly.9 Rule Fix](#-incorrectly-implemented-poly9)
+11. [🧱 Incorrectly Implemented nwell.4 Rule Fix](#-incorrectly-implemented-nwell4)
+12. [💡 Summary](#-summary)
+13. [📚 Repository & Author](#-repository--author)
+
+---
+
+## Objective
 In this document we will carry out the routing stage of PnR. It describes how how to incorporate the `Power Network` for the design then perform routing and visualise the final routed output on magic. It also talks about post-routing timing analysis to verify if the deisign meets timing requirements by utilizing design obtained from extracting parasitics.
 
 # Power Distribution Network 

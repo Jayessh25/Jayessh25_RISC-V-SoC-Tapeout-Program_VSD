@@ -59,13 +59,14 @@ run_cts
 gen_pdn 
 ```
 - Commands to generate PDN
-![docker]()
-![Commands 2]()
-![Commands 3]()
-![Commands 4]()
-![Commands 5]()
-![Commands 6]()
-![Commands 7]()
+![docker](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command1.png)
+![Commands 2](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command2.png)
+![Commands 3](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command3.png)
+![Commands 4](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command4.png)
+![Commands 5](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command5.png)
+![Commands 6](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command6.png)
+![Commands 7](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command7.png)
+![Commands 7](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command8.png)
 
 To load the PDN on magic follow these commands
 ```bash
@@ -74,20 +75,18 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ```
 
 - Generated Power Distribution Network
-![PDN]()
+![PDN](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command10.png)
 
 - Zoomed in to view power and ground rails
-![PWR and Gnd]()
-![STD cells]()
+![PWR and Gnd](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command11.png)
+![STD cells](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command12.png)
 
 # Routing 
 After creating the power distribution network, our design is ready for routing. Follow the command given below 
 ```bash
 run_routing
 ```
-![Routing Run]()
-![Routing Violations]()
-![Routing Success]()
+![Routing Success](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command13.png)
 
 Once the routing is completed we can view it in magic by following these commands
 ```bash
@@ -96,13 +95,14 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ```
 
 - Routed Design
-![Routed magic output]()
+![Routed magic output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command14.png)
 
 - Zommed in routed design to view metal contacts
-![Metal Contacts]()
-
+![Metal Contacts](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command15.png)
+![Metal Contacts](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command16.png)
+![Metal Contacts](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command17.png)
 - Fast route guide 
-![Fast route guide]()
+![Fast route guide](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command18.png)
 
 In the updated version of OpenLane, extracting parsitics is included in the routing process so no need to run separate commands for it. 
 

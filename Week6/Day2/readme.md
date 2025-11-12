@@ -1,6 +1,16 @@
-<summary>🏗️ Day 2 — Floorplanning Fundamentals</summary>
-<br>
-Understanding good vs bad floorplans, library cell architecture, and die/core planning.
+# 🚀 Week 6 :  Sky130 Day 2 – Floorplanning Fundamentals
+<div align="center">
+
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Week-6-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+
+</div>
+
+Welcome to **Week 6** **complete digital ASIC design flow** using the **Sky130 open-source PDK** and **OpenLANE EDA framework**.  
+It focuses on understanding each stage of the **RTL-to-GDSII flow**, from design synthesis to layout verification, using a real-world example — the **RISC-V-based SoC (picorv32a)**.  
+
+---
 
 ## 📑 Table of Contents
 
@@ -153,14 +163,36 @@ Good Floorplan = {Utilization: 50-70%, Aspect Ratio: 0.8-1.2, No congestion}
 ---
 
 ### 🚀 Running Floorplan in OpenLANE
+# Floorplan Commands
 
-Execute floorplan:
+Inorder to carry out the floorplan, we need to continue from the synthesis step in OpenLane flow
 
-```tcl
-% run_floorplan
+```bash
+cd openlane
+docker
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+run_synthesis
+run_floorplan
 ```
+![Floorplan Run]()
+![Floorplan Success]()
 
-![Floorplan Execution]()
+## Area Calculation 
+To calculate the area in microns we take dimensions from `/reults/floorplan/picorv32a.floorplan.def` directory in runs folder.
+![Area Calculation]()
+
+In the above image, we can decode that 
+- 1000 units = 1 Microns
+- Die width = 660685-0 = 660685
+- Die lenght = 671405-0 = 671405
+- Distance in Microns = Value in Unit Distance/1000
+- Die Width in Microns = 660685/1000 = 660.685 Microns
+- Die Length in Microns = 671405/1000 = 671.405 Microns
+- Area of die in Microns = 660.685 x 671.405 = 443587.212425 sq.microns
+
+To view the floorplan on magic, go into the runs command of your design file and go to floorplan and use the command
 
 **What's happening:**
 - ✅ OpenLANE executing floorplan stages
@@ -272,18 +304,23 @@ UTILIZATION = (TOTAL_CELL_AREA / CORE_AREA) * 100
 Navigate to results and launch MAGIC:
 
 ```bash
-cd designs/picorv32a/runs/[run_folder]/results/floorplan/
+# Change directory to path containing generated floorplan def
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/27-10_10-22/results/floorplan/
 
-magic -T /home/iraj/VLSI/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech \
-      lef read ../../tmp/merged.lef \
-      def read picorv32a.floorplan.def &
+# Command to load the floorplan def in magic tool
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
-
 ---
 
 #### Full Chip View
 
-![MAGIC Full View]()
+In the above command we are linking the sky130A technology file, reading the merge file we created before synthesis and reading the .def file generated during floorplan stage. 
+
+The output opened on magic will look like this 
+![Floorplan output](images/floorplan.png)
+
+We can zoom in and look at the i/o placements 
+![IO Pads](images/pins.png)
 
 **Visual Elements:**
 
@@ -372,6 +409,42 @@ magic -T /home/iraj/VLSI/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky13
    ├── 📍 Macros (if any) → Position, orientation, blockages
    └── 🟦 Standard Cell Rows → Height, spacing, continuity
 ```
+---
+# Placement Commands
+
+Inorder to carry out the placement, we need to continue from the floorplan step in OpenLane flow. The placement step performs congestion aware placement. 
+
+```bash
+cd openlane
+docker
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+run_synthesis
+run_floorplan
+run_placement
+```
+![Run_Placement]()
+![Placement Success]()
+
+## Loading the .def file into magic
+To view the floorplan on magic, go into the runs command of your design file and go to floorplan and use the command
+
+```bash
+# Change directory to path containing generated placement def
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/27-10_10-22/results/placement/
+
+# Command to load the placement def in magic tool
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
+
+In the above command we are linking the sky130A technology file, reading the merge file we created before synthesis and reading the .def file generated during floorplan stage. 
+
+The output of the placement process looks like the below image 
+![Placement]()
+
+Upon zooming in we can view the standard cells used 
+![Standard cells]()
 
 ---
 

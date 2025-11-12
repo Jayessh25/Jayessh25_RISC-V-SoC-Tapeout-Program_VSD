@@ -61,7 +61,7 @@ By the end, the goal is to achieve a functionally verified and DRC/LVS-clean lay
 * The **System-on-Chip (SoC)** integrates multiple **IP blocks** such as memory, processors, and I/O controllers within a single die.
 * Proper **pad arrangement**, **bonding wire routing**, and **substrate design** ensure minimal signal interference, reduced noise, and enhanced device reliability.
 
-<img width="1546" height="856" alt="Image" src="" />
+<img width="1546" height="856" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Screenshot%202025-10-27%20212555.png" />
 
 ---
 
@@ -88,7 +88,8 @@ By the end, the goal is to achieve a functionally verified and DRC/LVS-clean lay
 * This involves clocking, synchronization, timing constraints, and physical placement rules.
 
 
-<img width="1920" height="1080" alt="Image" src="" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Screenshot%202025-10-27%20213829.png" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Screenshot%202025-10-27%20213852.png" />
 
 
 ## **2. SoC Design and OpenLANE**
@@ -101,7 +102,7 @@ By the end, the goal is to achieve a functionally verified and DRC/LVS-clean lay
 * **PDK (Process Design Kit):** Provides foundry-specific models, rules, and device libraries.
 * These components together form a complete **ASIC flow** — from RTL coding to a manufacturable chip layout.
 
-<img width="1920" height="1080" alt="Image" src="" />
+
 
 ---
 
@@ -155,7 +156,7 @@ OpenLANE automates this process through several major stages:
 * **Timing Verification:** STA (Static Timing Analysis) ensures timing closure.
 * Confirms the design meets all fabrication constraints.
 
-<img width="1920" height="1080" alt="Image" src="" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Screenshot%202025-10-27%20220211.png" />
 
 ---
 
@@ -197,8 +198,8 @@ OpenLANE automates this process through several major stages:
   * On-chip **analog IPs**
 * Fabricated using **Sky130 PDK** via open multi-project wafer (MPW) runs.
 * Visual layouts and die photos show real hardware results from fully open-source flows.
+<img width="1920" height="1080" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Screenshot%202025-10-27%20221523.png" />
 
-<img width="1920" height="1080" alt="Image" src="" />
 
 ---
 
@@ -280,8 +281,7 @@ This section provides a comprehensive overview of the **OpenLANE** end-to-end AS
 * Fully automated and repeatable flow, ensuring **reproducibility** and **scalability**.
 * Enables rapid **design iterations**, optimization, and exploration of trade-offs (area vs. timing vs. power).
 * Makes **ASIC design accessible** to students, researchers, and startups without access to costly proprietary EDA tools.
-  
-<img width="1920" height="1080" alt="Image" src="" />
+  <img width="1920" height="1080" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Screenshot%202025-10-27%20221925.png" />
 
 ---
 
@@ -308,7 +308,7 @@ ls -ltr
 
 | Description                 | Screenshot                                                           |
 | --------------------------- | -------------------------------------------------------------------- |
-| Listing OpenLane workspace  | <img width="1280" height="768" alt="Image" src="" /> |
+| Listing OpenLane workspace  | <img width="1280" height="768" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Commant1.png" /> |
 
 
 ---
@@ -333,11 +333,11 @@ exit
 
 ### 📸 Screenshots — Running OpenLane
 
-<img width="1280" height="768" alt="Image" src="" />
+<img width="1280" height="768" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Commant3.png" />
 
-<img width="1280" height="768" alt="Image" src="" />
+<img width="1280" height="768" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Commant8preparationstage.png" />
 
-<img width="1280" height="768" alt="Image" src="" />
+<img width="1280" height="768" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Commant11.1.png" />
 
 ---
 
@@ -361,8 +361,8 @@ less 1-yosys_4.stat.rpt
 
 | Description           | Screenshot                                                   |
 | --------------------- | ------------------------------------------------------------ |
-| Yosys cell stats      | <img width="1280" height="768" alt="Image" src="" /> |
-| Highlighted DFF count | <img width="1280" height="768" alt="Image" src="" /> |
+| Yosys cell stats      | <img width="1280" height="768" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Commant11.2.png" /> |
+| Highlighted DFF count | <img width="1280" height="768" alt="Image" src="https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day1/Images/Commant11.2.png" /> |
 
 
 ---

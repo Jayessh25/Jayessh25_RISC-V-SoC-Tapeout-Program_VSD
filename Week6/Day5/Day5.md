@@ -1,4 +1,4 @@
-# 🚀 Week 6 :  Sky130 Day 3 – Custom Inverter Layout
+# 🚀 Week 6 :  Sky130 Day 5 – Power Distribution Network & Routing
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
@@ -7,34 +7,40 @@
 
 </div>
 
-Wlecome to **Day 3** – **Custom Inverter Layout** we will go through SPICE simulation of a inverter cell whose SPICE deck is obtained from the layout of an inverter on the opensource tool `magic`. We open a custom inverter design in magic and extract the post-layout SPICE deck for SPICE simulation. The document also goes through simple DRC violations that are fixed by updating the `sky130A.tech` file. 
+Wlecome to **Day 5** – **Custom Inverter Layout** we will go through SPICE simulation of a inverter cell whose SPICE deck is obtained from the layout of an inverter on the opensource tool `magic`. We open a custom inverter design in magic and extract the post-layout SPICE deck for SPICE simulation. The document also goes through simple DRC violations that are fixed by updating the `sky130A.tech` file. 
 
 ---
 
 ## 📑 Table of Contents
 
 1. [🎯 Objective](#-objective)
-2. [⚙️ Custom Inverter Layout Setup](#️-custom-inverter-layout-setup)
-3. [🔍 Identification of NMOS and PMOS](#-identification-of-nmos-and-pmos)
-4. [📏 Identifying Correct Connections](#-identifying-correct-connections)
-5. [⚠️ Deleting Parts to View DRC](#️-deleting-parts-to-view-drc)
-6. [🧩 SPICE Extraction from Layout](#-spice-extraction-from-layout)
-7. [⚡ SPICE Simulation](#-spice-simulation)
-8. [📊 Characterization of Inverter](#-characterization-of-inverter)
-   - [🔼 Rise Transition Time](#-rise-transition-time)
-   - [🔽 Fall Transition Time](#-fall-transision-time)
-   - [📈 Rise Propagation Delay](#-rise-propogation-delay)
-   - [📉 Fall Propagation Delay](#-fall-propogation-delay)
-9. [🏗️ Magic Examples and DRC Checks](#️-magic-examples)
-10. [📐 Incorrectly Implemented poly.9 Rule Fix](#-incorrectly-implemented-poly9)
-11. [🧱 Incorrectly Implemented nwell.4 Rule Fix](#-incorrectly-implemented-nwell4)
-12. [💡 Summary](#-summary)
-13. [📚 Repository & Author](#-repository--author)
-
+2. [⚙️ Power Distribution Network (PDN)](#-power-distribution-network)
+   - [🔧 Commands to Generate PDN](#-commands-to-generate-pdn)
+   - [🧩 Loading PDN in Magic](#-loading-pdn-in-magic)
+   - [🔍 PDN Visualization](#-pdn-visualization)
+3. [🚦 Routing Process](#-routing)
+   - [⚙️ Running Routing in OpenLANE](#️-running-routing-in-openlane)
+   - [🖥️ Viewing Routed Design in Magic](#️-viewing-routed-design-in-magic)
+   - [🔩 Metal Contacts and Fast Route Guide](#-metal-contacts-and-fast-route-guide)
+4. [🧠 Post-Route Timing Analysis](#-post-route-timing-analysis)
+   - [⚙️ Running OpenROAD for Timing](#️-running-openroad-for-timing)
+   - [📉 Setup and Hold Slack Results](#-setup-and-hold-slack-results)
+5. [🎬 Final Output](#-final-output-final-gdsii)
+   - [📄 Final DEF File Structure](#-final-def-file-structure)
+6. [🏆 Achievement Checklist](#-achievement-checklist)
+7. [🎓 Key Takeaways](#-key-takeaways)
+8. [📚 Repository & Author](#-repository--author)
 ---
 
 ## Objective
-In this document we will carry out the routing stage of PnR. It describes how how to incorporate the `Power Network` for the design then perform routing and visualise the final routed output on magic. It also talks about post-routing timing analysis to verify if the deisign meets timing requirements by utilizing design obtained from extracting parasitics.
+
+The objective of **Day 5 – Power Distribution Network (PDN) & Routing** is to complete the final physical implementation steps of the ASIC design using **OpenLANE** with the **Sky130 PDK**.  
+This involves generating a robust **Power Distribution Network (PDN)** to ensure stable power delivery across all standard cells and performing **detailed routing** to connect all logic nets.  
+The session focuses on executing OpenLANE commands for PDN creation, running **global and detailed routing**, and visualizing results using **Magic Layout**.  
+It also includes **post-route timing analysis** using **OpenROAD** to verify design timing closure, ensuring that setup and hold constraints are satisfied after parasitic extraction.  
+By completing this stage, the design achieves a **DRC-clean, fully routed layout** — ready for **GDSII generation** and tape-out.
+
+---
 
 # Power Distribution Network 
 To create a power distribution network, lets start from scratch by creating a new OpenLane flow. Follow the commands given below
@@ -177,7 +183,15 @@ The final GDS Picture is at " cd Desktop/work/tools/openlane_working_dir/openlan
 | **DRC Clean** | Ensures fabrication success |
 
 ---
+## 💡 Summary
 
+In this session, we executed the **Power Distribution Network (PDN)** generation and **Routing** stages for the `picorv32a` RISC-V core using **OpenLANE** and **Sky130 PDK**.  
+We initiated PDN creation with `gen_pdn`, visualized the resulting power and ground grids in **Magic**, and verified the presence of VDD/VSS rails across all standard cells.  
+Following PDN setup, the **routing phase** was executed using `run_routing`, successfully completing both **global** and **detailed routing** without DRC violations.  
+Post-routing, we performed **timing analysis in OpenROAD**, imported `.spef` parasitics, and confirmed that the design met setup and hold constraints.  
+This marks the final step of the physical design flow, yielding a **clean routed layout** and preparing the project for **GDSII export and fabrication readiness**.
+
+---
 
 <div align="center">
 

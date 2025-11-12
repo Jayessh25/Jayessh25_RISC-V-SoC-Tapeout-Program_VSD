@@ -55,7 +55,7 @@ cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/
 ls -ltr
 ```
 
-![VSDLIB]()
+![VSDLIB](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment3.1(gitclone).png)
 
 Run the command below to open the inverter layout in magic 
 
@@ -63,7 +63,8 @@ Run the command below to open the inverter layout in magic
 magic -T sky130A.tech sky130_inv.mag &
 ```
 
-![Inverter]()
+![Inverter](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment3.3(gitclone).png)
+![Inverter](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment3.4.png)
 
 ## Identification of NMOS and PMOS
 
@@ -101,15 +102,15 @@ ext2spice
 ```
 
 - SPICE Extraction in tkon
-![SPICE Extraction]()
+![SPICE Extraction](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment4.3.png)
 
 The .spice file obtained is stored in the directory as shown below
 
-![Spice directory]()
+![Spice directory](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment4.4.png)
 
 The obtained netlist is shown below
 
-![Netlist]()
+![Netlist](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment4.5.png)
 
 ## SPICE Simulation
 Inorder to run the SPICE simulation, we update the obtained inverter netlist, and add:
@@ -119,8 +120,8 @@ Inorder to run the SPICE simulation, we update the obtained inverter netlist, an
 - Update the model names of trasistors to `pshort_model.0` and `nshort_model.0`
 - Capacitance - `C6` to smoothen out sharp edges. The update netlist is shown below:
 - Add command to perform `transient analysis`.
-![Root Box]()
-![Updated netlist]()
+
+![Updated netlist](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment4.7.png)
 
 After saving the file, we go back to the terminal and perform SPICE simulation in `ngspice`. Followi these commands:
 
@@ -128,10 +129,10 @@ After saving the file, we go back to the terminal and perform SPICE simulation i
 ngspice sky130A_inv.spice # enters into ngspice environment
 plot y vs time a # Performs transient analysis
 ```
-![ngspice]()
+![ngspice](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment5.0.png)
 
 Upon running the command, we obtain the following result:
-![transient analysis]()
+![transient analysis](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment5.1.png)
 
 ## Characterization of Inverter
 From the transient analysis output, we can characterize the cell by finding it's:
@@ -150,10 +151,7 @@ It is defined as the difference between output rise time at 80% voltage and 20% 
 Therefore, Rise Transistion Time = 2.24669 - 2.18234 = 0.28456 ns
 
 - Rise Transition at 20%
-![Rise 20%]()
-
 - Rise Transition at 80%
-![Rise 80%]()
 
 ### Fall Transision Time
 It is defined as the difference between output rise time at 80% voltage and 20% voltage. 
@@ -162,21 +160,12 @@ It is defined as the difference between output rise time at 80% voltage and 20% 
 
 Therefore, Fall Transistion Time = 4.09554 - 4.05318 = 0.04236 ns
 
-- Fall Transition at 80%
-![Fall 80%]()
-
-- Fall Transistion at 20%
-![Fall 20%]()
-
 ### Rise Propogation Delay 
 It is defined as the the difference in timeing values at 50% voltage between output and input during the positive edge. At 50% Vin which is equal to 1.65V 
 - Input Signal Time at 1.65V = 2.14989 ns
 - Outpu Signal Time at 1.65V = 2.21121 ns
 
 Therefore, the Rise Propogation Delay = 2.21121 - 2.14989 = 0.06132 ns
-
-- Delay at 50% Vin
-![Rise Prop]()
 
 ### Fall Propogation Delay
 It is defined as the the difference in timeing values at 50% voltage between input and output during the negative edge. At 50% Vin which is equal to 1.65V 
@@ -185,14 +174,10 @@ It is defined as the the difference in timeing values at 50% voltage between inp
 
 Therefore, the Rise Propogation Delay = 4.0779 - 4.04986 = 0.02804 ns
 
-The values obtained for the calculations are shown below
-![Calc Values]()
+
 
 # Magic Examples
 This section of tasks describes how to install the examples of layouts to check for DRC violations along with changed made to correct the DRC violations. 
-
-To get a good understanding of the Magic tool follow this link
-[link]()
 
 
 Command to install the examples is as follows:
@@ -208,16 +193,12 @@ magic -d XR &
 ```
 
 - Installing the tar-ball package
-![Installing the package]()
+![Installing the package](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment5.4.png)
+![Installing the package](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment5.5.png)
 
 - Magicrc file 
-![Magic rc file]()
+![Magic rc file](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment5.6.png)
 
-- List of examples downloaded
-![Examples]()
-
-- Command to open Magic tool
-![Command]()
 
 ## Incorrectly Implemented poly.9
 

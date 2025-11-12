@@ -14,35 +14,33 @@ Wlecome to **Day 3** – **Custom Inverter Layout** we will go through SPICE sim
 ## 📑 Table of Contents
 
 1. [🎯 Objective](#-objective)
-2. [1️⃣ Floorplan Fundamentals](#1-floorplan-fundamentals)
-   - [🗺️ What is Floorplanning?](#️-what-is-floorplanning)
-   - [🎯 Floorplan Quality Metrics](#-floorplan-quality-metrics)
-   - [✅ Good vs Bad Floorplan](#-good-vs-bad-floorplan)
-   - [⚠️ Floorplan Red Flags](#️-floorplan-red-flags)
-3. [2️⃣ Floorplan Configuration & Execution](#2-floorplan-configuration--execution)
-   - [🎛️ Essential Floorplan Switches](#️-essential-floorplan-switches)
-   - [📊 Configuration Guidelines](#-configuration-guidelines)
-   - [🚀 Running Floorplan in OpenLANE](#-running-floorplan-in-openlane)
-   - [📐 Area Calculation](#area-calculation)
-4. [3️⃣ Analyzing and Visualizing Floorplan Results](#3-analyzing-and-visualizing-floorplan-results)
-   - [📊 Floorplan Results Analysis](#-floorplan-results-analysis)
-   - [🧩 I/O Placer Log Analysis](#-io-placer-log-analysis)
-   - [📂 DEF File (Design Exchange Format)](#-def-file-design-exchange-format)
-   - [📈 Key Metrics Extraction](#-key-metrics-extraction)
-   - [🎨 Visualizing with MAGIC Layout Viewer](#-visualizing-with-magic-layout-viewer)
-   - [🔍 Critical Areas to Inspect](#-critical-areas-to-inspect)
-5. [4️⃣ Placement Commands](#placement-commands)
-   - [📂 Loading the .def File into Magic](#loading-the-def-file-into-magic)
-   - [✅ Quality Checks](#-quality-checks)
-   - [⚠️ Common Issues and Fixes](#️-common-issues-and-fixes)
-6. [💡 Key Takeaways](#-key-takeaways)
-7. [📚 Repository & Author](#-repository--author)
-   
+2. [⚙️ Custom Inverter Layout Setup](#️-custom-inverter-layout-setup)
+3. [🔍 Identification of NMOS and PMOS](#-identification-of-nmos-and-pmos)
+4. [📏 Identifying Correct Connections](#-identifying-correct-connections)
+5. [⚠️ Deleting Parts to View DRC](#️-deleting-parts-to-view-drc)
+6. [🧩 SPICE Extraction from Layout](#-spice-extraction-from-layout)
+7. [⚡ SPICE Simulation](#-spice-simulation)
+8. [📊 Characterization of Inverter](#-characterization-of-inverter)
+   - [🔼 Rise Transition Time](#-rise-transition-time)
+   - [🔽 Fall Transition Time](#-fall-transision-time)
+   - [📈 Rise Propagation Delay](#-rise-propogation-delay)
+   - [📉 Fall Propagation Delay](#-fall-propogation-delay)
+9. [🏗️ Magic Examples and DRC Checks](#️-magic-examples)
+10. [📐 Incorrectly Implemented poly.9 Rule Fix](#-incorrectly-implemented-poly9)
+11. [🧱 Incorrectly Implemented nwell.4 Rule Fix](#-incorrectly-implemented-nwell4)
+12. [💡 Summary](#-summary)
+13. [📚 Repository & Author](#-repository--author)
+
 ---
 
 ## Objective
 
-In this document we will go through SPICE simulation of a inverter cell whose SPICE deck is obtained from the layout of an inverter on the opensource tool `magic`. We open a custom inverter design in magic and extract the post-layout SPICE deck for SPICE simulation. The document also goes through simple DRC violations that are fixed by updating the `sky130A.tech` file. 
+The objective of **Day 3 – Custom Inverter Layout** is to design, extract, and simulate a **custom CMOS inverter** using open-source VLSI design tools.  
+The process involves opening the inverter layout in **Magic**, extracting the **post-layout SPICE netlist**, and performing a **transient analysis** using **ngspice** to validate its switching characteristics.  
+Additionally, this session demonstrates **identification of transistors and connections**, **fixing DRC violations**, and **updating the `sky130A.tech` file** to correctly implement rules such as `poly.9` and `nwell.4`.  
+Through this flow, we bridge the gap between **layout-level design** and **circuit-level verification**, reinforcing the fundamentals of custom cell design.
+
+---
 
 # Custom Inverter Layout
 Inorder to open the custom inverter layout on magic, we must clone the github repo given below
@@ -234,10 +232,10 @@ drc why
 
 # Incorrectly Implemented nwell.4 rules
 - nwell rules
-![nwell]()
+![nwell](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Screenshot%202025-10-31%20180016.png)
 
 No DRC violation even though no tap present 
-![drc vio1](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment6.5.png)
+![drc vio1](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment6.5nwellerror.png)
 
 We update the `sky130A.tech` file to fix the DRC violation
 
@@ -260,6 +258,16 @@ drc why
 ![Nwell tap DRC](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment6.9.png)
 
 ---
+
+## 💡 Summary
+
+In this session, we successfully explored the **custom inverter layout design flow** using **Magic** and **Sky130 PDK**.  
+We cloned and opened the inverter layout, extracted its **SPICE netlist**, and performed **transient analysis** using **ngspice** to characterize its **rise/fall transition and propagation delays**.  
+Furthermore, we analyzed **DRC violations** such as `poly.9` and `nwell.4`, corrected them by updating the **sky130A.tech** file, and verified fixes using Magic’s DRC tools.  
+This exercise demonstrated the complete process of **custom standard cell design**, from layout editing to post-layout simulation — forming a crucial foundation for **library characterization** and **ASIC physical design**.
+
+---
+
 
 <div align="center">
 

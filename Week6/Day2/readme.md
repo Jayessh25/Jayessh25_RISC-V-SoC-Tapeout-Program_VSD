@@ -10,7 +10,7 @@ Understanding good vs bad floorplans, library cell architecture, and die/core pl
 
 ---
 
-## 🎯 Welcome to Day 2!
+## 🎯 Welcome to Day 2 Labs!
 
 Yesterday, we completed synthesis and obtained our gate-level netlist. Today, we're taking the next exciting step—**Floorplanning**! This is where we decide how to organize our chip's real estate. Think of it as being an architect planning where each room goes in a house before construction begins! 🏗️
 

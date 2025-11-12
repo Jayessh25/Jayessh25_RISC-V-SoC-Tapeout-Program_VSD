@@ -210,7 +210,7 @@ For this we load the `poly.mag` file as shown below
 ![Polymag file](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Comment5.8opening%20poly.png)
 
 The DRC violation for the zoomed in images is shown below
-![Violation]()
+![Violation](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day3/Images/Screenshot%202025-11-12%20181217.png)
 
 ### Lines Added in sky130A.tech file
 Inorder for these viloations to be fixed we add/update a few lines inside the sky130A.tech file.

@@ -1,4 +1,4 @@
-# 🚀 Week 6 :  Sky130 Day 2 – Floorplanning Fundamentals LABS
+# 🚀 Week 6 :  Sky130 Day 3 – Custom Inverter Layout
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
@@ -7,7 +7,7 @@
 
 </div>
 
-Wlecome to **Day 2** – **Floorplanning Fundamentals**, the focus was on understanding and implementing the floorplanning stage of the ASIC design flow using the **Sky130 PDK** within the **OpenLANE environment**. The process involved defining key physical parameters such as die area, core utilization, and aspect ratio, followed by setting up I/O pin placements and establishing a robust power distribution network (PDN) with proper tap cell insertion. Using OpenLANE configuration switches, the floorplan was customized and optimized for design efficiency.
+Wlecome to **Day 3** – **Custom Inverter Layout** we will go through SPICE simulation of a inverter cell whose SPICE deck is obtained from the layout of an inverter on the opensource tool `magic`. We open a custom inverter design in magic and extract the post-layout SPICE deck for SPICE simulation. The document also goes through simple DRC violations that are fixed by updating the `sky130A.tech` file. 
 
 ---
 
@@ -277,4 +277,19 @@ drc why
 
 - Placing TAP and checking DRC
 ![Nwell tap DRC]()
+
+---
+
+<div align="center">
+
+**📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  
+**👨‍💻 Author:** [Jayessh25](https://github.com/Jayessh25)  
+**📚 Program:** VLSI System Design (VSD)
+
+[![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
+[![Stars](https://img.shields.io/github/stars/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD?style=social)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)
+
+</div>
+
+---
 

@@ -7,11 +7,8 @@
 
 </div>
 
-Welcome to **Week 6** **OpenROAD Project** OpenROAD is an open-source, fully automated RTL-to-GDSII flow for digital integrated circuit (IC) design. It supports synthesis, floorplanning, placement, clock tree synthesis, routing, and final layout generation. OpenROAD enables rapid design iterations, making it ideal for academic research and industry prototyping.
-
-OpenROAD provides OpenROAD-flow-scripts as a native, ready-to-use prototyping and tapeout flow. However, it also enables the creation of any custom flow controllers based on the underlying tools, database and analysis engines. Please refer to the flow documentation here.
-
-OpenROAD-flow-scripts (ORFS) is a fully autonomous, RTL-GDSII flow for rapid architecture and design space exploration, early prediction of QoR and detailed physical design implementation. However, ORFS also enables manual intervention for finer user control of individual flow stages through Tcl commands and Python APIs.
+Welcome to **Week 6** **complete digital ASIC design flow** using the **Sky130 open-source PDK** and **OpenLANE EDA framework**.  
+It focuses on understanding each stage of the **RTL-to-GDSII flow**, from design synthesis to layout verification, using a real-world example — the **RISC-V-based SoC (picorv32a)**.  
 
 ---
 

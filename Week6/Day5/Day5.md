@@ -7,7 +7,7 @@
 
 </div>
 
-Wlecome to **Day 5** – **Custom Inverter Layout** we will go through SPICE simulation of a inverter cell whose SPICE deck is obtained from the layout of an inverter on the opensource tool `magic`. We open a custom inverter design in magic and extract the post-layout SPICE deck for SPICE simulation. The document also goes through simple DRC violations that are fixed by updating the `sky130A.tech` file. 
+Wlecome to **Day 5** –  generating a robust **Power Distribution Network (PDN)** to ensure stable power delivery across all standard cells and performing **detailed routing** to connect all logic nets.  The session focuses on executing OpenLANE commands for PDN creation, running **global and detailed routing**, and visualizing results using **Magic Layout**.  It also includes **post-route timing analysis** using **OpenROAD** to verify design timing closure, ensuring that setup and hold constraints are satisfied after parasitic extraction.  
 
 ---
 

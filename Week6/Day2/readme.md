@@ -7,9 +7,6 @@
 
 </div>
 
-Welcome to **Week 6** **complete digital ASIC design flow** using the **Sky130 open-source PDK** and **OpenLANE EDA framework**.  
-It focuses on understanding each stage of the **RTL-to-GDSII flow**, from design synthesis to layout verification, using a real-world example — the **RISC-V-based SoC (picorv32a)**.  
-
 ---
 
 ## 📑 Table of Contents
@@ -17,14 +14,43 @@ It focuses on understanding each stage of the **RTL-to-GDSII flow**, from design
 1. [Floorplan Fundamentals](#1-floorplan-fundamentals)
 2. [Floorplan Configuration & Execution](#2-floorplan-configuration--execution)
 3. [Analyzing and Visualizing Floorplan Results](#3-analyzing-and-visualizing-floorplan-results)
+## 📑 Table of Contents
 
+1. [🎯 Objective](#-objective)
+2. [1️⃣ Floorplan Fundamentals](#1-floorplan-fundamentals)
+   - [🗺️ What is Floorplanning?](#️-what-is-floorplanning)
+   - [🎯 Floorplan Quality Metrics](#-floorplan-quality-metrics)
+   - [✅ Good vs Bad Floorplan](#-good-vs-bad-floorplan)
+   - [⚠️ Floorplan Red Flags](#️-floorplan-red-flags)
+3. [2️⃣ Floorplan Configuration & Execution](#2-floorplan-configuration--execution)
+   - [🎛️ Essential Floorplan Switches](#️-essential-floorplan-switches)
+   - [📊 Configuration Guidelines](#-configuration-guidelines)
+   - [🚀 Running Floorplan in OpenLANE](#-running-floorplan-in-openlane)
+   - [📐 Area Calculation](#area-calculation)
+4. [3️⃣ Analyzing and Visualizing Floorplan Results](#3-analyzing-and-visualizing-floorplan-results)
+   - [📊 Floorplan Results Analysis](#-floorplan-results-analysis)
+   - [🧩 I/O Placer Log Analysis](#-io-placer-log-analysis)
+   - [📂 DEF File (Design Exchange Format)](#-def-file-design-exchange-format)
+   - [📈 Key Metrics Extraction](#-key-metrics-extraction)
+   - [🎨 Visualizing with MAGIC Layout Viewer](#-visualizing-with-magic-layout-viewer)
+   - [🔍 Critical Areas to Inspect](#-critical-areas-to-inspect)
+5. [4️⃣ Placement Commands](#placement-commands)
+   - [📂 Loading the .def File into Magic](#loading-the-def-file-into-magic)
+   - [✅ Quality Checks](#-quality-checks)
+   - [⚠️ Common Issues and Fixes](#️-common-issues-and-fixes)
+6. [💡 Key Takeaways](#-key-takeaways)
+7. [📚 Repository & Author](#-repository--author)
+   
 ---
 
-## 🎯 Welcome to Day 2 Labs!
-
-Yesterday, we completed synthesis and obtained our gate-level netlist. Today, we're taking the next exciting step—**Floorplanning**! This is where we decide how to organize our chip's real estate. Think of it as being an architect planning where each room goes in a house before construction begins! 🏗️
-
-A good floorplan can make or break your design—it affects timing, power consumption, and even whether your chip will work at all!
+## Objective
+The objective of **Week 6 – Sky130 Day 2: Floorplanning Fundamentals** is to understand and implement the **floorplanning stage** of the ASIC physical design flow using **OpenLANE** and the **Sky130 PDK**.  
+This phase defines the **die and core dimensions**, **I/O pin placement**, **power distribution network (PDN)**, and **macro planning** — laying the groundwork for successful placement and routing.  
+Through hands-on OpenLANE commands and visualization in **Magic Layout**, we aim to:
+- Configure and execute the floorplan step from the synthesis output.  
+- Analyze DEF and log files to extract chip dimensions, utilization, and aspect ratio.  
+- Verify correctness via **I/O pin placement**, **power rings**, and **tap cell insertion**.  
+- Build a strong foundation for the **placement** and **routing** stages of the ASIC design flow.  
 
 ---
 
@@ -496,5 +522,17 @@ Upon zooming in we can view the standard cells used
 - ✅ Verification before placement prevents costly downstream issues
 
 ---
+---
 
-*"A good floorplan is like a good foundation—you don't see it in the final product, but without it, everything crumbles!"* 🏗️
+<div align="center">
+
+**📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  
+**👨‍💻 Author:** [Jayessh25](https://github.com/Jayessh25)  
+**📚 Program:** VLSI System Design (VSD)
+
+[![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
+[![Stars](https://img.shields.io/github/stars/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD?style=social)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)
+
+</div>
+
+---

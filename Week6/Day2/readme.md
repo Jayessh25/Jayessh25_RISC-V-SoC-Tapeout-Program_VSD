@@ -197,12 +197,12 @@ prep -design picorv32a
 run_synthesis
 run_floorplan
 ```
-![Floorplan Run]()
-![Floorplan Success]()
+![Floorplan Run](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment2.png)
+![Floorplan Success](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment2.1.png)
 
 ## Area Calculation 
 To calculate the area in microns we take dimensions from `/reults/floorplan/picorv32a.floorplan.def` directory in runs folder.
-![Area Calculation]()
+![Area Calculation](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment4.2.png)
 
 In the above image, we can decode that 
 - 1000 units = 1 Microns
@@ -238,7 +238,7 @@ To view the floorplan on magic, go into the runs command of your design file and
 
 **Location:** `$OPENLANE_ROOT/configuration/floorplan.tcl`
 
-![Default Floorplan Config]()
+![Default Floorplan Config](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment1.3.png)
 
 **Contains:**
 - 📋 Default values for all switches
@@ -253,7 +253,7 @@ To view the floorplan on magic, go into the runs command of your design file and
 
 **Location:** `logs/floorplan/ioPlacer.log`
 
-![IO Placer Log]()
+![IO Placer Log](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment3.1.png)
 
 **Information provided:**
 - 🔌 I/O pin placement algorithm details
@@ -274,7 +274,7 @@ To view the floorplan on magic, go into the runs command of your design file and
 
 **Location:** `results/floorplan/picorv32a.floorplan.def`
 
-![DEF File]()
+![DEF File](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment4.2.png)
 
 **Key Information:**
 
@@ -331,6 +331,9 @@ cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/27-10
 # Command to load the floorplan def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
+
+![Floorplan ](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment5.0.png)
+
 ---
 
 #### Full Chip View
@@ -338,10 +341,10 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 In the above command we are linking the sky130A technology file, reading the merge file we created before synthesis and reading the .def file generated during floorplan stage. 
 
 The output opened on magic will look like this 
-![Floorplan output](images/floorplan.png)
+![Floorplan output](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment5.1.png)
 
 We can zoom in and look at the i/o placements 
-![IO Pads](images/pins.png)
+![IO Pads](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment5.2.png)
 
 **Visual Elements:**
 
@@ -396,7 +399,7 @@ We can zoom in and look at the i/o placements
 
 #### Detailed Cell Inspection
 
-![MAGIC What View]()
+![MAGIC What View](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment5.2.png)
 
 **Achieved by:**
 1. Zoom into region of interest
@@ -445,8 +448,8 @@ run_synthesis
 run_floorplan
 run_placement
 ```
-![Run_Placement]()
-![Placement Success]()
+![Run_Placement](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment6%20run_placement.png)
+![Placement Success](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment6.1.png)
 
 ## Loading the .def file into magic
 To view the floorplan on magic, go into the runs command of your design file and go to floorplan and use the command
@@ -462,10 +465,10 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 In the above command we are linking the sky130A technology file, reading the merge file we created before synthesis and reading the .def file generated during floorplan stage. 
 
 The output of the placement process looks like the below image 
-![Placement]()
+![Placement](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment6.2.png)
 
 Upon zooming in we can view the standard cells used 
-![Standard cells]()
+![Standard cells](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day2/Images/Comment6.3.png)
 
 ---
 

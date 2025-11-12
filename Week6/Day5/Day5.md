@@ -134,15 +134,6 @@ report_checks -path_delay min_max -fields {slew trans net cap input_pins} -forma
 exit 
 ```
 
-- Running OpenRoad
-![Running Openroad]()
-
-- Post-route Hold Slack
-![hold slack]()
-
-- Post-route Setup Slack
-![Setup slack]()
-
 ---
 ## 🎬 Final Output {#final-gdsii}
 

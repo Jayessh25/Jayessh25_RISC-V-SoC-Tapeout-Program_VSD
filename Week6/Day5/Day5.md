@@ -113,7 +113,7 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 In the updated version of OpenLane, extracting parsitics is included in the routing process so no need to run separate commands for it. 
 
 - `.spef` File generation after routing
-![spef file]()
+![spef file](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/Day5/Images/Command20.png)
 
 # Post-route Timing Analysis
 Once the routing of the `picorv32a` design is completed, we perform a timing analysis again in the OpenROad environment. To perform timing analysis carry out these steps

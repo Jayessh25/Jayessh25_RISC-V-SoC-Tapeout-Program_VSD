@@ -40,18 +40,18 @@
 <details> <summary><strong>config.mk</strong></summary>
 
 ```
-  # Design and Platform Configuration
-   export DESIGN_NICKNAME = vsdbabysoc
-   export DESIGN_NAME = vsdbabysoc
-   export PLATFORM    = sky130hd
+   # Design and Platform Configuration
+   export DESIGN_NICKNAME=vsdbabysoc
+   export DESIGN_NAME=vsdbabysoc
+   export PLATFORM=sky130hd
 
   # Design Paths
-  export vsdbabysoc_DIR = /home/spatha/OpenROAD-flow-scripts/flow/designs/sky130hd/$(DESIGN_NICKNAME)
+  export vsdbabysoc_DIR=/home/jayesshsk/VLSI/OpenROAD-flow-scripts/flow/designs/sky130hd/$(DESIGN_NICKNAME)
 
   # Explicitly list Verilog files for synthesis
-   export VERILOG_FILES = /home/spatha/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc/vsdbabysoc.v \
-                         /home/spatha/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc/rvmyth.v \
-                         /home/spatha/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc/clk_gate.v
+   export VERILOG_FILES = /home/jayesshsk/VLSI/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc/vsdbabysoc.v \
+                         /home/jayesshsk/VLSI/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc/rvmyth.v \
+                         /home/jayesshsk/VLSI/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc/clk_gate.v
 
 
   # Include Directory for Verilog Header Files
@@ -75,7 +75,8 @@
  # Pin Order and Macro Placement Configurations
    export FP_PIN_ORDER_CFG = $(vsdbabysoc_DIR)/pin_order.cfg
    export MACRO_PLACEMENT_CFG = $(vsdbabysoc_DIR)/macro.cfg
-
+  
+   
  # Clock Configuration
    export CLOCK_PORT = CLK
    export CLOCK_NET  = $(CLOCK_PORT)
@@ -84,7 +85,7 @@
 # Floorplanning Configuration
   export DIE_AREA   = 0 0 1600 1600
   export CORE_AREA  = 20 20 1590 1590
-
+ 
 # Placement Configuration
   export PLACE_PINS_ARGS = -exclude left:0-600 -exclude left:1000-1600 -exclude right:* -exclude top:* -exclude bottom:*
 
@@ -93,7 +94,7 @@
   export REMOVE_ABC_BUFFERS  = 1
   export CTS_BUF_DISTANCE    = 600
   export SKIP_GATE_CLONING   = 1
-
+  
  # Magic Tool Configuration
    export MAGIC_ZEROIZE_ORIGIN = 0
    export MAGIC_EXT_USE_GDS    = 1
@@ -110,12 +111,12 @@ This script sets up environment variables and configurations for the design and 
 ```shell
 jayesshsk@jayesshsk:~/OpenROAD-flow-scripts/flow$ ls -ltrh designs/src/vsdbabysoc/
 ```
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command2.png)
 
 ```shell
 jayesshsk@jayesshsk:~/OpenROAD-flow-scripts/flow$ ls -ltrh designs/sky130hd/vsdbabysoc/
 ```
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command1.png)
 
 #### Now go to terminal and run the following commands:
 
@@ -138,38 +139,42 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
 
 This command runs the synthesis process using the specified design configuration file `config.mk` for the `vsdbabysoc` design on the `sky130hd` platform.
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command3.png)
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command4.png)
 
 #### Synthesis netlist
 
 ```shell
 jayesshsk@jayesshsk:~/OpenROAD-flow-scripts/flow$ gvim results/sky130hd/vsdbabysoc/base/1_1_yosys.v
 ```
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command5.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command6.png)
 
 #### Synthesis log
 
 ```shell
 jayesshsk@jayesshsk:~/OpenROAD-flow-scripts/flow$ gvim logs/sky130hd/vsdbabysoc/base/1_1_yosys.log
 ```
-![Alt Text](Images/4.jpg)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command5.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command7.png)
 
 #### Synthesis Check
 
 ```shell
 jayesshsk@jayesshsk:~/OpenROAD-flow-scripts/flow$ gvim reports/sky130hd/vsdbabysoc/base/synth_check.txt
 ```
-![Alt Text]()
-
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command8.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command9.png)
 
 #### Synthesis Stats
 
 ```shell
 jayesshsk@jayesshsk:~/OpenROAD-flow-scripts/flow$ gvim reports/sky130hd/vsdbabysoc/base/synth_stat.txt
 ```
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command11.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command12.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command13.png)
 
 <details> <summary><strong>synth_stat.txt</strong></summary>
 
@@ -331,13 +336,17 @@ This error is caused by commented block structures in your Liberty file avsdpll.
 
 ✅ To fix it, simply delete the entire commented block starting at line 54:
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command14.png)
 
 After saving the changes, re-run the floorplan step and the flow should proceed without syntax errors. 
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command15.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command16.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command17.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command18.png)
 
-![Alt Text]()
+
+
 
 #### Floorplan Result (GUI)
 
@@ -345,7 +354,9 @@ After saving the changes, re-run the floorplan step and the flow should proceed 
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
 ```
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command19.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command20.png)
+
 
 ------
 
@@ -355,9 +366,9 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk place
 ```
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command21.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command22.png)
 
-![Alt Text]()
 
 **Placement Result (GUI)**
 
@@ -367,8 +378,10 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_place
 
 This image shows the placement stage in OpenROAD with the **placement density** heat map enabled.
 
-![Alt Text]()
-
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command23.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command24.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command25.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command26.png)
 This image shows a zoomed-in view of the Placement Density Heatmap after the placement stage:
 
 - **Red regions** indicate areas with higher cell density, approaching 100%.
@@ -381,7 +394,7 @@ This image shows a zoomed-in view of the Placement Density Heatmap after the pla
 
 **Placement Density (%) = (Area Occupied by Cells ÷ Total Placement Area) × 100**
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command27.png)
 
 This image shows the **Pin Density Heatmap** after the placement stage.
 
@@ -389,7 +402,7 @@ This image shows the **Pin Density Heatmap** after the placement stage.
 
 **Pin Density (%) = (Number of Pins in a Region ÷ Total Area of that Region) × 100**
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command28.png)
 
 ### `run cts`
 
@@ -397,9 +410,9 @@ This image shows the **Pin Density Heatmap** after the placement stage.
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk cts
 ```
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command29.png)
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command30.png)
 
 **CTS Result (GUI)**
 
@@ -409,15 +422,15 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_cts
 
 This image shows the Clock Tree Synthesis (CTS) stage, highlighting a placed clock buffer (clkbuf_leaf_209_CLK) with its properties displayed in the Inspector, including position, orientation, and connectivity details.
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command31.png)
 
 This image shows the **Clock Tree Viewer** after CTS, illustrating the clock buffer distribution on the layout and a histogram of clock insertion delays, indicating balanced clock skew across the sinks.
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command32.png)
 
 This image shows the **Clock Tree Viewer after Clock Tree Synthesis (CTS)**, illustrating the hierarchical structure of the clock network. The root node at the top represents the clock source (`pll/CLK`), and the branches show the inserted clock buffers used to distribute the clock signal across the design. The vertical axis represents the **clock arrival times (in nanoseconds)** at each stage. The endpoints at the bottom represent the registers (clock sinks), where the clock reaches after passing through multiple buffer levels. The balanced branching and closely aligned arrival times indicate **low clock skew and a well-optimized clock tree**.
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command33.png)
 
 This image shows the **Setup Timing Report**, presenting a list of timing paths with key metrics such as:
 
@@ -444,27 +457,25 @@ This image displays the **Hold Timing Report**, showing timing paths with detail
 
 All paths listed have **positive slack**, indicating that the design meets **hold timing requirements** and is free from hold violations.
 
-![Alt Text]()
 
 This image shows the **Setup Slack Histogram** after CTS. The histogram represents the distribution of endpoint slack values, all of which are positive, indicating that there are no setup timing violations.
-
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command37.png)
 
 This image shows the **Hold Slack Histogram** after CTS. The histogram represents the distribution of hold slack values for all endpoints. All values are positive, confirming that the design meets hold timing requirements without any violations.
 
-![Alt Text]()
-
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command36.png)
 Zoomed-in view of the design after CTS, showing inserted clock buffers and routing connections.
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command38.png)
 
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command39.png)
 
 **CTS final report:**
 
 ```shell
 gvim /home/jayesshsk@jayesshsk/OpenROAD-flow-scripts/flow/reports/sky130hd/vsdbabysoc/base/4_cts_final.rpt
 ```
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command40.png)
 
 <details> <summary><strong>4_cts_final.rpt</strong></summary>
 

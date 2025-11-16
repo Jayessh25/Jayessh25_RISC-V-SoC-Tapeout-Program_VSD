@@ -444,7 +444,6 @@ This image shows the **Setup Timing Report**, presenting a list of timing paths 
 
 All paths have **positive slack**, confirming that the design meets **setup timing requirements**.
 
-![Alt Text]()
 
 This image displays the **Hold Timing Report**, showing timing paths with details such as:
 
@@ -476,6 +475,8 @@ Zoomed-in view of the design after CTS, showing inserted clock buffers and routi
 gvim /home/jayesshsk@jayesshsk/OpenROAD-flow-scripts/flow/reports/sky130hd/vsdbabysoc/base/4_cts_final.rpt
 ```
 ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command40.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command41.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command42.png)
 
 <details> <summary><strong>4_cts_final.rpt</strong></summary>
 
@@ -952,9 +953,7 @@ Total                  1.13e-02   5.72e-03   2.44e-08   1.70e-02 100.0%
 ```shell
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk route
 ```
-
-![Alt Text]()
-
-![Alt Text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command43.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command44.png)
 
 

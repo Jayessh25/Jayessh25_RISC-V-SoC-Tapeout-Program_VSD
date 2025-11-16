@@ -1,8 +1,8 @@
-# 🚀 Week 7 : – Power Distribution Network & Routing
+# 🚀 Week 7 : – OpenROAD-Flow-Scripts: Physical Design, Placement,Floorplan,Post-Route SPEF and Verilog Netlist Generation for VSDBabySoC
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
-![Day](https://img.shields.io/badge/Week-6-orange?style=for-the-badge)
+![Day](https://img.shields.io/badge/Week-7-orange?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
 </div>

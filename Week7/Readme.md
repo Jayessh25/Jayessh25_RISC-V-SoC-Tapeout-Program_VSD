@@ -1,21 +1,39 @@
-# VSD Hardware Design Program
+# 🚀 Week 7 : – Power Distribution Network & Routing
+<div align="center">
 
-## Floorplan and Placement of VSDBabySoC in OpenROAD
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Week-6-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
-### 📚 Contents
- - [RTL2GDS Flow for VSDBabySoC: Initial Steps](#rtl2gds-flow-for-vsdbabysoc-initial-steps)
-    - [Key Components of config.mk](#key-components-of-configmk)
-    - [File Structure After Setup](#file-structure-after-setup)
-  - [Run Synthesis](#run-synthesis)
-    - [Synthesis Netlist](#synthesis-netlist)
-    - [Synthesis Log](#synthesis-log)
-    - [Synthesis Check](#synthesis-check)
-    - [Synthesis Stats](#synthesis-stats)
-  - [Run Floorplan](#run-floorplan)
-    - [Floorplan Error and Fix](#floorplan-error-and-fix)
-    - [Floorplan Result (GUI)](#floorplan-result-gui)
- -  [Run Placement](#run-placement)
-    - [Placement Result (GUI)](#placement-result-gui)
+</div>
+
+Wlecome to **Day 5** –  generating a robust **Power Distribution Network (PDN)** to ensure stable power delivery across all standard cells and performing **detailed routing** to connect all logic nets.  The session focuses on executing OpenLANE commands for PDN creation, running **global and detailed routing**, and visualizing results using **Magic Layout**.  It also includes **post-route timing analysis** using **OpenROAD** to verify design timing closure, ensuring that setup and hold constraints are satisfied after parasitic extraction.  
+
+---
+
+## 📑 Table of Contents
+
+1. [🎯 Objective](#-objective)
+2. [⚙️ Power Distribution Network (PDN)](#-power-distribution-network)
+   - [🔧 Commands to Generate PDN](#-commands-to-generate-pdn)
+   - [🧩 Loading PDN in Magic](#-loading-pdn-in-magic)
+   - [🔍 PDN Visualization](#-pdn-visualization)
+3. [🚦 Routing Process](#-routing)
+   - [⚙️ Running Routing in OpenLANE](#️-running-routing-in-openlane)
+   - [🖥️ Viewing Routed Design in Magic](#️-viewing-routed-design-in-magic)
+   - [🔩 Metal Contacts and Fast Route Guide](#-metal-contacts-and-fast-route-guide)
+4. [🧠 Post-Route Timing Analysis](#-post-route-timing-analysis)
+   - [⚙️ Running OpenROAD for Timing](#️-running-openroad-for-timing)
+   - [📉 Setup and Hold Slack Results](#-setup-and-hold-slack-results)
+5. [🎬 Final Output](#-final-output-final-gdsii)
+   - [📄 Final DEF File Structure](#-final-def-file-structure)
+6. [🏆 Achievement Checklist](#-achievement-checklist)
+7. [🎓 Key Takeaways](#-key-takeaways)
+8. [📚 Repository & Author](#-repository--author)
+---
+
+## Objective
+
 
 ###  `RTL2GDS Flow for VSDBabySoC: Initial Steps`
 
@@ -956,4 +974,26 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk route
 ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command43.png)
 ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command44.png)
 
+---
+## 💡 Summary
 
+In this session, we executed the **Power Distribution Network (PDN)** generation and **Routing** stages for the `picorv32a` RISC-V core using **OpenLANE** and **Sky130 PDK**.  
+We initiated PDN creation with `gen_pdn`, visualized the resulting power and ground grids in **Magic**, and verified the presence of VDD/VSS rails across all standard cells.  
+Following PDN setup, the **routing phase** was executed using `run_routing`, successfully completing both **global** and **detailed routing** without DRC violations.  
+Post-routing, we performed **timing analysis in OpenROAD**, imported `.spef` parasitics, and confirmed that the design met setup and hold constraints.  
+This marks the final step of the physical design flow, yielding a **clean routed layout** and preparing the project for **GDSII export and fabrication readiness**.
+
+---
+
+<div align="center">
+
+**📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  
+**👨‍💻 Author:** [Jayessh25](https://github.com/Jayessh25)  
+**📚 Program:** VLSI System Design (VSD)
+
+[![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
+[![Stars](https://img.shields.io/github/stars/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD?style=social)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)
+
+</div>
+
+---

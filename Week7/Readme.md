@@ -7,33 +7,33 @@
 
 </div>
 
-Wlecome to **Day 5** –  generating a robust **Power Distribution Network (PDN)** to ensure stable power delivery across all standard cells and performing **detailed routing** to connect all logic nets.  The session focuses on executing OpenLANE commands for PDN creation, running **global and detailed routing**, and visualizing results using **Magic Layout**.  It also includes **post-route timing analysis** using **OpenROAD** to verify design timing closure, ensuring that setup and hold constraints are satisfied after parasitic extraction.  
+Wlecome to **Week7** –  is to execute the complete **RTL-to-GDSII** flow for the VSDBabySoC using the **OpenROAD-Flow-Scripts** framework on the Sky130HD PDK, starting from synthesis and progressing through floorplanning, placement, and clock tree synthesis. This includes configuring the design environment, resolving library and constraint issues, validating each stage using OpenROAD GUI tools, and performing timing, density, and structural checks after every major step. The goal is to generate a timing-clean, physically realizable layout by integrating standard-cell libraries, LEFs, GDS files, PLL/IP macros, and custom configuration settings, ultimately preparing the design for routing and final GDS export. 
 
 ---
 
 ## 📑 Table of Contents
 
 1. [🎯 Objective](#-objective)
-2. [⚙️ Power Distribution Network (PDN)](#-power-distribution-network)
-   - [🔧 Commands to Generate PDN](#-commands-to-generate-pdn)
-   - [🧩 Loading PDN in Magic](#-loading-pdn-in-magic)
-   - [🔍 PDN Visualization](#-pdn-visualization)
-3. [🚦 Routing Process](#-routing)
-   - [⚙️ Running Routing in OpenLANE](#️-running-routing-in-openlane)
-   - [🖥️ Viewing Routed Design in Magic](#️-viewing-routed-design-in-magic)
-   - [🔩 Metal Contacts and Fast Route Guide](#-metal-contacts-and-fast-route-guide)
-4. [🧠 Post-Route Timing Analysis](#-post-route-timing-analysis)
-   - [⚙️ Running OpenROAD for Timing](#️-running-openroad-for-timing)
-   - [📉 Setup and Hold Slack Results](#-setup-and-hold-slack-results)
-5. [🎬 Final Output](#-final-output-final-gdsii)
-   - [📄 Final DEF File Structure](#-final-def-file-structure)
-6. [🏆 Achievement Checklist](#-achievement-checklist)
-7. [🎓 Key Takeaways](#-key-takeaways)
-8. [📚 Repository & Author](#-repository--author)
+2. [📝 Summary](#-summary)
+3. [📂 Design Setup & Directory Structure](#-design-setup--directory-structure)
+4. [⚙️ Configuration File (config.mk)](#️-configuration-file-configmk)
+5. [🔧 Fixing avsdpll.lib Error](#-fixing-avsdplllib-error)
+6. [🏗️ Floorplanning](#-floorplanning)
+7. [📐 Floorplan Visualization in OpenROAD](#-floorplan-visualization-in-openroad)
+8. [📍 Placement](#-placement)
+9. [🌡️ Density & Pin Heatmaps](#-density--pin-heatmaps)
+10. [⏰ Clock Tree Synthesis (CTS)](#-clock-tree-synthesis-cts)
+11. [🌳 Clock Tree Viewer Analysis](#-clock-tree-viewer-analysis)
+12. [🧪 Timing Verification](#-timing-verification)
+13. [📦 Final Files & DEF/GDS Checks](#-final-files--defgds-checks)
+14. [📚 Repository & Author](#-repository--author)
+
 ---
 
 ## Objective
+The objective of Week 7 is to execute the complete RTL-to-GDSII flow for the VSDBabySoC using the OpenROAD-Flow-Scripts framework on the Sky130HD PDK, starting from synthesis and progressing through floorplanning, placement, and clock tree synthesis. This includes configuring the design environment, resolving library and constraint issues, validating each stage using OpenROAD GUI tools, and performing timing, density, and structural checks after every major step. The goal is to generate a timing-clean, physically realizable layout by integrating standard-cell libraries, LEFs, GDS files, PLL/IP macros, and custom configuration settings, ultimately preparing the design for routing and final GDS export.
 
+---
 
 ###  `RTL2GDS Flow for VSDBabySoC: Initial Steps`
 
@@ -977,13 +977,7 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk route
 ---
 ## 💡 Summary
 
-In this session, we executed the **Power Distribution Network (PDN)** generation and **Routing** stages for the `picorv32a` RISC-V core using **OpenLANE** and **Sky130 PDK**.  
-We initiated PDN creation with `gen_pdn`, visualized the resulting power and ground grids in **Magic**, and verified the presence of VDD/VSS rails across all standard cells.  
-Following PDN setup, the **routing phase** was executed using `run_routing`, successfully completing both **global** and **detailed routing** without DRC violations.  
-Post-routing, we performed **timing analysis in OpenROAD**, imported `.spef` parasitics, and confirmed that the design met setup and hold constraints.  
-This marks the final step of the physical design flow, yielding a **clean routed layout** and preparing the project for **GDSII export and fabrication readiness**.
-
----
+Week 7 focuses on running the complete RTL to GDSII flow for the VSDBabySoC using OpenROAD-Flow-Scripts on the Sky130HD PDK. The process includes synthesis, floorplanning, placement, and clock tree synthesis, followed by density, structural, and timing validation using the OpenROAD GUI. Key issues such as library parsing errors and placement optimization are resolved along the flow. By the end of the week, a timing-clean and layout-ready design is achieved, fully prepared for routing and final GDS export.
 
 <div align="center">
 

@@ -239,7 +239,7 @@ To run a docker container using the OpenSTA image, use the -v option to docker t
 docker run -i -v $HOME:/data opensta
 ```
 You now have OpenSTA installed and running inside a Docker container. After successful installation, you will see the % prompt—this indicates that the OpenSTA interactive shell is ready for use.
-
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command1.png)
 ### Timing Analysis Using Inline Commands
 
 Once inside the OpenSTA shell (% prompt), you can perform a basic static timing analysis using the following inline commands:
@@ -265,9 +265,9 @@ report_checks
   
 _This flow is useful for quick testing and debugging without writing a full TCL script._
 
-![Alt Text](Images/4.jpg)
+[![Alt Text](Images/4.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command2.png)
 
-![Alt Text](Images/5.jpg)
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command3.png)
 
 
 **Note:** We used report_checks here because only the slow liberty file (nangate45_slow.lib.gz) is loaded. 
@@ -341,6 +341,9 @@ Checking module top...
 Found and reported 0 problems.
 
 ```
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command7.png)
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command8.png)
+
 
 #### SPEF-Based Timing Analysis
 
@@ -362,7 +365,9 @@ set_input_delay -clock clk 0 {in1 in2}
 report_checks
 ```
 
-![Alt Text](Images/12.png)
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command9.png)
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command10.png)
+
 
 #### more options to explore
 
@@ -558,9 +563,9 @@ This absolute path ensures that OpenSTA can locate and execute the script correc
 
 This method ensures repeatability and makes it easy to maintain reusable timing analysis setups for your designs.
 
-![Alt Text](Images/6.jpg)
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command11.png)
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command12.png)
 
-![Alt Text](Images/7.jpg)
 
 ### VSDBabySoC basic timing analysis
 
@@ -643,6 +648,7 @@ Warning: /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_
 Warning: /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib line 23, default_fanout_load is 0.0.
 Error: /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/avsdpll.lib line 54, syntax error
 ```
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command13.png)
 
 ✅ **Fix:**
 
@@ -670,7 +676,8 @@ This should allow OpenSTA to parse the Liberty file without throwing syntax erro
 
 After fixing the Liberty file comment syntax as shown above, you can rerun the script to perform complete timing analysis for VSDBabySoC:
 
-![Alt Text](Images/11.jpg)
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command14.png)
+
 
 ### VSDBabySoC PVT Corner Analysis (Post-Synthesis Timing)
 Static Timing Analysis (STA) is performed across various **PVT (Process-Voltage-Temperature)** corners to ensure the design meets timing requirements under different conditions.
@@ -692,8 +699,7 @@ _These represent the **fastest** operating conditions._
 
 Below is the script that can be used to perform STA across the PVT corners for which the Sky130 Liberty files are available.
 
-<details>
-<summary><strong>sta_across_pvt.tcl</strong></summary>
+### sta_across_pvt.tcl
 
 ```shell
  set list_of_lib_files(1) "sky130_fd_sc_hd__tt_025C_1v80.lib"
@@ -753,6 +759,8 @@ docker run -it -v $HOME:/data opensta /data/VLSI/VSDBabySoC/OpenSTA/examples/Bab
 
 After executing the above script, you can find the generated timing reports in the STA_OUTPUT directory:
 
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command15.png)
+
 ```shell
 jayesshsk@jayesshsk:~/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT$ ls
 min_max_sky130_fd_sc_hd__ff_100C_1v65.lib.txt  min_max_sky130_fd_sc_hd__ss_100C_1v40.lib.txt  min_max_sky130_fd_sc_hd__ss_n40C_1v44.lib.txt  sta_worst_max_slack.txt
@@ -761,6 +769,7 @@ min_max_sky130_fd_sc_hd__ff_n40C_1v56.lib.txt  min_max_sky130_fd_sc_hd__ss_n40C_
 min_max_sky130_fd_sc_hd__ff_n40C_1v65.lib.txt  min_max_sky130_fd_sc_hd__ss_n40C_1v35.lib.txt  sta_tns.txt
 min_max_sky130_fd_sc_hd__ff_n40C_1v76.lib.txt  min_max_sky130_fd_sc_hd__ss_n40C_1v40.lib.txt  sta_wns.txt
 ```
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command16.png)
 
 | **File**                  | **Description**                                                     |
 | ------------------------- | ------------------------------------------------------------------- |
@@ -776,17 +785,30 @@ The following timing summary table was collected by running STA across 13 PVT co
 
 Metrics such as Worst Hold Slack, Worst Setup Slack, WNS, and TNS were extracted from the output reports.
 
-![Alt Text](Images/excel_data.png)
+| PVT_CORNER                     | Worst Setup Slack | Worst Hold Slack | WNS       | TNS          |
+|-------------------------------|-------------------|------------------|-----------|--------------|
+| sky130_fd_sc_hd_tt_025C_1v80  | 0.8595            | 0.3096           | 0         | 0            |
+| sky130_fd_sc_hd_ff_100C_1v65  | 2.2764            | 0.2491           | 0         | 0            |
+| sky130_fd_sc_hd_ff_100C_1v95  | 3.7138            | 0.1960           | 0         | 0            |
+| sky130_fd_sc_hd_ff_n40C_1v56  | 0.8214            | 0.2915           | 0         | 0            |
+| sky130_fd_sc_hd_ff_n40C_1v65  | 1.8597            | 0.2551           | 0         | 0            |
+| sky130_fd_sc_hd_ff_n40C_1v76  | 2.7707            | 0.2243           | 0         | 0            |
+| sky130_fd_sc_hd_ss_100C_1v40  | -13.6381          | 0.9053           | -13.6381  | -7567.7964   |
+| sky130_fd_sc_hd_ss_100C_1v60  | -6.7098           | 0.6420           | -6.7098   | -2833.05     |
+| sky130_fd_sc_hd_ss_n40C_1v28  | -51.2061          | 1.8296           | -51.2061  | -36861.4102  |
+| sky130_fd_sc_hd_ss_n40C_1v35  | -32.0887          | 1.3475           | -32.0887  | -23317.6035  |
+| sky130_fd_sc_hd_ss_n40C_1v40  | -23.8290          | 1.1249           | -23.8290  | -17211.252   |
+| sky130_fd_sc_hd_ss_n40C_1v44  | -19.2010          | 0.9909           | -19.2010  | -13652.0469  |
+| sky130_fd_sc_hd_ss_n40C_1v76  | -4.4548           | 0.5038           | -4.4548   | -1842.5518   |
+
 
 #### 📈Timing Plots Across PVT Corners
 
-![Alt Text](Images/WHS.jpg)
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command17.png)
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command18.png)
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command19.png)
+[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command20.png)
 
-![Alt Text](Images/WSS.jpg)
-
-![Alt Text](Images/WNS.jpg)
-
-![Alt Text](Images/TNS.jpg)
 
 ---
 

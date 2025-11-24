@@ -786,6 +786,8 @@ Metrics such as Worst Hold Slack, Worst Setup Slack, WNS, and TNS were extracted
 
 ![Alt Text](Images/WNS.jpg)
 
+![Alt Text](Images/TNS.jpg)
+
 ---
 
 ## Outcome
@@ -819,4 +821,4 @@ Validate whether the post-synthesis BabySoC meets timing across corners and iden
 
 ---
 
-![Alt Text](Images/TNS.jpg)
+

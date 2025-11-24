@@ -1,5 +1,16 @@
-# VSD Hardware Design Program
+ # 🚀 Week 3 Part 3: Static Timing Analysis: “BabySOC”
+<div align="center">
 
+![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)
+![Day](https://img.shields.io/badge/Week-3-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+
+</div>
+
+Welcome to **Part 3 of Week 3!** 🚀  
+Timing Analysis (STA) was performed using OpenSTA to analyze the timing behavior of the synthesized RISC-V design. The flow involved loading the gate-level netlist, Liberty timing libraries, and SDC constraints, followed by generating timing reports for setup, hold, and clock path analysis. Key STA commands such as read_liberty, read_verilog, link_design, and report_checks were used to evaluate slack and identify critical timing paths. The final outcome was verifying whether the post-synthesis design meets all timing requirements.
+
+---
 ## Timing Graphs using openSTA
 
 ### 📚 Contents
@@ -18,6 +29,19 @@
 - [VSDBabySoC PVT Corner Analysis (Post-Synthesis Timing)](#vsdbabysoc-pvt-corner-analysis-post-synthesis-timing)
 - [Timing Summary Across PVT Corners (Post-Synthesis STA Results)](#timing-summary-across-pvt-corners-post-synthesis-sta-results)
 - [Timing Plots Across PVT Corners](#timing-plots-across-pvt-corners)
+
+---
+## Objective
+The objective of this lab is to perform Static Timing Analysis (STA) on the synthesized Gate-Level Netlist of VSDBabySoC using OpenSTA.
+This includes:
+- Understanding timing paths, timing checks, and slack calculations.
+- Running max-delay (setup) and min-delay (hold) analysis.
+- Performing timing using Liberty files and SPEF-based parasitics.
+- Generating timing reports across different PVT corners (TT, SS, FF).
+- Interpreting timing graphs, path delays, and clock modeling.
+- Ensuring the BabySoC meets timing requirements for its target frequency.
+
+---
 
 ## Introduction
 
@@ -192,6 +216,7 @@ Lastly, **Power Constraints** help manage dynamic and leakage power budgets usin
 | **Exceptions**           | `set_false_path` <br> `set_max_delay` <br> `set_multicycle_path`              |
 | **Power**                | `set_max_dynamic_power` <br> `set_max_leakage_power`                          |
 
+---
 ## Installation of OpenSTA
 
 **Note:** Installation instructions are adapted from the official OpenSTA repository:
@@ -760,5 +785,38 @@ Metrics such as Worst Hold Slack, Worst Setup Slack, WNS, and TNS were extracted
 ![Alt Text](Images/WSS.jpg)
 
 ![Alt Text](Images/WNS.jpg)
+
+---
+
+## Outcome
+
+By the end of this experiment, you will be able to:
+  - Run OpenSTA using interactive commands and TCL scripts.
+  - Load Liberty, Verilog, SPEF, and SDC files for complete timing analysis.
+  - Analyze setup/hold paths and identify timing violations.
+Interpret STA reports like:
+  - report_checks
+  - report_timing
+  - report_power
+  - report_units
+  - report_pulse_width_checks
+
+Understand how parasitics (SPEF) influence real chip timing.
+Perform PVT sweep timing analysis and generate consolidated timing tables and graphs. 
+Validate whether the post-synthesis BabySoC meets timing across corners and identify optimization needs.
+
+---
+<div align="center">
+
+**📂 Repository:** [Jayessh25_RISC-V-SoC-Tapeout-Program_VSD](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)  
+**👨‍💻 Author:** [Jayessh25](https://github.com/Jayessh25)  
+**📚 Program:** VLSI System Design (VSD)
+
+[![Follow](https://img.shields.io/github/followers/Jayessh25?style=social)](https://github.com/Jayessh25)
+[![Stars](https://img.shields.io/github/stars/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD?style=social)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD)
+
+</div>
+
+---
 
 ![Alt Text](Images/TNS.jpg)

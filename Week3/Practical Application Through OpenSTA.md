@@ -198,29 +198,21 @@ Lastly, **Power Constraints** help manage dynamic and leakage power budgets usin
 🔗 https://github.com/parallaxsw/OpenSTA
 
 #### Step 1: Clone the Repository
-
 ```bash
 git clone https://github.com/parallaxsw/OpenSTA.git
 cd OpenSTA
 ```
-
-![Alt Text](Images/1.jpg)
-
 #### Step 2: Build the Docker Image
 ```bash
 docker build --file Dockerfile.ubuntu22.04 --tag opensta .
 ```
 This builds a Docker image named opensta using the provided Ubuntu 22.04 Dockerfile. All dependencies are installed during this step.
 
-![Alt Text](Images/2.jpg)
-
 #### Step 3: Run the OpenSTA Container
 To run a docker container using the OpenSTA image, use the -v option to docker to mount direcories with data to use and -i to run interactively.
 ```bash
 docker run -i -v $HOME:/data opensta
 ```
-![Alt Text](Images/3.png)
-
 You now have OpenSTA installed and running inside a Docker container. After successful installation, you will see the % prompt—this indicates that the OpenSTA interactive shell is ready for use.
 
 ### Timing Analysis Using Inline Commands
@@ -296,8 +288,8 @@ endmodule
 Here are the commands for Yosys synthesis for example1.v:
 
 ```shell
-patha@spatha-VirtualBox:~$ cd ~/VLSI/VSDBabySoC/OpenSTA/examples/
-patha@spatha-VirtualBox:~/VLSI/VSDBabySoC/OpenSTA/examples$ yosys
+jayesshsk@jayesshsk:~ cd ~/VLSI/VSDBabySoc/OpenSTA/examples/
+jayesshsk@jayesshsk:~/VLSI/VSDBabySoc/OpenSTA/examples$ yosys
 yosys> read_liberty -lib nangate45_slow.lib
 yosys> read_verilog example1.v
 yosys> synth -top top
@@ -322,13 +314,8 @@ yosys> synth -top top
 3.26. Executing CHECK pass (checking for obvious problems).
 Checking module top...
 Found and reported 0 problems.
-yosys> show
+
 ```
-Below is the *netlist diagram* generated using Yosys.
-
-The datapath has been annotated with delay values at each stage for easier understanding:
-
-![Alt Text](Images/block.png)
 
 #### SPEF-Based Timing Analysis
 
@@ -495,16 +482,16 @@ report_units
 
 To automate the timing flow, you can write the commands into a .tcl script and execute it from the OpenSTA shell.
 
-<details>
-<summary><strong>min_max_delays.tcl</strong></summary>
+---
+### min_max_delays.tcl
 
 ```shell
 # Load liberty files for max and min analysis
-read_liberty -max /data/VLSI/VSDBabySoC/OpenSTA/examples/nangate45_slow.lib.gz
-read_liberty -min /data/VLSI/VSDBabySoC/OpenSTA/examples/nangate45_fast.lib.gz
+read_liberty -max /data/VLSI/VSDBabySoc/OpenSTA/examples/nangate45_slow.lib
+read_liberty -min /data/VLSI/VSDBabySoc/OpenSTA/examples/nangate45_fast.lib
 
 # Read the gate-level Verilog netlist
-read_verilog /data/VLSI/VSDBabySoC/OpenSTA/examples/example1.v
+read_verilog /data/VLSI/VSDBabySoc/OpenSTA/examples/example1.v
 
 # Link the top-level design
 link_design top
@@ -533,14 +520,14 @@ report_checks -path_delay min_max
 To run this script non-interactively using Docker:
 
 ```shell
-docker run -it -v $HOME:/data opensta /data/VLSI/VSDBabySoC/OpenSTA/examples/min_max_delays.tcl
+docker run -it -v $HOME:/data opensta /data/VLSI/VSDBabySoc/OpenSTA/examples/min_max_delays.tcl
 ```
 
 🤔**Why use the full path?**
 
 Inside the Docker container, your $HOME directory from the host system is mounted as /data.
 
-_So a file located at `$HOME/VLSI/VSDBabySoC/OpenSTA/examples/min_max_delays.tcl` on your machine becomes accessible at `/data/VLSI/VSDBabySoC/OpenSTA/examples/min_max_delays.tcl` inside the container._
+_So a file located at `$HOME/VLSI/VSDBabySoc/OpenSTA/examples/min_max_delays.tcl` on your machine becomes accessible at `/data/VLSI/VSDBabySoc/OpenSTA/examples/min_max_delays.tcl` inside the container._
 
 This absolute path ensures that OpenSTA can locate and execute the script correctly within the container's file system.
 
@@ -558,12 +545,12 @@ To begin static timing analysis on the VSDBabySoC design, you must organize and 
 
 ```bash
 # Create a directory to store Liberty timing libraries
-spatha@spatha-VirtualBox:~/VLSI/VSDBabySoC/OpenSTA$ mkdir -p examples/timing_libs/
-spatha@spatha-VirtualBox:~/VLSI/VSDBabySoC/OpenSTA/examples$ ls timing_libs/
+jayesshsk@jayesshsk:~/VLSI/VSDBabySoc/OpenSTA$ mkdir -p examples/timing_libs/
+jayesshsk@jayesshsk:~/VLSI/VSDBabySoc/OpenSTA/examples$ ls timing_libs/
 avsddac.lib  avsdpll.lib  sky130_fd_sc_hd__tt_025C_1v80.lib
 # Create a directory to store synthesized netlist and constraint files
-spatha@spatha-VirtualBox:~/VLSI/VSDBabySoC/OpenSTA$ mkdir -p examples/BabySoC
-spatha@spatha-VirtualBox:~/VLSI/VSDBabySoC/OpenSTA/examples$ ls BabySoC/
+jayesshsk@jayesshsk:~/VLSI/VSDBabySoc/OpenSTA$ mkdir -p examples/BabySoC
+jayesshsk@jayesshsk:~/VLSI/VSDBabySoc/OpenSTA/examples$ ls BabySoC/
 gcd_sky130hd.sdc vsdbabysoc_synthesis.sdc  vsdbabysoc.synth.v
 ```
 These files include:
@@ -578,28 +565,27 @@ These files include:
 
 Below is the TCL script to run complete min/max timing checks on the SoC:
 
-<details>
-<summary><strong>vsdbabysoc_min_max_delays.tcl</strong></summary>
+### vsdbabysoc_min_max_delays.tcl
   
 ```shell
 # Load Liberty Libraries (standard cell + IPs)
-read_liberty -min /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_liberty -max /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -min /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -max /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib
 
-read_liberty -min /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsdpll.lib
-read_liberty -max /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsdpll.lib
+read_liberty -min /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/avsdpll.lib
+read_liberty -max /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/avsdpll.lib
 
-read_liberty -min /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsddac.lib
-read_liberty -max /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsddac.lib
+read_liberty -min /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/avsddac.lib
+read_liberty -max /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/avsddac.lib
 
 # Read Synthesized Netlist
-read_verilog /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/vsdbabysoc.synth.v
+read_verilog /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/vsdbabysoc.synth.v
 
 # Link the Top-Level Design
 link_design vsdbabysoc
 
 # Apply SDC Constraints
-read_sdc /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/vsdbabysoc_synthesis.sdc
+read_sdc /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/vsdbabysoc_synthesis.sdc
 
 # Generate Timing Report
 report_checks
@@ -620,17 +606,17 @@ report_checks
 execute it inside the Docker container:
 
 ```shell
-docker run -it -v $HOME:/data opensta /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/vsdbabysoc_min_max_delays.tcl
+docker run -it -v $HOME:/data opensta /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/vsdbabysoc_min_max_delays.tcl
 ```
 ⚠️ **Possible Error Alert**
 
 You may encounter the following error when running the script:
 
 ```shell
-Warning: /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib line 23, default_fanout_load is 0.0.
-Warning: /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib line 1, library sky130_fd_sc_hd__tt_025C_1v80 already exists.
-Warning: /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib line 23, default_fanout_load is 0.0.
-Error: /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsdpll.lib line 54, syntax error
+Warning: /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib line 23, default_fanout_load is 0.0.
+Warning: /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib line 1, library sky130_fd_sc_hd__tt_025C_1v80 already exists.
+Warning: /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib line 23, default_fanout_load is 0.0.
+Error: /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/avsdpll.lib line 54, syntax error
 ```
 
 ✅ **Fix:**
@@ -654,6 +640,7 @@ pin (GND#2) {
 }
 */
 ```
+we have to do for everything
 This should allow OpenSTA to parse the Liberty file without throwing syntax errors.
 
 After fixing the Liberty file comment syntax as shown above, you can rerun the script to perform complete timing analysis for VSDBabySoC:
@@ -698,29 +685,29 @@ Below is the script that can be used to perform STA across the PVT corners for w
  set list_of_lib_files(12) "sky130_fd_sc_hd__ss_n40C_1v44.lib"
  set list_of_lib_files(13) "sky130_fd_sc_hd__ss_n40C_1v76.lib"
 
- read_liberty /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsdpll.lib
- read_liberty /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsddac.lib
+ read_liberty /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/avsdpll.lib
+ read_liberty /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/avsddac.lib
 
  for {set i 1} {$i <= [array size list_of_lib_files]} {incr i} {
- read_liberty /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/$list_of_lib_files($i)
- read_verilog /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/vsdbabysoc.synth.v
+ read_liberty /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/$list_of_lib_files($i)
+ read_verilog /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/vsdbabysoc.synth.v
  link_design vsdbabysoc
  current_design
- read_sdc /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/vsdbabysoc_synthesis.sdc
+ read_sdc /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/vsdbabysoc_synthesis.sdc
  check_setup -verbose
- report_checks -path_delay min_max -fields {nets cap slew input_pins fanout} -digits {4} > /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT/min_max_$list_of_lib_files($i).txt
+ report_checks -path_delay min_max -fields {nets cap slew input_pins fanout} -digits {4} > /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/STA_OUTPUT/min_max_$list_of_lib_files($i).txt
 
- exec echo "$list_of_lib_files($i)" >> /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_worst_max_slack.txt
- report_worst_slack -max -digits {4} >> /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_worst_max_slack.txt
+ exec echo "$list_of_lib_files($i)" >> /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_worst_max_slack.txt
+ report_worst_slack -max -digits {4} >> /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_worst_max_slack.txt
 
- exec echo "$list_of_lib_files($i)" >> /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_worst_min_slack.txt
- report_worst_slack -min -digits {4} >> /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_worst_min_slack.txt
+ exec echo "$list_of_lib_files($i)" >> /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_worst_min_slack.txt
+ report_worst_slack -min -digits {4} >> /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_worst_min_slack.txt
 
- exec echo "$list_of_lib_files($i)" >> /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_tns.txt
- report_tns -digits {4} >> /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_tns.txt
+ exec echo "$list_of_lib_files($i)" >> /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_tns.txt
+ report_tns -digits {4} >> /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_tns.txt
 
- exec echo "$list_of_lib_files($i)" >> /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_wns.txt
- report_wns -digits {4} >> /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_wns.txt
+ exec echo "$list_of_lib_files($i)" >> /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_wns.txt
+ report_wns -digits {4} >> /data/VLSI/VSDBabySoc/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_wns.txt
  }
 ```
 
@@ -742,7 +729,7 @@ docker run -it -v $HOME:/data opensta /data/VLSI/VSDBabySoC/OpenSTA/examples/Bab
 After executing the above script, you can find the generated timing reports in the STA_OUTPUT directory:
 
 ```shell
-spatha@spatha-VirtualBox:~/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT$ ls
+jayesshsk@jayesshsk:~/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT$ ls
 min_max_sky130_fd_sc_hd__ff_100C_1v65.lib.txt  min_max_sky130_fd_sc_hd__ss_100C_1v40.lib.txt  min_max_sky130_fd_sc_hd__ss_n40C_1v44.lib.txt  sta_worst_max_slack.txt
 min_max_sky130_fd_sc_hd__ff_100C_1v95.lib.txt  min_max_sky130_fd_sc_hd__ss_100C_1v60.lib.txt  min_max_sky130_fd_sc_hd__ss_n40C_1v76.lib.txt  sta_worst_min_slack.txt
 min_max_sky130_fd_sc_hd__ff_n40C_1v56.lib.txt  min_max_sky130_fd_sc_hd__ss_n40C_1v28.lib.txt  min_max_sky130_fd_sc_hd__tt_025C_1v80.lib.txt

@@ -265,9 +265,9 @@ report_checks
   
 _This flow is useful for quick testing and debugging without writing a full TCL script._
 
-[![Alt Text](Images/4.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command2.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command2.png)
 
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command3.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command3.png)
 
 
 **Note:** We used report_checks here because only the slow liberty file (nangate45_slow.lib.gz) is loaded. 
@@ -341,8 +341,8 @@ Checking module top...
 Found and reported 0 problems.
 
 ```
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command7.png)
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command8.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command7.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command8.png)
 
 
 #### SPEF-Based Timing Analysis
@@ -365,8 +365,8 @@ set_input_delay -clock clk 0 {in1 in2}
 report_checks
 ```
 
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command9.png)
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command10.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command9.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command10.png)
 
 
 #### more options to explore
@@ -563,9 +563,8 @@ This absolute path ensures that OpenSTA can locate and execute the script correc
 
 This method ensures repeatability and makes it easy to maintain reusable timing analysis setups for your designs.
 
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command11.png)
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command12.png)
-
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command11.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command12.png)
 
 ### VSDBabySoC basic timing analysis
 
@@ -648,7 +647,7 @@ Warning: /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_
 Warning: /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib line 23, default_fanout_load is 0.0.
 Error: /data/VLSI/VSDBabySoc/OpenSTA/examples/timing_libs/avsdpll.lib line 54, syntax error
 ```
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command13.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command13.png)
 
 ✅ **Fix:**
 
@@ -676,7 +675,7 @@ This should allow OpenSTA to parse the Liberty file without throwing syntax erro
 
 After fixing the Liberty file comment syntax as shown above, you can rerun the script to perform complete timing analysis for VSDBabySoC:
 
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command14.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command14.png)
 
 
 ### VSDBabySoC PVT Corner Analysis (Post-Synthesis Timing)
@@ -759,7 +758,7 @@ docker run -it -v $HOME:/data opensta /data/VLSI/VSDBabySoC/OpenSTA/examples/Bab
 
 After executing the above script, you can find the generated timing reports in the STA_OUTPUT directory:
 
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command15.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command15.png)
 
 ```shell
 jayesshsk@jayesshsk:~/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/STA_OUTPUT$ ls
@@ -769,8 +768,7 @@ min_max_sky130_fd_sc_hd__ff_n40C_1v56.lib.txt  min_max_sky130_fd_sc_hd__ss_n40C_
 min_max_sky130_fd_sc_hd__ff_n40C_1v65.lib.txt  min_max_sky130_fd_sc_hd__ss_n40C_1v35.lib.txt  sta_tns.txt
 min_max_sky130_fd_sc_hd__ff_n40C_1v76.lib.txt  min_max_sky130_fd_sc_hd__ss_n40C_1v40.lib.txt  sta_wns.txt
 ```
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command16.png)
-
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command16.png)
 | **File**                  | **Description**                                                     |
 | ------------------------- | ------------------------------------------------------------------- |
 | `min_max_<lib>.txt`       | Detailed timing report for setup and hold paths for each PVT corner |
@@ -804,11 +802,10 @@ Metrics such as Worst Hold Slack, Worst Setup Slack, WNS, and TNS were extracted
 
 #### 📈Timing Plots Across PVT Corners
 
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command17.png)
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command18.png)
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command19.png)
-[![Alt Text](Images/5.jpg)](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command20.png)
-
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command17.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command18.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command19.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Imagest3/Command20.png)
 
 ---
 

@@ -31,7 +31,7 @@ Wlecome to **Week8** –   is to perform a complete **post-routing Static Timing
 
 ---
 
-### 1.Objective
+### Objective
 The objective of Week 8 is to perform a complete post-routing Static Timing Analysis (STA) of the VSDBabySoC design using OpenSTA across multiple PVT corners. This includes running STA with accurate post-route parasitic data (SPEF), post-CTS constraints (SDC), and multi-corner Liberty files to evaluate worst-case setup, hold, WNS, and TNS metrics. The goal is to verify the timing integrity of the design after routing, identify corner-specific violations, and ensure sign-off-quality timing closure for the final GDSII.
 
 ---
@@ -249,8 +249,48 @@ for metric, title in metrics.items():
     plt.show()
 
 ```
+### 📌 Technical Analysis of Hold Slack (Post-Synthesis vs Post-Routing)
 
-Here is a graph showing the comparison of `worst-case hold slack` post-synthesis vs post-routing for the BabySoC design.
+The hold slack values across all PVT corners show only minimal variation between the post-synthesis and post-routing stages. This indicates that routing parasitics did not significantly degrade hold timing. The overall behavior can be summarized as follows:
+
+**✔️ 1. Hold slacks remain positive for all corners**
+
+All PVT corners retain positive hold slack both before and after routing, confirming that:
+  - The design does not exhibit hold violations at any PVT corner.
+  - Clock tree synthesis (CTS) and routing did not introduce unexpected negative skew.
+    
+**✔️ 2. Very small delta between pre- and post-routing**
+
+Most corners show only ~0.001–0.02 ns variation, which suggests:
+  - Parasitic extraction (RC effects) had negligible impact on short-path delays.
+  - The design already had strong inherent short-path margins during synthesis.
+    
+**✔️ 3. Fast corners (FF) show extremely stable slack**
+
+Examples:
+  - ff_100C_1v65: 0.2491 → 0.2516
+  - ff_100C_1v95: 0.1960 → 0.1977
+
+This stabililty across FF corners implies:
+  - Data paths do not shrink dangerously with high voltage / low temperature.
+  - The clock tree is well-balanced, with controlled skew.
+    
+**✔️ 4. Slow corners (SS) exhibit larger slack values**
+
+Example:
+  - ss_n40C_1v28: 1.8296 → 1.6106
+
+SS corners naturally produce:
+  - Larger combinational delays
+  - Reduced sensitivity to hold issues
+A minor reduction (≈ 0.2 ns) after routing is expected due to realistic RC delays.
+
+**✔️ 5. No corner shows critical degradation**
+
+Even the worst-case delta (≈0.22 ns at ss_n40C_1v28) is small relative to typical hold margins, confirming:
+  - Routing added predictable and non-critical delay.
+  - There is no need for additional hold buffer insertion.
+
 
 | PVT Corner        | Hold Slack Post-Synthesis  | Hold Slack Post-routing  |
 |-------------------|--------------|--------------|
@@ -268,9 +308,75 @@ Here is a graph showing the comparison of `worst-case hold slack` post-synthesis
 | ss_n40C_1v44      | 0.9909       | 0.9072       |
 | ss_n40C_1v76      | 0.5038       | 0.4688       |
 
+Here is a graph showing the comparison of `worst-case hold slack` post-synthesis vs post-routing for the BabySoC design.
+
 ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week8/Images/Command6.png)
 
-Here is a graph showing the comparison of `worst-case setup slack` post-synthesis vs post-routing for the BabySoC design.
+
+📌 Conclusion
+Overall, the post-routing hold timing is well within acceptable limits and demonstrates excellent correlation with post-synthesis estimates. The design shows robust short-path behavior across all PVT corners, and no hold fixes or ECO buffers are required.
+
+---
+### 📌 Technical Analysis of Setup Slack (Post-Synthesis vs Post-Routing)
+
+The setup slack values across the PVT corners show significant variation between post-synthesis and post-routing stages. This behavior highlights the impact of real parasitics, routing delay, and physical optimization on long-path timing characteristics.
+The overall observations are:
+
+**✔️ 1. Setup slack improves significantly after routing in most corners**
+
+Corners such as TT and all FF corners show a dramatic positive shift:
+
+Example:
+  - tt_025C_1v80: 0.8595 → 6.5987 ns
+  - ff_n40C_1v76: 2.7707 → 7.6698 ns
+
+This indicates:
+  - Physical optimization (buffering, gate sizing, placement refinement) greatly reduced long-path delays.
+  - Clock tree synthesis introduced a favorable skew (data path slightly delayed, clock arrives earlier).
+  - Routing parasitics did not worsen critical paths, but instead helped balance path delays.
+
+**✔️ 2. All FF corners show strong positive timing margins**
+
+Examples:
+  - ff_100C_1v65: 2.2764 → 7.5661
+  - ff_n40C_1v65: 1.8597 → 7.1347
+
+This consistent improvement suggests:
+  - Faster process conditions already favor setup timing.
+  - Routing provided sufficient RC delay smoothing to keep long-path slack high.
+  - The design is highly stable under fast operating conditions, with no risk of setup violations.
+
+**✔️ 3. SS corners remain challenging due to inherently slow process conditions**
+
+Examples:
+  - ss_100C_1v40: –13.6381 → –1.4062
+  - ss_n40C_1v28: –51.2061 → –25.0572
+
+Even though routing improves timing, these corners remain negative because:
+  - Slow process + low voltage + temperature stress dramatically increase cell delays.
+  - Critical data paths exceed the clock period under worst-case SS conditions.
+  - Clock skew cannot fully compensate for extreme delay increase.
+  - This confirms that SS corners represent the true worst-case setup bottleneck of the design.
+
+**✔️ 4. Post-routing reduces the magnitude of negative slack, showing good correlation**
+
+Example:
+  - ss_n40C_1v40: –23.8290 → –9.2025
+  - ss_n40C_1v44: –19.2010 → –6.4161
+
+Interpretation:
+  - Placement and routing significantly optimized long-path delay (up to ~14 ns improvement).
+  - Physical design reduced pessimism in early synthesis estimates.
+  - Despite improvements, path-level restructuring is still needed for closure at extreme corners.
+
+**✔️ 5. The overall trend shows predictable and consistent timing behavior**
+
+  - FF/TT corners → always positive and strongly improved
+  - SS corners → still negative but significantly recovered
+  - No unexpected degradation after routing
+  - STA behavior indicates good synthesis–routing correlation
+
+
 | PVT Corner        | Setup Slack Post-Synthesis | Setup Slack Post-routing|
 |-------------------|---------------|----------------|
 | tt_025C_1v80      | 0.8595        | 6.5987         |
@@ -287,9 +393,74 @@ Here is a graph showing the comparison of `worst-case setup slack` post-synthesi
 | ss_n40C_1v44      | -19.2010      | -6.4161        |
 | ss_n40C_1v76      | -4.4548       | 3.2889         |
 
+Here is a graph showing the comparison of `worst-case setup slack` post-synthesis vs post-routing for the BabySoC design.
+
 ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week8/Images/Command5.png)
 
-Here is a graph showing the comparison of `WNS` post-synthesis vs post-routing for the BabySoC design.
+📌 Conclusion 
+
+Overall, setup timing improves substantially after routing across typical and fast PVT corners, indicating effective physical optimization and well-balanced clock distribution. However, worst-case SS corners continue to display significant negative slack, confirming that they remain the critical setup-limiting conditions of the design. Further optimization—such as path restructuring, cell upsizing, or pipeline refinement—is required to fully close timing in these slow process, low-voltage scenarios.
+
+---
+### 📌 Technical Analysis of WNS (Post-Synthesis vs Post-Routing)
+
+The WNS values reveal how the most critical setup paths behave across PVT corners before and after routing. Since WNS directly determines whether the design meets timing, this analysis highlights the true worst-case limitations of the chip.
+
+**✔️ 1. All TT and FF corners show zero WNS both pre- and post-routing**
+
+Example corners:
+  - tt_025C_1v80: 0 → 0
+  - ff_100C_1v65: 0 → 0
+  - ff_n40C_1v76: 0 → 0
+
+This indicates:
+  - The design easily meets setup timing under typical and fast process conditions.
+  - Routing does not reveal hidden violations.
+  - There is strong timing margin for high-performance operation at nominal or fast corners.
+
+**✔️ 2. SS corners remain the true setup bottleneck**
+
+The worst violations occur at slow-slow combinations, especially at low voltages:
+Example severe cases:
+  - ss_n40C_1v28: –51.2061 → –25.0572
+  - ss_n40C_1v35: –32.0887 → –13.8790
+  - ss_n40C_1v40: –23.8290 → –9.2025
+
+Reasons:
+  - Slow transistors + low VDD + temperature stress dramatically increase delay.
+  - Critical long paths exceed the target clock period.
+  - These corners define the minimum operating frequency of the design.
+
+**✔️ 3. Post-routing significantly improves WNS in all SS corners**
+
+Examples of improvement:
+  - ss_100C_1v40: –13.6381 → –1.4062
+  - ss_n40C_1v44: –19.2010 → –6.4161
+  - ss_n40C_1v28: –51.2061 → –25.0572
+
+Interpretation:
+   - Routing/CTS added beneficial skew and optimized critical paths.
+   - Worst-case slack improved by 10–25 ns, showing strong physical design optimization.
+   - However, even after routing, SS corners still hold negative WNS → timing closure incomplete.
+
+**✔️ 4. Some SS corners improve enough to reach zero WNS**
+
+Examples:
+  - ss_100C_1v60: –6.7098 → 0
+  - ss_n40C_1v76: –4.4548 → 0
+
+This shows:
+  - For moderate voltage SS corners, routing is sufficient to fully close timing.
+  - Only the most extreme low-voltage SS corners remain problematic.
+
+**✔️ 5. Overall trend reflects predictable timing behavior**
+
+ - TT/FF → stable, clean, zero-WNS corners
+ - SS moderate voltage → post-routing closure
+ - SS low voltage → persistent violations due to device limitations
+ - Routing significantly improves but cannot fully compensate for extreme slow-process delays
+
+
 | PVT Corner        | WNS Post-Synthesis       | WNS Post-routing       |
 |-------------------|---------------|---------------|
 | tt_025C_1v80      | 0             | 0             |
@@ -306,10 +477,76 @@ Here is a graph showing the comparison of `WNS` post-synthesis vs post-routing f
 | ss_n40C_1v44      | -19.2010      | -6.4161       |
 | ss_n40C_1v76      | -4.4548       | 0             |
 
+Here is a graph showing the comparison of `WNS` post-synthesis vs post-routing for the BabySoC design.
 
 ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week8/Images/Command7.png)
 
-Here is a graph showing the comparison of `TNS` post-synthesis vs post-routing for the BabySoC design.
+📌 Conclusion 
+
+The WNS analysis shows that typical and fast corners easily meet timing at both synthesis and routing stages, confirming strong high-speed behavior. Although routing dramatically improves worst-case slack, extreme slow-slow low-voltage corners still exhibit large negative WNS and represent the fundamental setup-limited operating condition. Additional logic optimization, cell upsizing, or pipeline insertion is required to close timing at these harsh SS corners.
+
+---
+### 📌 Technical Analysis of TNS (Post-Synthesis vs Post-Routing)
+
+The TNS values provide a clear understanding of how many endpoints fail setup timing and by how much in aggregate. Unlike WNS, which identifies the single worst path, TNS reflects the overall timing health of the design across all timing endpoints.
+
+Your data shows a strong improvement after routing, particularly in slow-slow (SS) corners.
+
+**✔️ 1. All TT and FF corners show clean TNS = 0 at both stages**
+
+Examples:
+  - tt_025C_1v80: 0 → 0
+  - ff_100C_1v65: 0 → 0
+  - ff_n40C_1v76: 0 → 0
+
+Interpretation:
+  - No endpoints violate setup timing in typical or fast conditions.
+  - Design is highly stable under performance-oriented corners.
+  - Clock tree + routing introduce no regressions.
+
+**✔️ 2. SS corners show large TNS violations due to widespread long-path failures**
+
+Worst cases:
+  - ss_n40C_1v28: –36,861 → –14,950
+  - ss_n40C_1v35: –23,317 → –7,197
+  - ss_n40C_1v40: –17,211 → –3,827
+
+These values indicate:
+  - Many endpoints simultaneously fail timing in harsh SS corners.
+  - This behavior is expected due to extremely slow cell delays at low voltage.
+  - These corners define the dominant limitation for achieving timing closure.
+
+**✔️ 3. Post-routing dramatically improves TNS across all SS corners**
+
+Examples:
+  - ss_100C_1v40: –7,567 → –132
+  - ss_n40C_1v44: –13,652 → –2,041
+  - ss_n40C_1v28: –36,861 → –14,950
+
+Key points:
+  - Physical design optimization reduces total violation magnitude by 70–90%.
+  - Placement, buffering, and skew balancing improved a large number of paths.
+  - Routing parasitics reduced pessimism present at synthesis time.
+
+**✔️ 4. Some SS corners recover fully to TNS = 0 after routing**
+
+Examples:
+   - ss_100C_1v60: –2,833 → 0
+   - ss_n40C_1v76: –1,842 → 0
+
+This indicates:
+   - These moderate SS corners can achieve full timing closure with only routing optimization.
+   - Violations were minor and easily resolved by physical design.
+
+**✔️ 5. Overall trend indicates predictable STA behavior**
+
+  - TT/FF corners → always clean, zero TNS
+  - SS moderate voltage → routing fixes all violations
+  - SS extreme low-voltage → still large TNS, requiring architectural or logic-level fixes
+  - Routing significantly narrows but does not eliminate violations where the process is inherently slow
+  - This reflects realistic silicon behavior and good synthesis–routing correlation.
+
+
 | PVT Corner        | TNS Post-Synthesis          | TNS Post-routing        |
 |-------------------|------------------|----------------|
 | tt_025C_1v80      | 0                | 0              |
@@ -326,7 +563,13 @@ Here is a graph showing the comparison of `TNS` post-synthesis vs post-routing f
 | ss_n40C_1v44      | -13652.0469      | -2041.2456     |
 | ss_n40C_1v76      | -1842.5518       | 0              |
 
+Here is a graph showing the comparison of `TNS` post-synthesis vs post-routing for the BabySoC design.
+
 ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week8/Images/Command8.png)
+
+📌 Conclusion 
+
+TNS analysis confirms that the design is fully timing-clean in all TT and FF corners, with routing eliminating violations in several moderate SS conditions. However, extreme slow-slow low-voltage corners continue to exhibit substantial aggregate setup failures, indicating widespread long-path delays that cannot be fixed by physical design alone. Further optimization—such as critical-path restructuring, cell upsizing, or pipeline insertion—is required to close timing at these harsh corners.
 
 ---
 

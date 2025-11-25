@@ -459,7 +459,7 @@ This image shows the **Setup Timing Report**, presenting a list of timing paths 
 - **Fanout**
 
 All paths have **positive slack**, confirming that the design meets **setup timing requirements**.
-
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command34.png)
 
 This image displays the **Hold Timing Report**, showing timing paths with details such as:
 
@@ -471,6 +471,8 @@ This image displays the **Hold Timing Report**, showing timing paths with detail
 - **Fanout**
 
 All paths listed have **positive slack**, indicating that the design meets **hold timing requirements** and is free from hold violations.
+
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command35.png)
 
 
 This image shows the **Setup Slack Histogram** after CTS. The histogram represents the distribution of endpoint slack values, all of which are positive, indicating that there are no setup timing violations.

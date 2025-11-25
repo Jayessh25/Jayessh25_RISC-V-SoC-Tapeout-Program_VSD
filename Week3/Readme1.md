@@ -1,4 +1,4 @@
-# ⚡ Static Timing Analysis (STA)
+# Week 3 Part 2:⚡ Static Timing Analysis (STA)
 
 **Static Timing Analysis (STA)** is a fundamental method in **VLSI design** used to verify whether a digital circuit meets its **timing requirements** — ensuring that data moves correctly through flip-flops and logic **at the target clock frequency**.  
 

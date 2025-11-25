@@ -57,17 +57,11 @@ The STA is static since the analysis of the design is carried out statically and
 
 This is in contrast to simulation based timing analysis where a stimulus is applied on input signals, resulting behavior is observed and verified, then time is advanced with new input stimulus applied, and the new behavior is observed and verified and so on.
 
-![Alt Text](Images/sta6.png)
-
 In a CMOS digital design flow, the static timing analysis can be performed at many different stages of the implementation. Figure below shows a typical flow.
-
-![Alt Text](Images/flow.png)
 
 **OpenSTA** is an open source static timing analyzer (STA) tool used in digital design. It is utilized to analyze and verify the timing performance of digital circuits at the gate level.
 
 OpenSTA uses a TCL command interpreter to read the design, specify timing constraints and print timing reports.
-
-![Alt Text](Images/opensta.png)
 
 #### Input Files
 
@@ -143,17 +137,6 @@ The end point of a timing path can be either:
 
 **Combinational Logic:** Combinational logic elements are the building blocks of a digital circuit and are used to perform logic operations on the signals passing through the circuit. These elements do not store any information, and the output of a combinational logic element is solely determined by the input values at that moment.
 
-The diagram illustrates four distinct timing paths:
-
-Path 1: Input to Register (in2reg)
-
-Path 2: Register to Register (reg2reg)
-
-Path 3: Register to Output (reg2out)
-
-Path 4: Input to Output (in2out)
-
-![Alt Text](Images/paths.png)
 
 #### Setup and Hold Checks
 

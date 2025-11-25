@@ -139,6 +139,8 @@ A System-on-Chip (SoC) is a single chip that integrates:
 - Interconnect/Buses (AXI, AHB, APB)
 - Clock & Power Management
 
+![VSDBabySoc Block Diagram](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/3.png)
+
 **👉 Benefits:**
 
 - Compact, power-efficient, and high-performance.
@@ -166,6 +168,8 @@ Designed during the MYTH (Microprocessor for You in Thirty Hours) workshop.
 
 - Drives the RVMYTH core with a clean and stable clock signal.
 
+![VSDBabySoc Block Diagram](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/2.png)
+
 ---
 ## 10. What is DAC?
 
@@ -176,6 +180,8 @@ Designed during the MYTH (Microprocessor for You in Thirty Hours) workshop.
 
 -  A 10-bit DAC converts CPU digital output into analog form.
 - Demonstrates mixed-signal integration inside SoCs.
+
+![VSDBabySoc Block Diagram](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week2/1.png)
 
 ---
 

@@ -1224,7 +1224,7 @@ Design area 728556 um^2 13% utilization.
 
 * Final routing Screenshots:
 
-![alt text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command45.png)
 
 ---
 
@@ -1565,9 +1565,9 @@ It will get generated automatically after the route but we have to write this co
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk route
 ```
 
-![alt text]()
-![alt text]()
-![alt text]()
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command50.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command51.png)
+![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command52.png)
 
 ---
 ## 💡 Summary

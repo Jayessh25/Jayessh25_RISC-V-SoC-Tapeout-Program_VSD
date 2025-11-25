@@ -1,5 +1,5 @@
 
-# 🚀 Day 6: BabySoC Fundamentals & Functional Modelling
+# 🚀 Week 2: BabySoC Fundamentals & Functional Modelling
 <div align="center">
 
 ![VLSI](https://img.shields.io/badge/VLSI-System%20Design-blue?style=for-the-badge&logo=chip)

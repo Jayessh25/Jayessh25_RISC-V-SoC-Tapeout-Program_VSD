@@ -1562,7 +1562,7 @@ This routing failure exemplifies a common challenge in mixed-signal SoC design: 
 It will get generated automatically after the route but we have to write this command:
 
 ```shell
-make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk route
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk final
 ```
 
 ![Alt Text](https://github.com/Jayessh25/Jayessh25_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/Images/Command50.png)
